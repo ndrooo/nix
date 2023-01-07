@@ -75,6 +75,11 @@
       firefox
       vscode
       _1password-gui
+      signal-desktop
+      protonvpn-gui
+      xfce.thunar
+      baobab
+      discord
     ];
   };
 
