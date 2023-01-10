@@ -18,15 +18,23 @@
     nushell
     zsh
     antibody
+    bat
+    exa
     vim
     neovim
+    tmux
     wget
     git
     curl
     stow
     bottom
+    ranger
     efibootmgr
     ntfs3g
+    nitrogen
+    alacritty
+    kitty
+    redshift
   ];
 
   nix = {
@@ -80,6 +88,10 @@
       xfce.thunar
       baobab
       discord
+      notion-app-enhanced
+      spotify
+      steam
+      # itch: running off an EOLed Electron version?
     ];
   };
 
