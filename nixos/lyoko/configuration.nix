@@ -76,12 +76,16 @@
   time.timeZone = "America/New_York";
   i18n.defaultLocale = "en_US.UTF-8";
 
+  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.opengl.enable = true;
+
   services.xserver.enable = true;
   services.xserver.displayManager.lightdm.enable = true;
   services.xserver.desktopManager.xfce.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
-  services.xserver.windowManager.bspwm.enable = true;
-  services.xserver.windowManager.bspwm.sxhkd.configFile = "/home/ndrooo/.config/sxhkd/lyoko.sxhkdrc";
+  services.xserver.windowManager.bspwm = {
+    enable = true;
+  };
   sound.enable = true;
   hardware.pulseaudio.enable = true;
 
