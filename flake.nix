@@ -9,20 +9,22 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    # Add any other flake you might need
-    # hardware.url = "github:nixos/nixos-hardware";
+    hyprland.url = "github:hyprwm/Hyprland";
 
     # Shameless plug: looking for a way to nixify your themes and make
     # everything match nicely? Try nix-colors!
     # nix-colors.url = "github:misterio77/nix-colors";
   };
 
-  outputs = { nixpkgs, home-manager, ... }@inputs: {
+  outputs = { nixpkgs, home-manager, hyprland, ... }@inputs: {
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations.lyoko = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs; }; # Pass flake inputs to our config
-      modules = [ ./nixos/lyoko/configuration.nix ];
+      modules = [
+        hyprland.nixosModules.default
+        ./nixos/lyoko/configuration.nix
+      ];
     };
 
     # Standalone home-manager configuration entrypoint
