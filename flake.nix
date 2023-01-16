@@ -22,7 +22,7 @@
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations.lyoko = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs; }; # Pass flake inputs to our config
-      modules = [ ./nixos/configuration.nix ];
+      modules = [ ./nixos/lyoko/configuration.nix ];
     };
 
     # Standalone home-manager configuration entrypoint

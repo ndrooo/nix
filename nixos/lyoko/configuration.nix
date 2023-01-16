@@ -26,6 +26,7 @@
     wget
     git
     curl
+    pciutils
     stow
     bottom
     ranger
@@ -75,7 +76,9 @@
   services.xserver.enable = true;
   services.xserver.displayManager.lightdm.enable = true;
   services.xserver.desktopManager.xfce.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
   services.xserver.windowManager.bspwm.enable = true;
+  services.xserver.windowManager.bspwm.sxhkd.configFile = "/home/ndrooo/.config/sxhkd/lyoko.sxhkdrc";
   sound.enable = true;
   hardware.pulseaudio.enable = true;
 
@@ -95,6 +98,7 @@
       notion-app-enhanced
       spotify
       steam
+      protonvpn-gui
       # itch: running off an EOLed Electron version?
     ];
   };
