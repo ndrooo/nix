@@ -52,6 +52,8 @@
   sound.enable = true;
   hardware.pulseaudio.enable = true;
 
+  services.picom.enable = true;
+
   programs.hyprland.enable = true;
 
   users.users.ndrooo = {
