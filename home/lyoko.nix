@@ -34,6 +34,18 @@
     };
   };
 
+  programs.nushell = {
+    enable = true;
+    extraConfig = ''
+      let-env config = {
+        show_banner: false
+        edit_mode: vi
+      }
+    '';
+    envFile.text = ''
+    '';
+  };
+
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 
