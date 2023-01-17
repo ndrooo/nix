@@ -29,10 +29,10 @@
 
     # Standalone home-manager configuration entrypoint
     # Available through 'home-manager --flake .#your-username@your-hostname'
-    homeConfigurations.ndrooo = home-manager.lib.homeManagerConfiguration {
+    homeConfigurations.lyoko = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
       extraSpecialArgs = { inherit inputs; }; # Pass flake inputs to our config
-      modules = [ ./home-manager/home.nix ];
+      modules = [ ./home/lyoko.nix ];
     };
   };
 }

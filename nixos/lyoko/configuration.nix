@@ -24,6 +24,7 @@
     rofi
     polybar
     dunst
+    home-manager
   ];
 
   boot.loader.systemd-boot.enable = true;
