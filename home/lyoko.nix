@@ -19,6 +19,14 @@
     homeDirectory = "/home/ndrooo";
   };
 
+  xdg.configFile = {
+    "bspwm/bspwmrc" = {
+      source = ./bspwmrc;
+      executable = true;
+    };
+    "sxhkd/sxhkdrc".source = ./sxhkdrc;
+  };
+
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
   # home.packages = with pkgs; [ steam ];
@@ -41,6 +49,7 @@
         show_banner: false
         edit_mode: vi
       }
+      alias cat = bat
     '';
     envFile.text = ''
     '';

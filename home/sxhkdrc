@@ -1,0 +1,89 @@
+super + c
+	pkill -USR1 -x sxhkd
+
+super + {_,shift + }{h,j,k,l}
+	bspc node -{f,s} {west,south,north,east} --follow
+
+super + r
+	bspc node @parent -R 90
+
+alt + {_,shift + } Tab
+	bspc node -f {next,prev}.leaf.window.local
+
+super + r
+	bspc node @parent -R 90
+
+super + {f, s}
+	bspc node -t {'~fullscreen', '~floating'}
+
+super + m
+	bspc desktop -l next
+
+super + d
+	rofi -show drun
+
+super + shift + d
+	rofi -show run
+
+super + s
+	rofi -show ssh
+
+super + Return
+	kitty
+
+super + shift + {e,r}
+	bspc {quit,wm -r}
+
+super + shift + s
+	systemctl suspend
+
+super + q
+	bspc node -c
+
+# Smart resize
+super + ctrl + {h,j,k,l}
+	n=20; \
+	{ d1=left;   d2=right;  dx=-$n; dy=0; \
+	, d1=bottom; d2=top;    dx=0;   dy=$n;  \
+	, d1=top;    d2=bottom; dx=0;   dy=-$n; \
+	, d1=right;  d2=left;   dx=$n;  dy=0;   \
+	} \
+	bspc node -z $d1 $dx $dy || bspc node -z $d2 $dx $dy
+
+XF86AudioPlay
+	playerctl play-pause
+
+XF86AudioStop
+	playerctl stop
+
+XF86AudioPrev
+	playerctl prev
+
+XF86AudioNext
+	playerctl next
+
+XF86AudioLowerVolume
+	~/bin/dunst-volume down
+
+XF86AudioRaiseVolume
+	~/bin/dunst-volume up
+
+XF86AudioMute
+	~/bin/dunst-volume mute
+
+XF86MonBrightnessDown
+	~/bin/dunst-brightness down
+
+XF86MonBrightnessUp
+	~/bin/dunst-brightness up
+
+alt + {_, shift + }{u,i,o,p,comma,period,y}
+	bspc {desktop -f,node -d} '{left,steam,right,discord,code,docs,tv}'
+
+super + {_, shift + }{1,2,3,4,5,6,7}
+	bspc {desktop -f,node -d} '{left,steam,right,discord,code,docs,tv}'
+
+Pause
+	mkdir -p ~/Pictures/scrot && \
+	scrot -u ~/Pictures/scrot/$(uname -n).png && \
+	notify-send -t 3000 "took scrot"

@@ -1,0 +1,68 @@
+#!/bin/sh
+
+if ! pgrep -x polybar > /dev/null; then
+  polybar -c ~/.config/polybar/lyoko.ini left &
+  polybar -c ~/.config/polybar/lyoko.ini right &
+  polybar -c ~/.config/polybar/lyoko.ini tv &
+fi
+
+pgrep -x picom > /dev/null || picom &
+
+bspc monitor DP-2 -d left steam code
+bspc monitor DP-0 -d right discord docs
+bspc monitor HDMI-0 -d tv
+
+polybar-msg cmd restart
+xsetroot -cursor_name left_ptr
+nitrogen --restore
+pgrep -x dunst > /dev/null || dunst &
+
+bspc config border_width 4
+bspc config window_gap 20
+bspc config normal_border_color "#121212"
+bspc config active_border_color "#444444"
+bspc config focused_border_color "#ca9ee9"
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config borderless_singleton   true
+bspc config gapless_monocle      true
+bspc config single_monocle       true
+
+bspc rule -a Zathura state=tiled
+
+# https://www.reddit.com/r/bspwm/comments/hqt1r3/is_there_a_way_to_disable_picom_rounded_borders/
+bspc subscribe desktop_layout node_add node_remove | while read -r Event
+do
+  Desktop=$(echo "$Event" | awk '{print $3}')
+  State=$(bspc query -T -d $Desktop | grep -o '"layout":"\w*",' | cut -d \" -f 4)
+  if [ "$State" = "monocle" ]; then
+    bspc query -N -d $Desktop | while read -r Node
+    do
+      xprop -id $Node -f _PICOM_ROUNDED 32c -set _PICOM_ROUNDED 1
+    done
+  else
+    bspc query -N -d $Desktop | while read -r Node
+    do
+      xprop -id $Node -remove _PICOM_ROUNDED
+    done
+  fi
+done &
+bspc subscribe node_transfer | while read -r Event
+do
+  NewDesktop=$(echo "$Event" | awk '{print $6}')
+  State=$(bspc query -T -d $Desktop | grep -o '"layout":"\w*",' | cut -d \" -f 4)
+  if [ "$State" = "monocle" ]; then
+    bspc query -N -d $NewDesktop | while read -r Node
+    do
+      xprop -id $Node -f _PICOM_ROUNDED 32c -set _PICOM_ROUNDED 1
+    done
+  else
+    bspc query -N -d $NewDesktop | while read -r Node
+    do
+      xprop -id $Node -remove _PICOM_ROUNDED
+    done
+  fi
+done &
+
+wmname LG3D
