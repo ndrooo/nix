@@ -24,6 +24,8 @@
     rofi
     polybar
     dunst
+    picom
+    lxappearance
     home-manager
   ];
 
@@ -53,9 +55,13 @@
   sound.enable = true;
   hardware.pulseaudio.enable = true;
 
-  services.picom.enable = true;
-
   programs.hyprland.enable = true;
+
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true;
+    dedicatedServer.openFirewall = true;
+  };
 
   users.users.ndrooo = {
     isNormalUser = true;
