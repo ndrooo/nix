@@ -39,6 +39,12 @@
     };
   };
 
+  fileSystems."/papertape" = {
+    device = "/dev/disk/by-uuid/7A909141909104B3";
+    fsType = "ntfs3";
+    options = ["rw" "uid=1000"];
+  };
+
   time.timeZone = "America/New_York";
   i18n.defaultLocale = "en_US.UTF-8";
 
