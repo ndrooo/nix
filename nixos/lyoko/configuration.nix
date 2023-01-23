@@ -10,24 +10,11 @@
 
     # Import your generated (nixos-generate-config) hardware configuration
     ../base.nix
+    ../graphics.nix
     ./hardware-configuration.nix
   ];
 
   networking.hostName = "lyoko";
-
-  environment.systemPackages = with pkgs; [
-    nitrogen
-    alacritty
-    kitty
-    redshift
-    rofi
-    polybar
-    dunst
-    picom
-    lxappearance
-    home-manager
-    feh
-  ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = false;
@@ -45,33 +32,8 @@
     options = ["rw" "uid=1000"];
   };
 
-  time.timeZone = "America/New_York";
-  i18n.defaultLocale = "en_US.UTF-8";
-
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.opengl.enable = true;
-
-  services.xserver.enable = true;
-  services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.desktopManager.xfce.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-  services.xserver.windowManager.bspwm = {
-    enable = true;
-  };
-  sound.enable = true;
-  hardware.pulseaudio.enable = true;
-
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall = true;
-    dedicatedServer.openFirewall = true;
-  };
-
-  xdg.mime.defaultApplications = {
-    "text/html" = "firefox.desktop";
-    "x-scheme-handler/http" = "firefox.desktop";
-    "x-scheme-handler/https" = "firefox.desktop";
-  };
 
   users.users.ndrooo = {
     isNormalUser = true;
