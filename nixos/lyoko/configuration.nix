@@ -16,7 +16,6 @@
   networking.hostName = "lyoko";
 
   environment.systemPackages = with pkgs; [
-    ntfs3g
     nitrogen
     alacritty
     kitty
@@ -27,6 +26,7 @@
     picom
     lxappearance
     home-manager
+    feh
   ];
 
   boot.loader.systemd-boot.enable = true;
