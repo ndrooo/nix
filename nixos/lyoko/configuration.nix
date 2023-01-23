@@ -61,8 +61,6 @@
   sound.enable = true;
   hardware.pulseaudio.enable = true;
 
-  programs.hyprland.enable = true;
-
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true;
