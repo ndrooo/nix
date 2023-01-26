@@ -32,6 +32,20 @@
     options = ["rw" "uid=1000"];
   };
 
+  environment.etc.crypttab = {
+    enable = true;
+    text = ''
+      magdrum UUID=682c9ace-52e0-46e0-9f8e-0ed479d648e1 /root/lyoko.key luks,nofail
+    '';
+  };
+
+  environment.etc.fstab = {
+    enable = true;
+    text = ''
+      UUID=3239b580-6a8b-4a1f-a9cd-d6a97c3b9f95 /magdrum ext4 rw,relatime,nofail 0 2
+    '';
+  };
+
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.opengl.enable = true;
 
