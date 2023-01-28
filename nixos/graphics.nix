@@ -11,10 +11,21 @@
     polybar
     dunst
     picom
+    vscode
+    firefox
     lxappearance
+    xfce.thunar
+    baobab
     feh
     darktable
     godot
+    spotify
+    protonvpn-gui
+    _1password-gui
+    signal-desktop
+    discord
+    notion-app-enhanced
+    # itch: running off an EOLed Electron version?
   ];
 
   services.xserver.enable = true;

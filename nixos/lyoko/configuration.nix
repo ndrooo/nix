@@ -53,20 +53,5 @@
     isNormalUser = true;
     extraGroups = [ "wheel" ];
     shell = pkgs.fish;
-    packages = with pkgs; [
-      firefox
-      vscode
-      _1password-gui
-      signal-desktop
-      protonvpn-gui
-      xfce.thunar
-      baobab
-      discord
-      notion-app-enhanced
-      spotify
-      steam
-      protonvpn-gui
-      # itch: running off an EOLed Electron version?
-    ];
   };
 }
