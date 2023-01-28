@@ -83,11 +83,11 @@
         disabled = false;
         map_symbol = true;
         symbol = "";
-        not_executable_symbol = "🚫 [NEX](bold red)";
-        not_found_symbol = "🔍 [NFD](bold red)";
-        sigint_symbol = "✋ [INT](bold yellow)";
-        signal_symbol = "🏁 [SIG](bold yellow)";
-        format = "$symbol ";
+        not_executable_symbol = "🚫 [NEX](bold red) ";
+        not_found_symbol = "🔍 [NFD](bold red) ";
+        sigint_symbol = "✋ [INT](bold yellow) ";
+        signal_symbol = "🏁 [SIG](bold yellow) ";
+        format = "$symbol";
       };
       git_branch.symbol = "🔀 ";
       sudo.disabled = false;
