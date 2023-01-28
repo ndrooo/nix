@@ -52,7 +52,7 @@
   users.users.ndrooo = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
-    shell = pkgs.nushell;
+    shell = pkgs.fish;
     packages = with pkgs; [
       firefox
       vscode

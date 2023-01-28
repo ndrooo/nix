@@ -13,6 +13,8 @@
     picom
     lxappearance
     feh
+    darktable
+    godot
   ];
 
   services.xserver.enable = true;

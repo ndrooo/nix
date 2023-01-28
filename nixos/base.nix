@@ -11,6 +11,7 @@
     nushell
     zsh
     antibody
+    fish
     bat
     exa
     vim
