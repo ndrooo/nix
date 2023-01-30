@@ -11,7 +11,6 @@
     nushell
     zsh
     antibody
-    fish
     bat
     exa
     vim
@@ -20,13 +19,17 @@
     wget
     git
     curl
+    mlocate
     pciutils
     stow
     bottom
     ranger
     efibootmgr
     home-manager
+    python3
   ];
+  
+  programs.fish.enable = true;
 
   nix = {
     # This will add each flake input as a registry

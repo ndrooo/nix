@@ -17,6 +17,7 @@
     xfce.thunar
     baobab
     feh
+    mpv
     darktable
     godot
     spotify
@@ -26,6 +27,10 @@
     discord
     notion-app-enhanced
     # itch: running off an EOLed Electron version?
+  ];
+
+  fonts.fonts = with pkgs; [
+    (nerdfonts.override { fonts = ["VictorMono" "SpaceMono"]; })
   ];
 
   services.xserver.enable = true;
