@@ -11,22 +11,20 @@
     # Import your generated (nixos-generate-config) hardware configuration
     ../base.nix
     ../graphics.nix
-    # ./hardware-configuration.nix
+    ./hardware-configuration.nix
   ];
 
   networking.hostName = "kiwi";
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = false;
-  /*
   boot.initrd.luks.devices = {
     nix = {
-      device = "/dev/disk/by-uuid/###";
+      device = "/dev/disk/by-uuid/e649bf5c-e2e4-4195-ad49-57014efaa1ad";
       preLVM = true;
       allowDiscards = true;
     };
   };
-  */
 
   /*
   environment.etc.crypttab = {
@@ -44,7 +42,6 @@
   };
   */
 
-  services.xserver.videoDrivers = [ "nvidia" ];
   hardware.opengl.enable = true;
 
   users.users.ndrooo = {

@@ -18,9 +18,15 @@
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations.lyoko = nixpkgs.lib.nixosSystem {
-      specialArgs = { inherit inputs; }; # Pass flake inputs to our config
+      specialArgs = { inherit inputs; };
       modules = [
         ./nixos/lyoko/configuration.nix
+      ];
+    };
+    nixosConfigurations.kiwi = nixpkgs.lib.nixosSystem {
+      specialArgs = { inherit inputs; };
+      modules = [
+        ./nixos/kiwi/configuration.nix
       ];
     };
 
