@@ -8,7 +8,7 @@
     kitty
     redshift
     rofi
-    polybar
+    (polybar.override { i3Support = true; pulseSupport = true; })
     dunst
     picom
     vscode
@@ -40,6 +40,7 @@
   services.xserver.windowManager.bspwm = {
     enable = true;
   };
+  services.xserver.windowManager.i3.enable = true;
   sound.enable = true;
   hardware.pulseaudio.enable = true;
 
