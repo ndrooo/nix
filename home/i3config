@@ -7,6 +7,10 @@ set $second #444444
 set $first #ca9ee9
 set $urgent #ca9ee9
 
+# Autostarts
+exec_always nitrogen --restore
+exec_always --no-startup-id "pkill dunst; dunst"
+
 # Control the system
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
