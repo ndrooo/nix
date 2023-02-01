@@ -64,6 +64,7 @@ bindsym $mod+Shift+q exec xkill -id `xprop -root _NET_ACTIVE_WINDOW | cut -d\# -
 bindsym $mod+d exec rofi -show drun
 bindsym $mod+Shift+d exec rofi -show run
 bindsym $mod+s exec rofi -show ssh
+bindsym $mod+m exec rofimoji
 
 bindsym $mod+Return exec kitty
 

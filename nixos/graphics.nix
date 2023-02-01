@@ -7,7 +7,8 @@
     alacritty
     kitty
     redshift
-    rofi
+    rofi rofimoji
+    xdotool
     (polybar.override { i3Support = true; pulseSupport = true; })
     dunst
     picom
