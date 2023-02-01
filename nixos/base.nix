@@ -27,6 +27,7 @@
     efibootmgr
     home-manager
     python3
+    libnotify
   ];
   
   programs.fish.enable = true;
