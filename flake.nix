@@ -37,5 +37,10 @@
       extraSpecialArgs = { inherit inputs; }; # Pass flake inputs to our config
       modules = [ ./home/lyoko.nix ];
     };
+    homeConfigurations.kiwi = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+      extraSpecialArgs = { inherit inputs; }; # Pass flake inputs to our config
+      modules = [ ./home/kiwi.nix ];
+    };
   };
 }
