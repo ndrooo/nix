@@ -26,7 +26,7 @@ in {
       "${mod}+Shift+c" = "reload";
       "${mod}+Shift+r" = "restart";
       "${mod}+Shift+e" = "exit";
-      "${mod}+Shift+x" = "exec systemctl suspend";
+      "${mod}+Shift+s" = "exec systemctl suspend";
 
       "${mod}+h" = "focus left";
       "${mod}+j" = "focus down";
