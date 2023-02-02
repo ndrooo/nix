@@ -44,6 +44,9 @@
 
   hardware.opengl.enable = true;
 
+  hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
+
   users.users.ndrooo = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
