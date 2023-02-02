@@ -22,7 +22,6 @@
       executable = true;
     };
     "sxhkd/sxhkdrc".source = ./sxhkdrc;
-    "i3/config".source = ./i3config;
   };
 
   # Add stuff for your user as you see fit:
