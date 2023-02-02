@@ -22,6 +22,14 @@ in {
   ];
 
   xsession.windowManager.i3.config = {
+    startup = [
+      {
+        command = "\"pkill polybar; polybar -c ~/.config/polybar/lyoko.ini left; polybar -c ~/.config/polybar/lyoko.ini right\"";
+        always = true;
+        notification = false;
+      }
+    ];
+
     workspaceOutputAssign = [
       { workspace = ws1; output = lmon; }
       { workspace = ws2; output = rmon; }

@@ -16,7 +16,7 @@ in {
 
     startup = [
       { command = "nitrogen --restore"; always = true; notification = false; }
-      { command = "pkill dunst; dunst"; always = true; notification = false; }
+      { command = "\"pkill dunst; dunst\""; always = true; notification = false; }
     ];
 
     modifier = "${mod}";
