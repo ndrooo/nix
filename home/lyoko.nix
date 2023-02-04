@@ -55,8 +55,8 @@ in {
       "${alt}+y" = "workspace ${ws7}";
 
       "${alt}+Shift+u" = "move container to workspace ${ws1}";
-      "${alt}+Shift+o" = "move container to workspace ${ws2}";
-      "${alt}+Shift+i" = "move container to workspace ${ws3}";
+      "${alt}+Shift+i" = "move container to workspace ${ws2}";
+      "${alt}+Shift+o" = "move container to workspace ${ws3}";
       "${alt}+Shift+p" = "move container to workspace ${ws4}";
       "${alt}+Shift+comma" = "move container to workspace ${ws5}";
       "${alt}+Shift+period" = "move container to workspace ${ws6}";
