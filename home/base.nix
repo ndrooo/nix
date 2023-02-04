@@ -28,6 +28,7 @@
     "dunst/dunstrc".source = ./dunstrc;
     "rofi/config.rasi".source = ./rofi/config.rasi;
     "rofi/theme.rasi".source = ./rofi/theme.rasi;
+    "kitty/kitty.conf".source = ./kitty.conf;
   };
 
   # Add stuff for your user as you see fit:
