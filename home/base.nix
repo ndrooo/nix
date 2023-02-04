@@ -26,6 +26,8 @@
     "polybar/modules.ini".source = ./polybar/modules.ini;
     "polybar/user_modules.ini".source = ./polybar/user_modules.ini;
     "dunst/dunstrc".source = ./dunstrc;
+    "rofi/config.rasi".source = ./rofi/config.rasi;
+    "rofi/theme.rasi".source = ./rofi/theme.rasi;
   };
 
   # Add stuff for your user as you see fit:

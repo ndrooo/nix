@@ -1,0 +1,9 @@
+configuration {
+	modi: "drun,ssh,window,run";
+	show-icons: true;
+	icon-theme: "Qogir";
+	cycle: true;
+	terminal: "kitty";
+	m: "-1";
+}
+@theme "theme"
