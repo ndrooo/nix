@@ -25,6 +25,7 @@
     "polybar/bars.ini".source = ./polybar/bars.ini;
     "polybar/modules.ini".source = ./polybar/modules.ini;
     "polybar/user_modules.ini".source = ./polybar/user_modules.ini;
+    "dunst/dunstrc".source = ./dunstrc;
   };
 
   # Add stuff for your user as you see fit:
