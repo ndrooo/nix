@@ -9,7 +9,9 @@ let
   ws7 = "7: seven";
   ws8 = "8: music";
   ws9 = "9: nine";
+  ws10 = "10: ten";
 
+  mod = "Mod4";
   alt = "Mod1";
 in {
   imports = [
@@ -30,18 +32,42 @@ in {
       }
     ];
 
+    defaultWorkspace = "workspace ${ws1}";
+
     keybindings = {
+      "${mod}+1" = "workspace ${ws1}";
+      "${mod}+2" = "workspace ${ws2}";
+      "${mod}+3" = "workspace ${ws3}";
+      "${mod}+4" = "workspace ${ws4}";
+      "${mod}+5" = "workspace ${ws5}";
+      "${mod}+6" = "workspace ${ws6}";
+      "${mod}+7" = "workspace ${ws7}";
+      "${mod}+8" = "workspace ${ws8}";
+      "${mod}+9" = "workspace ${ws9}";
+      "${mod}+0" = "workspace ${ws10}";
+
+      "${mod}+Shift+1" = "move container to workspace ${ws1}";
+      "${mod}+Shift+2" = "move container to workspace ${ws2}";
+      "${mod}+Shift+3" = "move container to workspace ${ws3}";
+      "${mod}+Shift+4" = "move container to workspace ${ws4}";
+      "${mod}+Shift+5" = "move container to workspace ${ws5}";
+      "${mod}+Shift+6" = "move container to workspace ${ws6}";
+      "${mod}+Shift+7" = "move container to workspace ${ws7}";
+      "${mod}+Shift+8" = "move container to workspace ${ws8}";
+      "${mod}+Shift+9" = "move container to workspace ${ws9}";
+      "${mod}+Shift+0" = "move container to workspace ${ws10}";
+
       "${alt}+u" = "workspace ${ws1}";
-      "${alt}+o" = "workspace ${ws2}";
-      "${alt}+i" = "workspace ${ws3}";
+      "${alt}+i" = "workspace ${ws2}";
+      "${alt}+o" = "workspace ${ws3}";
       "${alt}+p" = "workspace ${ws4}";
       "${alt}+comma" = "workspace ${ws5}";
       "${alt}+period" = "workspace ${ws6}";
       "${alt}+y" = "workspace ${ws8}";
 
       "${alt}+Shift+u" = "move container to workspace ${ws1}";
-      "${alt}+Shift+o" = "move container to workspace ${ws2}";
-      "${alt}+Shift+i" = "move container to workspace ${ws3}";
+      "${alt}+Shift+i" = "move container to workspace ${ws2}";
+      "${alt}+Shift+o" = "move container to workspace ${ws3}";
       "${alt}+Shift+p" = "move container to workspace ${ws4}";
       "${alt}+Shift+comma" = "move container to workspace ${ws5}";
       "${alt}+Shift+period" = "move container to workspace ${ws6}";
