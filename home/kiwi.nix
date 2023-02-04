@@ -17,6 +17,10 @@ in {
     ./i3.nix
   ];
 
+  xdg.configFile = {
+    "polybar/kiwi.ini".source = ./polybar/kiwi.ini;
+  };
+
   xsession.windowManager.i3.config = {
     startup = [
       {

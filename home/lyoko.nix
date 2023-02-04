@@ -21,6 +21,10 @@ in {
     ./i3.nix
   ];
 
+  xdg.configFile = {
+    "polybar/lyoko.ini".source = ./polybar/lyoko.ini;
+  };
+
   xsession.windowManager.i3.config = {
     startup = [
       {

@@ -22,6 +22,9 @@
       executable = true;
     };
     "sxhkd/sxhkdrc".source = ./sxhkdrc;
+    "polybar/bars.ini".source = ./polybar/bars.ini;
+    "polybar/modules.ini".source = ./polybar/modules.ini;
+    "polybar/user_modules.ini".source = ./polybar/user_modules.ini;
   };
 
   # Add stuff for your user as you see fit:
