@@ -29,6 +29,7 @@
     "rofi/config.rasi".source = ./rofi/config.rasi;
     "rofi/theme.rasi".source = ./rofi/theme.rasi;
     "kitty/kitty.conf".source = ./kitty.conf;
+    "zathura/zathurarc".source = ./zathurarc;
   };
 
   # Add stuff for your user as you see fit:

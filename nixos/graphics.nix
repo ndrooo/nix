@@ -27,6 +27,7 @@
     signal-desktop
     discord
     notion-app-enhanced
+    zathura
     # itch: running off an EOLed Electron version?
   ];
 
