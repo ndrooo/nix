@@ -2,11 +2,11 @@
 
 let
   mod = "Mod4";
-  bg = "#121212";
-  fg = "#f3e2ec";
-  second = "#444444";
-  first = "#ca9ee9";
-  urgent = "#ca9ee9";
+  bg = "#101010";
+  fg = "#e0def4";
+  second = "#3d3d3d";
+  first = "#7882bf";
+  urgent = "#596196";
   terminal = "kitty";
 in {
   xsession.windowManager.i3.enable = true;
