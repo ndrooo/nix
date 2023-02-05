@@ -25,6 +25,8 @@ in {
     ./kitty.nix
   ];
 
+  programs.kitty.font.size = 12;
+
   xdg.configFile = {
     "polybar/lyoko.ini".source = ./polybar/lyoko.ini;
   };

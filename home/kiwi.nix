@@ -20,6 +20,8 @@ in {
     ./kitty.nix
   ];
 
+  programs.kitty.font.size = 14;
+
   xdg.configFile = {
     "polybar/kiwi.ini".source = ./polybar/kiwi.ini;
   };
