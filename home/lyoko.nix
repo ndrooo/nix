@@ -22,6 +22,7 @@ in {
   imports = [
     ./base.nix
     ./i3.nix
+    ./kitty.nix
   ];
 
   xdg.configFile = {
