@@ -4,7 +4,6 @@
     overlays = [];
     # Configure your nixpkgs instance
     config = {
-      # Disable if you don't want unfree packages
       allowUnfree = true;
       # Workaround for https://github.com/nix-community/home-manager/issues/2942
       allowUnfreePredicate = (_: true);
@@ -28,7 +27,6 @@
     "dunst/dunstrc".source = ./dunstrc;
     "rofi/config.rasi".source = ./rofi/config.rasi;
     "rofi/theme.rasi".source = ./rofi/theme.rasi;
-    # "kitty/kitty.conf".source = ./kitty.conf;
     "zathura/zathurarc".source = ./zathurarc;
   };
 
@@ -36,8 +34,8 @@
   # programs.neovim.enable = true;
   # home.packages = with pkgs; [ steam ];
 
-  # Enable home-manager and git
   programs.home-manager.enable = true;
+
   programs.git = {
     enable = true;
     userName = "ndrooo";
