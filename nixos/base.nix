@@ -28,6 +28,7 @@
     home-manager
     python3
     libnotify
+    neofetch
   ];
   
   programs.fish.enable = true;
