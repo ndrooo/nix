@@ -12,8 +12,8 @@
 
   imports = [
     inputs.nix-colors.homeManagerModule
-    ./rofi/rofi.nix
-    ./polybar/polybar.nix
+    ./rofi
+    ./polybar
   ];
 
   home = {
