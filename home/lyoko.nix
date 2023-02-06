@@ -21,6 +21,7 @@ let
 in {
   imports = [
     ./base.nix
+    ./graphix.nix
     ./i3.nix
     ./kitty.nix
     ./themes/luna.nix

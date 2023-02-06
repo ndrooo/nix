@@ -1,4 +1,4 @@
-{ inputs, lib, config, pkgs, ... }: {
+{ pkgs, ... }: {
   nixpkgs = {
     # You can add overlays here
     overlays = [];
@@ -10,20 +10,9 @@
     };
   };
 
-  imports = [
-    inputs.nix-colors.homeManagerModule
-    ./rofi
-    ./polybar
-  ];
-
   home = {
     username = "ndrooo";
     homeDirectory = "/home/ndrooo";
-  };
-
-  xdg.configFile = {
-    "dunst/dunstrc".source = ./dunstrc;
-    "zathura/zathurarc".source = ./zathurarc;
   };
 
   # Add stuff for your user as you see fit:
