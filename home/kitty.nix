@@ -1,4 +1,7 @@
-{ inputs, lib, config, pkgs, ... }: {
+{ inputs, lib, config, pkgs, ... }:
+let
+  colors = config.colorScheme.colors;
+in {
   programs.kitty.enable = true;
 
   programs.kitty.font.name = "Victor Mono Nerd Font";
@@ -17,29 +20,29 @@
     enable_audio_bell = false;
     window_alert_on_bell = true;
 
-    url_color = "#4d4d4d";
+    url_color = "#${colors.altbg}";
     url_style = "curly";
 
-    cursor = "#e0def4";
-    foreground = "#e0def4";
-    background = "#101010";
-    selection_foreground = "#101010";
-    selection_background = "#e0def4";
-    color0  = "#3d3d3d";
-    color8  = "#4d4d4d";
-    color1  = "#6673bf";
-    color9  = "#899aff";
-    color2  = "#52ad91";
-    color10 = "#48bca7";
-    color3  = "#98c9bb";
-    color11 = "#b0ead9";
-    color4  = "#31658c";
-    color12 = "#477ab3";
-    color5  = "#596196";
-    color13 = "#7882bf";
-    color6  = "#8292b2";
-    color14 = "#95a7cc";
-    color7  = "#c8cacc";
-    color15 = "#edeff2";
+    cursor = "#${colors.fg}";
+    foreground = "#${colors.fg}";
+    background = "#${colors.bg}";
+    selection_foreground = "#${colors.bg}";
+    selection_background = "#${colors.fg}";
+    color0  = "#${colors.c0}";
+    color8  = "#${colors.c8}";
+    color1  = "#${colors.c1}";
+    color9  = "#${colors.c9}";
+    color2  = "#${colors.c2}";
+    color10 = "#${colors.c10}";
+    color3  = "#${colors.c3}";
+    color11 = "#${colors.c11}";
+    color4  = "#${colors.c4}";
+    color12 = "#${colors.c12}";
+    color5  = "#${colors.c5}";
+    color13 = "#${colors.c13}";
+    color6  = "#${colors.c6}";
+    color14 = "#${colors.c14}";
+    color7  = "#${colors.c7}";
+    color15 = "#${colors.c15}";
   };
 }

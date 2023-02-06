@@ -1,12 +1,15 @@
 { inputs, lib, config, pkgs, ... }:
 
+with config.colorScheme.colors;
 let
   mod = "Mod4";
-  bg = "#101010";
-  fg = "#e0def4";
-  second = "#3d3d3d";
-  first = "#7882bf";
-  urgent = "#596196";
+  bg = "#${config.colorScheme.colors.bg}";
+  fg = "#${config.colorScheme.colors.fg}";
+  altbg = "#${config.colorScheme.colors.altbg}";
+  altfg = "#${config.colorScheme.colors.altfg}";
+  dimmed = "#${config.colorScheme.colors.dimmed}";
+  primary = "#${config.colorScheme.colors.primary}";
+  urgent = "#${config.colorScheme.colors.urgent}";
   terminal = "kitty";
 in {
   xsession.windowManager.i3.enable = true;
@@ -92,18 +95,18 @@ in {
     colors = {
       background = bg;
       focused = {
-        border = first;
-        background = first;
+        border = primary;
+        background = primary;
         text = bg;
-        indicator = first;
-        childBorder = first;
+        indicator = primary;
+        childBorder = primary;
       };
       focusedInactive = {
-        border = second;
-        background = second;
-        text = bg;
-        indicator = second;
-        childBorder = second;
+        border = altbg;
+        background = altbg;
+        text = altfg;
+        indicator = altbg;
+        childBorder = altbg;
       };
       unfocused = {
         border = bg;
@@ -122,7 +125,7 @@ in {
       placeholder = {
         border = bg;
         background = bg;
-        text = second;
+        text = dimmed;
         indicator = bg;
         childBorder = bg;
       };

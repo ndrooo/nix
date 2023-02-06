@@ -23,6 +23,7 @@ in {
     ./base.nix
     ./i3.nix
     ./kitty.nix
+    ./themes/luna.nix
   ];
 
   programs.kitty.font.size = 12;

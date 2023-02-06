@@ -10,6 +10,10 @@
     };
   };
 
+  imports = [
+    inputs.nix-colors.homeManagerModule
+  ];
+
   home = {
     username = "ndrooo";
     homeDirectory = "/home/ndrooo";
