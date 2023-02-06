@@ -12,6 +12,8 @@
 
   imports = [
     inputs.nix-colors.homeManagerModule
+    ./rofi/rofi.nix
+    ./polybar/polybar.nix
   ];
 
   home = {
@@ -20,12 +22,7 @@
   };
 
   xdg.configFile = {
-    "polybar/bars.ini".source = ./polybar/bars.ini;
-    "polybar/modules.ini".source = ./polybar/modules.ini;
-    "polybar/user_modules.ini".source = ./polybar/user_modules.ini;
     "dunst/dunstrc".source = ./dunstrc;
-    "rofi/config.rasi".source = ./rofi/config.rasi;
-    "rofi/theme.rasi".source = ./rofi/theme.rasi;
     "zathura/zathurarc".source = ./zathurarc;
   };
 
