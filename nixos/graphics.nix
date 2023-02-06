@@ -39,9 +39,6 @@
   services.xserver.displayManager.lightdm.enable = true;
   services.xserver.desktopManager.xfce.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
-  services.xserver.windowManager.bspwm = {
-    enable = true;
-  };
   services.xserver.windowManager.i3.enable = true;
   sound.enable = true;
   hardware.pulseaudio.enable = true;
