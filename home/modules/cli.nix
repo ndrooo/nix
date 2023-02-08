@@ -3,8 +3,6 @@
 { pkgs, ... }: {
   programs.git = {
     enable = true;
-    userName = "ndrooo";
-    userEmail = "git@ndr.ooo";
     aliases = {
       st = "status";
     };

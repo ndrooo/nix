@@ -12,20 +12,15 @@
     };
   };
 
-  home = {
-    username = "ndrooo";
-    homeDirectory = "/home/ndrooo";
-  };
-
-  # Add stuff for your user as you see fit:
-  # programs.neovim.enable = true;
-  # home.packages = with pkgs; [ steam ];
-
+  home.username = "ndrooo";
+  home.homeDirectory = "/home/ndrooo";
+  # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
+  home.stateVersion = "22.11";
   programs.home-manager.enable = true;
+
+  programs.git.userName = "ndrooo";
+  programs.git.userEmail = "git@ndr.ooo";
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
-
-  # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  home.stateVersion = "22.11";
 }
