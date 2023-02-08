@@ -9,7 +9,6 @@
     redshift
     rofi rofimoji
     xdotool
-    (polybar.override { i3Support = true; pulseSupport = true; })
     dunst
     picom
     vscode

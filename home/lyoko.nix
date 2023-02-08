@@ -29,14 +29,20 @@ in {
 
   programs.kitty.font.size = 12;
 
-  xdg.configFile = {
-    "polybar/lyoko.ini".source = ./polybar/lyoko.ini;
-  };
+  services.polybar.config = ./polybar/lyoko.ini;
 
   xsession.windowManager.i3.config = {
     startup = [
       {
-        command = "\"pkill polybar; polybar -c ~/.config/polybar/lyoko.ini left; polybar -c ~/.config/polybar/lyoko.ini right\"";
+        command = "\"polybar left &\"";
+        notification = false;
+      }
+      {
+        command = "\"polybar right &\"";
+        notification = false;
+      }
+      {
+        command = "polybar-msg cmd restart";
         always = true;
         notification = false;
       }

@@ -24,14 +24,16 @@ in {
 
   programs.kitty.font.size = 14;
 
-  xdg.configFile = {
-    "polybar/kiwi.ini".source = ./polybar/kiwi.ini;
-  };
+  services.polybar.config = ./polybar/kiwi.ini;
 
   xsession.windowManager.i3.config = {
     startup = [
       {
-        command = "\"pkill polybar; polybar -c ~/.config/polybar/kiwi.ini laptop\"";
+        command = "\"polybar laptop &\"";
+        notification = false;
+      }
+      {
+        command = "polybar-msg cmd restart";
         always = true;
         notification = false;
       }
