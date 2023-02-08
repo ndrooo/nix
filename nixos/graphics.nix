@@ -19,7 +19,7 @@
     feh
     mpv
     darktable
-    godot
+    godot_4
     spotify
     protonvpn-gui
     _1password-gui
