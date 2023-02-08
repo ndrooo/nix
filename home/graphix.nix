@@ -3,6 +3,7 @@
     inputs.nix-colors.homeManagerModule
     ./rofi
     ./polybar
+    ./kitty.nix
   ];
 
   xdg.configFile = {
