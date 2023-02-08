@@ -21,15 +21,15 @@ let
 in {
   imports = [
     ./base.nix
-    ./cli.nix
-    ./graphix.nix
-    ./i3.nix
+    ./modules/cli.nix
+    ./modules/graphix.nix
+    ./modules/i3.nix
     ./themes/luna.nix
   ];
 
   programs.kitty.font.size = 12;
 
-  services.polybar.config = ./polybar/lyoko.ini;
+  services.polybar.config = ./modules/polybar/lyoko.ini;
 
   xsession.windowManager.i3.config = {
     startup = [

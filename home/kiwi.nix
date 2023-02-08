@@ -16,15 +16,15 @@ let
 in {
   imports = [
     ./base.nix
-    ./cli.nix
-    ./graphix.nix
-    ./i3.nix
+    ./modules/cli.nix
+    ./modules/graphix.nix
+    ./modules/i3.nix
     ./themes/luna.nix
   ];
 
   programs.kitty.font.size = 14;
 
-  services.polybar.config = ./polybar/kiwi.ini;
+  services.polybar.config = ./modules/polybar/kiwi.ini;
 
   xsession.windowManager.i3.config = {
     startup = [
