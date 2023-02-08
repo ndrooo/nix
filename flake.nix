@@ -9,7 +9,7 @@
   };
 
   outputs = { nixpkgs, home-manager, nix-colors, ... }@inputs: {
-    # nixos-rebuild --flake .#your-hostname
+    # nixos-rebuild switch --flake .#hostname
     nixosConfigurations.lyoko = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs; };
       modules = [
@@ -23,7 +23,7 @@
       ];
     };
 
-    # home-manager --flake .#your-username@your-hostname
+    # home-manager switch --flake .#hostname
     homeConfigurations.lyoko = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
       extraSpecialArgs = { inherit inputs; };
