@@ -78,6 +78,14 @@ in {
     window = {
       titlebar = false;
       border = 4;
+      commands = [
+        {
+          command = "border pixel 4";
+          criteria = {
+            class = "^.*";
+          };
+        }
+      ];
     };
 
     floating = {
