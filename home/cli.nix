@@ -1,3 +1,5 @@
+# Common configuration for any unix-like host with a CLI
+
 { pkgs, ... }: {
   programs.git = {
     enable = true;

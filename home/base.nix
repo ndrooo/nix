@@ -1,3 +1,5 @@
+# Common configuration for all home-manager hosts
+
 {
   nixpkgs = {
     # You can add overlays here
