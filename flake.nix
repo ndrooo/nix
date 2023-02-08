@@ -23,6 +23,8 @@
       ];
     };
 
+    homeModules = import ./home/modules;
+
     # home-manager switch --flake .#hostname
     homeConfigurations.lyoko = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
