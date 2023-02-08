@@ -1,4 +1,3 @@
-{ config, ... }:
 let
   bg = "101010";
   fg = "e0def4";

@@ -1,5 +1,3 @@
-{ inputs, lib, config, pkgs, ... }:
-
 let
   lmon = "DP-2";
   rmon = "DP-0";

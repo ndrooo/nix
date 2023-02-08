@@ -1,4 +1,3 @@
-{ inputs, lib, config, pkgs, ... }:
 let
   ws1 = "1: www";
   ws2 = "2: code";

@@ -8,7 +8,7 @@
     nix-colors.url = "github:misterio77/nix-colors";
   };
 
-  outputs = { nixpkgs, home-manager, nix-colors, ... }@inputs: {
+  outputs = { nixpkgs, home-manager, ... }@inputs: {
     # nixos-rebuild switch --flake .#hostname
     nixosConfigurations.lyoko = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs; };

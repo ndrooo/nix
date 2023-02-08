@@ -1,4 +1,4 @@
-{ inputs, lib, config, pkgs, ... }:
+{ config, ... }:
 let
   colors = config.colorScheme.colors;
 in {
