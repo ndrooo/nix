@@ -7,6 +7,7 @@
     alacritty
     kitty
     redshift
+    brightnessctl
     rofi rofimoji
     xdotool
     dunst
@@ -20,6 +21,7 @@
     mpv
     darktable
     godot_4
+    playerctl
     spotify
     protonvpn-gui
     _1password-gui

@@ -41,6 +41,13 @@ in {
     defaultWorkspace = "workspace ${ws1}";
 
     keybindings = {
+      "XF86AudioMute" = "exec pactl set-sink-mute @DEFAULT_SINK@ toggle";
+      "XF86AudioRaiseVolume" = "exec pactl set-sink-volume @DEFAULT_SINK@ +1000";
+      "XF86AudioLowerVolume" = "exec pactl set-sink-volume @DEFAULT_SINK@ -1000";
+      "XF86MonBrightnessUp" = "exec brightnessctl set 5%+";
+      "XF86MonBrightnessDown" = "exec brightnessctl set 5%-";
+      "XF86AudioPlay" = "exec playerctl play-pause";
+
       "${mod}+1" = "workspace ${ws1}";
       "${mod}+2" = "workspace ${ws2}";
       "${mod}+3" = "workspace ${ws3}";
