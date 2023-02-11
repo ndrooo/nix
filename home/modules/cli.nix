@@ -29,6 +29,7 @@
     interactiveShellInit = ''
       set fish_greeting # no more greeting
       fish_vi_key_bindings
+      set -gx EDITOR vim
     '';
     plugins = [
       { name = "pisces"; src = pkgs.fishPlugins.pisces.src; }
