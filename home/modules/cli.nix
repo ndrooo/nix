@@ -6,6 +6,9 @@
     aliases = {
       st = "status";
     };
+    extraConfig = {
+      pull.rebase = true;
+    };
   };
 
   programs.nushell = {
