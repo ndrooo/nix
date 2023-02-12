@@ -26,21 +26,19 @@
     };
   };
 
-  /*
   environment.etc.crypttab = {
     enable = true;
     text = ''
-      selectron UUID=### /root/kiwi.key luks,nofail
+      selectron UUID=4f94671e-2b0f-47f9-b1bc-e42653a1d5f0 /root/kiwi.key luks,nofail
     '';
   };
 
   environment.etc.fstab = {
     enable = true;
     text = ''
-      UUID=### /selectron ext4 rw,relatime,nofail 0 2
+      UUID=08f1112e-fbc0-4f3e-9a6a-cd5c562d92fd /selectron ext4 rw,relatime,nofail 0 2
     '';
   };
-  */
 
   hardware.opengl.enable = true;
 
