@@ -36,7 +36,7 @@
   environment.etc.fstab = {
     enable = true;
     text = ''
-      UUID=08f1112e-fbc0-4f3e-9a6a-cd5c562d92fd /selectron ext4 rw,relatime,nofail 0 2
+      UUID=08f1112e-fbc0-4f3e-9a6a-cd5c562d92fd /selectron ext4 rw,relatime,nofail,x-systemd.device-timeout=100ms 0 2
     '';
   };
 
