@@ -1,0 +1,3 @@
+{
+  luna = import ./luna.nix;
+}

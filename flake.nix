@@ -24,6 +24,7 @@
     };
 
     homeModules = import ./home/modules;
+    themes = import ./home/themes;
 
     # home-manager switch --flake .#hostname
     homeConfigurations.lyoko = home-manager.lib.homeManagerConfiguration {
