@@ -23,7 +23,7 @@
     envFile.text = ''
     '';
   };
-  
+
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
@@ -44,7 +44,6 @@
       format = lib.concatStrings [
         "$hostname" "$directory"
         "$git_branch" "$git_status" "$git_state"
-        "$package" "$haskell" "$java" "$kotlin" "$nodejs" "$python" "$rust"
         "$nix_shell"
         "$cmd_duration"
         "$sudo"
