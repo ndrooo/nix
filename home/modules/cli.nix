@@ -41,25 +41,41 @@
     enableNushellIntegration = true;
     enableFishIntegration = true;
     settings = {
+      directory = {
+        format = "[   ]($style inverted)[$read_only]($read_only_style inverted)[ $path ]($style)";
+        style = "bright-blue bold bg:black";
+        read_only = "  ";
+        read_only_style = "bright-red bg:black";
+      };
       character = {
-        success_symbol = "💖";
-        error_symbol = "💀";
-        vimcmd_symbol = "🔮";
-        vimcmd_replace_one_symbol = "🔂";
-        vimcmd_replace_symbol = "🔁";
-        vimcmd_visual_symbol = "📋";
+        success_symbol = "[   ](bright-cyan bg:black)";
+        error_symbol = "[ 󰚌  ](bright-cyan bg:black)";
+        vimcmd_symbol = "[ 󰘳  ](bright-cyan bg:black)";
+        vimcmd_replace_one_symbol = "[ 󰓡  ](bright-cyan bg:black)";
+        vimcmd_replace_symbol = "[ 󰯍  ](bright-cyan bg:black)";
+        vimcmd_visual_symbol = "[ 󰒉  ](bright-cyan bg:black)";
       };
       status = {
         disabled = false;
         map_symbol = true;
         symbol = "";
-        not_executable_symbol = "🚫 [NEX](bold red) ";
-        not_found_symbol = "🔍 [NFD](bold red) ";
-        sigint_symbol = "✋ [INT](bold yellow) ";
-        signal_symbol = "🏁 [SIG](bold yellow) ";
+        not_executable_symbol = "[ NEX ]($style)";
+        not_found_symbol = "[ NFD ]($style)";
+        sigint_symbol = "[ INT ]($style)";
+        signal_symbol = "[ SIG ]($style)";
         format = "$symbol";
+        style = "bold black bg:yellow";
       };
-      git_branch.symbol = "🔀 ";
+      git_branch = {
+        symbol = " ";
+        format = "[ $symbol ]($style inverted)[ $branch(:$remote_branch) ]($style)";
+        style = "bright-green bg:black";
+      };
+      git_status = {
+        format = "[ $all_status ]($style inverted)[ $ahead_behind ]($style)";
+        style = "bright-red bg:black";
+      };
+      git_commit.disabled = true;
       sudo.disabled = false;
     };
   };
