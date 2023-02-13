@@ -1,6 +1,6 @@
 # Common configuration for any unix-like host with a CLI
 
-{ pkgs, ... }: {
+{ pkgs, lib, ... }: {
   programs.git = {
     enable = true;
     aliases = {
@@ -41,6 +41,21 @@
     enableNushellIntegration = true;
     enableFishIntegration = true;
     settings = {
+      format = lib.concatStrings [
+        "$hostname" "$directory"
+        "$git_branch" "$git_status" "$git_state"
+        "$package" "$haskell" "$java" "$kotlin" "$nodejs" "$python" "$rust"
+        "$nix_shell"
+        "$cmd_duration"
+        "$sudo"
+        "$line_break"
+        "$jobs" "$battery" "$shell"
+        "$character" "$status" " "
+      ];
+      hostname = {
+        format = "[ 󰟀  ]($style inverted)[ $hostname ]($style)";
+        style = "white bg:black";
+      };
       directory = {
         format = "[   ]($style inverted)[$read_only]($read_only_style inverted)[ $path ]($style)";
         style = "bright-blue bold bg:black";
@@ -48,8 +63,9 @@
         read_only_style = "bright-red bg:black";
       };
       character = {
+        format = "$symbol";
         success_symbol = "[   ](bright-cyan bg:black)";
-        error_symbol = "[ 󰚌  ](bright-cyan bg:black)";
+        error_symbol = "[ 󰚌  ](black bg:bright-yellow)";
         vimcmd_symbol = "[ 󰘳  ](bright-cyan bg:black)";
         vimcmd_replace_one_symbol = "[ 󰓡  ](bright-cyan bg:black)";
         vimcmd_replace_symbol = "[ 󰯍  ](bright-cyan bg:black)";
@@ -64,19 +80,37 @@
         sigint_symbol = "[ INT ]($style)";
         signal_symbol = "[ SIG ]($style)";
         format = "$symbol";
-        style = "bold black bg:yellow";
+        style = "bold bright-yellow bg:black";
       };
       git_branch = {
-        symbol = " ";
-        format = "[ $symbol ]($style inverted)[ $branch(:$remote_branch) ]($style)";
+        format = "[  ]($style inverted)[ $branch(:$remote_branch) ]($style)";
         style = "bright-green bg:black";
+        ignore_branches = ["main" "master"];
       };
       git_status = {
-        format = "[ $all_status ]($style inverted)[ $ahead_behind ]($style)";
-        style = "bright-red bg:black";
+        format = "[   ]($style inverted)([ $all_status$ahead_behind ]($style))";
+        style = "bold bright-purple bg:black";
+        conflicted = "Cft";
+        ahead = "󰜷";
+        behind = "󰜮";
+        diverged = "󰹺";
+        untracked = "";
+        modified = "";
+        staged = "󰆼";
+        renamed = "󰑕";
+        deleted = "󰆴";
+      };
+      cmd_duration = {
+        format = "[ 󱦟 $duration ]($style inverted)";
+        style = "yellow bg:black";
+      };
+      fill.symbol = "╍";
+      sudo = {
+        disabled = false;
+        format = "[ 󱑷  ]($style inverted)";
+        style = "red bg:black";
       };
       git_commit.disabled = true;
-      sudo.disabled = false;
     };
   };
 }
