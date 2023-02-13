@@ -25,7 +25,7 @@ in {
     ./themes/luna.nix
   ];
 
-  programs.kitty.font.size = 12;
+  programs.kitty.font.size = 13;
 
   services.polybar.config = ./modules/polybar/lyoko.ini;
 
