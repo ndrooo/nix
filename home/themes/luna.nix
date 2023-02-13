@@ -3,8 +3,8 @@ let
   fg = "e0def4";
 
   # black
-  c0 =  "3d3d3d";
-  c8 =  "4d4d4d";
+  c0 =  "2d2d2d";
+  c8 =  "3d3d3d";
 
   # red
   c1 =  "6673bf";
