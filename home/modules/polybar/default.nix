@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ inputs, pkgs, config, ... }:
 with config.colorScheme.colors;
 let
   bg = "#${config.colorScheme.colors.bg}";
@@ -12,6 +12,10 @@ let
   red = "#${config.colorScheme.colors.c9}";
   magenta = "#${config.colorScheme.colors.c14}";
 in {
+  imports = [
+    inputs.nix-colors.homeManagerModule
+  ];
+
   xdg.configFile = {
     "polybar/bars.ini".source = ./bars.ini;
     "polybar/modules.ini".source = ./modules.ini;

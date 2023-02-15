@@ -1,4 +1,6 @@
 let
+  modules = import ./modules;
+
   lmon = "DP-2";
   rmon = "DP-0";
   tvmon = "HDMI-0";
@@ -19,9 +21,10 @@ let
 in {
   imports = [
     ./base.nix
-    ./modules/cli.nix
-    ./modules/graphix.nix
-    ./modules/i3.nix
+    modules.cli
+    modules.i3
+    modules.kitty
+    modules.zathura
     ./themes/luna.nix
   ];
 

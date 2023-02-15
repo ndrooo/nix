@@ -1,4 +1,6 @@
 let
+  modules = import ./modules;
+
   ws1 = "1: www";
   ws2 = "2: code";
   ws3 = "3: discord";
@@ -15,9 +17,10 @@ let
 in {
   imports = [
     ./base.nix
-    ./modules/cli.nix
-    ./modules/graphix.nix
-    ./modules/i3.nix
+    modules.cli
+    modules.i3
+    modules.kitty
+    modules.zathura
     ./themes/luna.nix
   ];
 

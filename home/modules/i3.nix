@@ -1,4 +1,4 @@
-{ config, ... }:
+{ inputs, config, ... }:
 
 with config.colorScheme.colors;
 let
@@ -12,6 +12,13 @@ let
   urgent = "#${config.colorScheme.colors.urgent}";
   terminal = "kitty";
 in {
+  imports = [
+    inputs.nix-colors.homeManagerModule
+    ./polybar
+    ./rofi
+    (import ./default.nix).dunst
+  ];
+
   xsession.windowManager.i3.enable = true;
 
   xsession.windowManager.i3.config = {

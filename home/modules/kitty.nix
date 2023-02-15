@@ -1,7 +1,11 @@
-{ config, ... }:
+{ inputs, config, ... }:
 let
   colors = config.colorScheme.colors;
 in {
+  imports = [
+    inputs.nix-colors.homeManagerModule
+  ];
+
   programs.kitty.enable = true;
 
   programs.kitty.font.name = "Victor Mono Nerd Font";
