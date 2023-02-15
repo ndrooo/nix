@@ -63,9 +63,9 @@
       };
       character = {
         format = "$symbol";
-        success_symbol = "[   ](bright-cyan bg:black)";
+        success_symbol = "[ 󰊠  ](bright-cyan bg:black)";
         error_symbol = "[ 󰚌  ](black bg:bright-yellow)";
-        vimcmd_symbol = "[ 󰘳  ](bright-cyan bg:black)";
+        vimcmd_symbol = "[ 󰐱  ](bright-cyan bg:black)";
         vimcmd_replace_one_symbol = "[ 󰓡  ](bright-cyan bg:black)";
         vimcmd_replace_symbol = "[ 󰯍  ](bright-cyan bg:black)";
         vimcmd_visual_symbol = "[ 󰒉  ](bright-cyan bg:black)";
@@ -106,7 +106,7 @@
       fill.symbol = "╍";
       sudo = {
         disabled = false;
-        format = "[ 󱑷  ]($style inverted)";
+        format = " []($style bg:none) [   ]($style inverted)[]($style bg:none) ";
         style = "red bg:black";
       };
       git_commit.disabled = true;
