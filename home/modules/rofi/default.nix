@@ -1,7 +1,11 @@
-{ inputs, ... }:
+{ inputs, pkgs, ... }:
 {
   imports = [
     inputs.nix-colors.homeManagerModule
+  ];
+
+  home.packages = with pkgs; [
+    rofimoji
   ];
 
   xdg.configFile = {

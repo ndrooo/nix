@@ -8,7 +8,7 @@
     kitty
     redshift
     brightnessctl
-    rofi rofimoji
+    rofi
     xdotool
     dunst
     picom
