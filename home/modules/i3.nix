@@ -16,6 +16,7 @@ in {
     inputs.nix-colors.homeManagerModule
     ./polybar
     ./rofi
+    ./flameshot.nix
     (import ./default.nix).dunst
   ];
 
@@ -68,6 +69,8 @@ in {
       "${mod}+Shift+d" = "exec rofi -show run";
       "${mod}+s" = "exec rofi -show ssh";
       "${mod}+m" = "exec rofimoji";
+
+      "${mod}+c" = "exec flameshot gui";
     };
 
     focus = {
