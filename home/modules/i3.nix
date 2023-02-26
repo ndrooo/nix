@@ -1,4 +1,4 @@
-{ inputs, config, ... }:
+{ inputs, config, pkgs, ... }:
 
 with config.colorScheme.colors;
 let
@@ -19,6 +19,8 @@ in {
     ./flameshot.nix
     (import ./default.nix).dunst
   ];
+
+  home.packages = [ pkgs.wmfocus ];
 
   xsession.windowManager.i3.enable = true;
 
@@ -71,6 +73,7 @@ in {
       "${mod}+m" = "exec rofimoji";
 
       "${mod}+c" = "exec flameshot gui";
+      "${mod}+g" = "exec wmfocus";
     };
 
     focus = {
