@@ -155,4 +155,27 @@ in {
   xsession.windowManager.i3.extraConfig = ''
     title_align center
   '';
+
+  services.picom.enable = true;
+  services.picom.backend = "glx";
+  services.picom.settings = {
+    corner-radius = 4.0;
+    rounded-corners-exclude = [
+      "class_g = 'Polybar'"
+      "fullscreen"
+      "class_g = 'i3-frame'"
+      "_PICOM_ROUNDED@:32c = 1"
+    ];
+    shadow = true;
+    shadow-radius = 15;
+    shadow-offset-x = -7;
+    shadow-offset-y = -7;
+    shadow-opacity = 0.3;
+    shadow-exclude = [
+        "class_g = 'Polybar'"
+        "fullscreen"
+        "class_g = 'i3-frame'"
+        "_PICOM_ROUNDED@:32c = 1"
+    ];
+  };
 }
