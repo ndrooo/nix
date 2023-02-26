@@ -162,6 +162,7 @@ in {
   services.picom.enable = true;
   services.picom.backend = "glx";
   services.picom.settings = {
+    vsync = true;
     corner-radius = 4.0;
     rounded-corners-exclude = [
       "class_g = 'Polybar'"
