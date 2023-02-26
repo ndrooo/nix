@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 let
   modules = import ./modules;
 
@@ -22,6 +23,10 @@ in {
     modules.kitty
     modules.zathura
     ./themes/luna.nix
+  ];
+
+  home.packages = [
+    pkgs.obsidian
   ];
 
   programs.kitty.font.size = 15;
