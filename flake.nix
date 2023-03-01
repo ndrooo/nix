@@ -22,6 +22,12 @@
         ./nixos/kiwi/configuration.nix
       ];
     };
+    nixosConfigurations.xana = nixpkgs.lib.nixosSystem {
+      specialArgs = { inherit inputs; };
+      modules = [
+        ./nixos/xana/configuration.nix
+      ];
+    };
 
     homeModules = import ./home/modules;
     themes = import ./home/themes;
@@ -36,6 +42,11 @@
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
       extraSpecialArgs = { inherit inputs; };
       modules = [ ./home/kiwi.nix ];
+    };
+    homeConfigurations.xana = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages.x86_64-linux; # TODO: fix
+      extraSpecialArgs = { inherit inputs; };
+      modules = [ ./home/xana.nix ];
     };
   };
 }
