@@ -31,6 +31,7 @@ in {
 
   home.packages = [
     pkgs.obsidian
+    pkgs.todoist-electron
   ];
 
   programs.kitty.font.size = 13;
