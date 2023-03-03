@@ -34,6 +34,8 @@
 
   fonts.fonts = with pkgs; [
     (nerdfonts.override { fonts = ["VictorMono" "SpaceMono"]; })
+    lexend
+    victor-mono
   ];
 
   services.xserver.enable = true;
