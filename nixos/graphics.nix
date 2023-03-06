@@ -3,33 +3,12 @@
   imports = [];
 
   environment.systemPackages = with pkgs; [
-    nitrogen
-    alacritty
-    kitty
+    firefox
     redshift
     brightnessctl
     rofi
-    xdotool
     dunst
     picom
-    vscode
-    firefox
-    lxappearance
-    xfce.thunar
-    baobab
-    feh
-    mpv
-    darktable
-    godot_4
-    playerctl
-    spotify
-    protonvpn-gui
-    _1password-gui
-    signal-desktop
-    discord
-    notion-app-enhanced
-    zathura
-    # itch: running off an EOLed Electron version?
   ];
 
   fonts.fonts = with pkgs; [
