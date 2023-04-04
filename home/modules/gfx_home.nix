@@ -11,6 +11,7 @@
     signal-desktop
     discord
     notion-app-enhanced
+    zoom-us
     # itch: running off an EOLed Electron version?
   ];
 }
