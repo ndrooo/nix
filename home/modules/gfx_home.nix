@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
     obsidian
-    todoist-electron
+    # todoist-electron
     gimp
     xfce.thunar
     darktable
