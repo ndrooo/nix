@@ -12,6 +12,7 @@
     discord
     notion-app-enhanced
     zoom-us
+    prusa-slicer
     # itch: running off an EOLed Electron version?
   ];
 }
