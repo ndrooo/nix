@@ -13,15 +13,31 @@
     # ./hardware-configuration.nix
   ];
 
-  networking.hostName = "xana";
+  boot = {
+    kernelPackages = pkgs.linuxPackages_rpi4;
+    tmpOnTmpfs = true;
+    initrd.availableKernelModules = [ "usbhid" "usb_storage" ];
+    kernelParams = [
+      "8250.nr_uarts=1"
+      "console=ttyAMA0,115200"
+      "console=tty1"
+      # A lot of GUI programs need this, nearly all wayland applications
+      "cma=128M"
+    ];
 
-  # boot.loader.systemd-boot.enable = true;
-  # boot.loader.efi.canTouchEfiVariables = false;
-  boot.initrd.luks.devices = {
-    nix = {
-      device = "/dev/disk/by-uuid/30b81c9d-b1ab-4eca-97f0-b76443553999";
-      preLVM = true;
-      allowDiscards = true;
+    loader.raspberryPi = {
+      enable = true;
+      version = 4;
+    };
+    loader.grub.enable = false;
+  };
+  
+  hardware.enableRedistributableFirmware = true;
+
+  networking = {
+    hostName = "xana";
+    networkmanager = {
+      enable = true;
     };
   };
 
