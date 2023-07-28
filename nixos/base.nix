@@ -29,6 +29,8 @@
     python3
     libnotify
     neofetch
+    # for terminfo
+    kitty
   ];
   
   programs.fish.enable = true;
