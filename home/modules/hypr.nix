@@ -4,12 +4,13 @@
     ];
 
     wayland.windowManager.hyprland.enable = true;
+	programs.waybar.enable = true;
 
     wayland.windowManager.hyprland.extraConfig = ''
 	# See https://wiki.hyprland.org/Configuring/Monitors/
 	monitor=eDP-1,1920x1200@60,0x0,1
 
-	# exec-once = waybar
+	exec-once = waybar
 
 	input {
 		follow_mouse = 0
@@ -36,6 +37,7 @@
 	bind = SUPER SHIFT, E, exit
 	bind = SUPER, Return, exec, kitty
 	bind = SUPER, D, exec, rofi -show drun
+	bind = SUPER SHIFT, D, exec, rofi -show run
 
 	bind = SUPER, H, movefocus, l
 	bind = SUPER, J, movefocus, d
@@ -75,4 +77,22 @@
 	bindm = SUPER, mouse:272, movewindow
 	bindm = SUPER, mouse:273, resizewindow
     '';
+
+	programs.waybar.settings = {
+		mainBar = {
+			layer = "top";
+			position = "top";
+			height = 32;
+			output = [
+				"eDP-1"
+			];
+			modules-left = [ "wlr/workspaces" ];
+			modules-center = ["wlr/taskbar"];
+			modules-right = [ "mpd" "battery" ];
+
+			"wlr/taskbar" = {
+				active-first = true;
+			};
+		};
+	};
 }
