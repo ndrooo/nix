@@ -1,6 +1,8 @@
 { inputs, lib, config, pkgs, ... }: {
   # You can import other NixOS modules here
-  imports = [];
+  imports = [
+    inputs.agenix.nixosModules.default
+  ];
 
   nixpkgs.config.allowUnfree = true;
 
@@ -22,6 +24,7 @@
     mlocate
     pciutils
     stow
+    inputs.agenix.packages."${system}".default
     bottom
     ranger
     efibootmgr
