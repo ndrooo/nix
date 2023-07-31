@@ -48,7 +48,7 @@
       modules = [ ./home/kiwi.nix ];
     };
     homeConfigurations.xana = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages.x86_64-linux; # TODO: fix
+      pkgs = nixpkgs.legacyPackages.aarch64-linux;
       extraSpecialArgs = { inherit inputs; };
       modules = [ ./home/xana.nix ];
     };
