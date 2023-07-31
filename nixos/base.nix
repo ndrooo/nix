@@ -21,7 +21,6 @@
     wget
     git
     curl
-    mlocate
     pciutils
     stow
     inputs.agenix.packages."${system}".default
@@ -35,6 +34,8 @@
     # for terminfo
     kitty
   ];
+
+  services.locate.enable = true;
   
   programs.fish.enable = true;
 
