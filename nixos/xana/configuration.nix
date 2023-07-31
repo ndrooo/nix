@@ -10,40 +10,49 @@
 
     # Import your generated (nixos-generate-config) hardware configuration
     ../base.nix
-    # ./hardware-configuration.nix
+    # ../server.nix
+    ./hardware-configuration.nix
   ];
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_rpi4;
-    tmpOnTmpfs = true;
-    initrd.availableKernelModules = [ "usbhid" "usb_storage" ];
-    kernelParams = [
-      "8250.nr_uarts=1"
-      "console=ttyAMA0,115200"
-      "console=tty1"
-      # A lot of GUI programs need this, nearly all wayland applications
-      "cma=128M"
-    ];
-
-    loader.raspberryPi = {
-      enable = true;
-      version = 4;
+    kernelPackages = pkgs.linuxKernel.packages.linux_rpi4;
+    initrd.availableKernelModules = [ "xhci_pci" "usbhid" "usb_storage" ];
+    loader = {
+      grub.enable = false;
+      generic-extlinux-compatible.enable = true;
     };
-    loader.grub.enable = false;
+  };
+
+  fileSystems = {
+    "/" = {
+      options = [ "noatime" ];
+    };
   };
   
-  hardware.enableRedistributableFirmware = true;
-
   networking = {
     hostName = "xana";
-    networkmanager = {
+    wireless = {
       enable = true;
+      # networks."ssid".psk = "password";
+      interfaces = [ "wlan0" ];
     };
+  };
+
+  services.openssh = {
+    enable = true;
+    settings.PasswordAuthentication = false;
   };
 
   users.users.ndrooo = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
     shell = pkgs.fish;
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEEnxGHi/ehTxFxEwWSyozesfQL3uX9762NW/YtgKrJw ndrooo@lyoko"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJhQKBp+aYcvMtHWUp6X3aUIfglWEl+6LcU/XrqdnWNC ndrooo@kiwi"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPglOw1DK7ANW7k3s2UrpzEzJ11VD9db/9BVc2mdQCsP ndrooo@sanic"
+    ];
   };
+
+  hardware.enableRedistributableFirmware = true;
 }
