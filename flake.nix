@@ -6,13 +6,12 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nix-colors.url = "github:misterio77/nix-colors";
-    hyprland.url = "github:hyprwm/Hyprland";
     agenix.url = "github:ryantm/agenix";
     agenix.inputs.nixpkgs.follows = "nixpkgs";
     agenix.inputs.darwin.follows = "";
   };
 
-  outputs = { nixpkgs, home-manager, hyprland, agenix, ... }@inputs: {
+  outputs = { nixpkgs, home-manager, agenix, ... }@inputs: {
     # nixos-rebuild switch --flake .#hostname
     nixosConfigurations.lyoko = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs; };

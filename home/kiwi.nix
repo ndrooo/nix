@@ -21,7 +21,6 @@ in {
     modules.cli
     modules.gfx
     modules.gfx_home
-    modules.hypr
     modules.i3
     modules.kitty
     modules.zathura
