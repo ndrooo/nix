@@ -11,7 +11,7 @@
     picom
   ];
 
-  fonts.fonts = with pkgs; [
+  fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = ["VictorMono" "SpaceMono"]; })
     lexend
     victor-mono
@@ -29,7 +29,7 @@
   hardware.pulseaudio.enable = true;
 
   programs.hyprland.enable = true;
-  programs.hyprland.nvidiaPatches = true;
+  programs.hyprland.enableNvidiaPatches = true;
 
   programs.steam = {
     enable = true;

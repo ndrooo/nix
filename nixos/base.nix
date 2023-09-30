@@ -14,7 +14,7 @@
     zsh
     antibody
     bat
-    exa
+    eza
     vim
     neovim
     tmux
