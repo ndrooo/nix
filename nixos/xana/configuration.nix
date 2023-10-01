@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ config, pkgs, ... }: {
   # You can import other NixOS modules here
   imports = [
     # If you want to use modules from other flakes (such as nixos-hardware):
@@ -29,12 +29,15 @@
     };
   };
   
+  age.identityPaths = ["/etc/ssh/id_ed25519"];
+  age.secrets.home-wifi = {
+    file = ../../secrets/home-wifi.age;
+    path = "/etc/NetworkManager/system-connections/home-wifi.nmconnection";
+  };
   networking = {
     hostName = "xana";
-    wireless = {
+    networkmanager = {
       enable = true;
-      # networks."ssid".psk = "password";
-      interfaces = [ "wlan0" ];
     };
   };
 

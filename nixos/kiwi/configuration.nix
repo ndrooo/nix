@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ config, pkgs, ... }: {
   # You can import other NixOS modules here
   imports = [
     # If you want to use modules from other flakes (such as nixos-hardware):
@@ -14,7 +14,19 @@
     ./hardware-configuration.nix
   ];
 
-  networking.hostName = "kiwi";
+
+  age.identityPaths = ["/etc/ssh/id_ed25519"];
+  age.secrets.home-wifi = {
+    file = ../../secrets/home-wifi.age;
+    path = "/etc/NetworkManager/system-connections/home-wifi.nmconnection";
+  };
+  networking = {
+    hostName = "kiwi";
+    networkmanager = {
+      enable = true;
+    };
+  };
+
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = false;

@@ -14,7 +14,17 @@
     ./hardware-configuration.nix
   ];
 
-  networking.hostName = "lyoko";
+  age.identityPaths = ["/etc/ssh/id_ed25519"];
+  age.secrets.home-wifi = {
+    file = ../../secrets/home-wifi.age;
+    path = "/etc/NetworkManager/system-connections/home-wifi.nmconnection";
+  };
+  networking = {
+    hostName = "lyoko";
+    networkmanager = {
+      enable = true;
+    };
+  };
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = false;
