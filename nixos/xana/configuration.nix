@@ -30,15 +30,18 @@
   };
   
   age.identityPaths = ["/etc/ssh/id_ed25519"];
-  age.secrets.home-wifi = {
-    file = ../../secrets/home-wifi.age;
-    path = "/etc/NetworkManager/system-connections/home-wifi.nmconnection";
-  };
+  age.secrets.ddclient.file = ../../secrets/ddclient.age;
+
   networking = {
     hostName = "xana";
     networkmanager = {
       enable = true;
     };
+  };
+
+  services.ddclient = {
+    enable = true;
+    configFile = config.age.secrets.ddclient.path;
   };
 
   services.openssh = {

@@ -5,5 +5,5 @@ let
   hosts = [ lyoko kiwi xana ];
 in
 {
-  "home-wifi.age".publicKeys = hosts;
+  "ddclient.age".publicKeys = hosts;
 }
