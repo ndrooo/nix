@@ -50,10 +50,6 @@
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
 
-  environment.systemPackages = with pkgs; [
-    flutter
-  ];
-
   users.users.ndrooo = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
