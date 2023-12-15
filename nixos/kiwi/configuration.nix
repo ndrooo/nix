@@ -10,6 +10,7 @@
 
     # Import your generated (nixos-generate-config) hardware configuration
     ../base.nix
+    ../dev.nix
     ../graphics.nix
     ./hardware-configuration.nix
   ];
