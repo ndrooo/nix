@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
-    obsidian
+    # obsidian
     # todoist-electron
     gimp
     xfce.thunar
