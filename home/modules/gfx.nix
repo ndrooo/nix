@@ -21,6 +21,13 @@
         svelte.svelte-vscode
         vscodevim.vim
         enkia.tokyo-night
+      ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+        {
+          name = "godot-tools";
+          publisher = "geequlim";
+          version = "1.3.1";
+          sha256 = "wJICDW8bEBjilhjhoaSddN63vVn6l6aepPtx8VKTdZA=";
+        }
       ];
     })
   ];
