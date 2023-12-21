@@ -21,6 +21,7 @@
     wget
     git
     curl
+    direnv
     pciutils
     stow
     inputs.agenix.packages."${system}".default
