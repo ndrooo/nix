@@ -1,6 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, nixpkgs, ... }: {
   home.packages = with pkgs; [
-    # obsidian
     # todoist-electron
     gimp
     xfce.thunar
@@ -14,5 +13,9 @@
     zoom-us
     prusa-slicer
     # itch: running off an EOLed Electron version?
+    blender
+    obsidian
   ];
+
+  nixpkgs.config.permittedInsecurePackages = ["electron-25.9.0"];
 }
