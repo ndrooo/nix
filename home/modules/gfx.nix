@@ -12,8 +12,6 @@
     zathura
     playerctl
     spotify
-    vscode
-    /*
     (vscode-with-extensions.override {
       vscodeExtensions = with vscode-extensions; [
         rust-lang.rust-analyzer
@@ -24,6 +22,7 @@
         vscodevim.vim
         enkia.tokyo-night
         mkhl.direnv
+        vadimcn.vscode-lldb
       ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         {
           name = "godot-tools";
@@ -33,6 +32,5 @@
         }
       ];
     })
-    */
   ];
 }
