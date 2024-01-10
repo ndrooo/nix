@@ -52,6 +52,16 @@
   };
 
   services.xserver.videoDrivers = [ "nvidia" ];
+  services.xserver.xrandrHeads = [
+    {
+      output = "DP-2";
+      primary = true;
+    }
+    {
+      output = "DP-4";
+      monitorConfig = "Option \"LeftOf\" \"DP-2\"";
+    }
+  ];
   hardware.opengl.enable = true;
   hardware.nvidia.modesetting.enable = true;
 

@@ -3,8 +3,7 @@ let
   modules = import ./modules;
 
   lmon = "DP-2";
-  rmon = "DP-0";
-  tvmon = "HDMI-0";
+  rmon = "DP-4";
 
   ws1 = "1: left";
   ws2 = "2: steam";
@@ -59,7 +58,7 @@ in {
       { workspace = ws4; output = rmon; }
       { workspace = ws5; output = lmon; }
       { workspace = ws6; output = rmon; }
-      { workspace = ws7; output = tvmon; }
+      { workspace = ws7; output = rmon; }
       { workspace = ws8; output = lmon; }
     ];
 
