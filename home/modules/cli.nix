@@ -4,6 +4,7 @@
   
   home.packages = with pkgs; [
     wiki-tui
+    ripgrep
   ];
   
   programs.git = {
