@@ -33,19 +33,27 @@
           }]
         }
         completions: {
+          quick: true
+          algorithm: "fuzzy"
           external: {
             enable: true
             max_results: 100
             completer: {|spans|
-              ${pkgs.carapace}/bin/carapace $spans.0 nushell ...$spans | from json
+              carapace $spans.0 nushell ...$spans | from json
             }
           }
         }
       }
       alias cat = bat
     '';
-    envFile.text = ''
-    '';
+    shellAliases = {
+      cat = "bat";
+    };
+  };
+
+  programs.carapace = {
+    enable = true;
+    enableNushellIntegration = true;
   };
 
   programs.fish = {
