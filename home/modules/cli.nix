@@ -1,6 +1,11 @@
 # Common configuration for any unix-like host with a CLI
 
 { pkgs, lib, ... }: {
+  
+  home.packages = with pkgs; [
+    wiki-tui
+  ];
+  
   programs.git = {
     enable = true;
     aliases = {
