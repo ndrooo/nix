@@ -19,9 +19,27 @@
   programs.nushell = {
     enable = true;
     extraConfig = ''
-      let-env config = {
+      $env.config = {
         show_banner: false
         edit_mode: vi
+        hooks: {
+          pre_prompt: [{ ||
+            if (which direnv | is-empty) {
+              return
+            }
+
+            direnv export json | from json | default {} | load-env
+          }]
+        }
+        completions: {
+          external: {
+            enable: true
+            max_results: 100
+            completer: {|spans|
+              ${pkgs.carapace}/bin/carapace $spans.0 nushell ...$spans | from json
+            }
+          }
+        }
       }
       alias cat = bat
     '';
