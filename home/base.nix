@@ -1,6 +1,12 @@
 # Common configuration for all home-manager hosts
 
-{
+let
+  modules = import ./modules;
+in {
+  imports = [
+    modules.firefox_webapp
+  ];
+
   nixpkgs = {
     # You can add overlays here
     overlays = [];
