@@ -15,6 +15,8 @@
     # itch: running off an EOLed Electron version?
     blender
     obsidian
+    logseq
+    butler
   ];
 
   programs.firefox.webapps.superlist = {

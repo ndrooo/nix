@@ -5,6 +5,8 @@
   home.packages = with pkgs; [
     wiki-tui
     ripgrep
+    zola
+    nodejs
   ];
   
   programs.git = {
