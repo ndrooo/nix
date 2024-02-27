@@ -22,6 +22,8 @@ in {
 
   home.packages = [ pkgs.wmfocus ];
 
+  services.network-manager-applet.enable = true;
+
   xsession.windowManager.i3.enable = true;
 
   xsession.windowManager.i3.config = {

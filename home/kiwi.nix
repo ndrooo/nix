@@ -30,20 +30,9 @@ in {
   programs.kitty.font.size = 15;
 
   services.polybar.config = ./modules/polybar/kiwi.ini;
+  services.polybar.script = "polybar laptop &";
 
   xsession.windowManager.i3.config = {
-    startup = [
-      {
-        command = "\"polybar laptop &\"";
-        notification = false;
-      }
-      {
-        command = "polybar-msg cmd restart";
-        always = true;
-        notification = false;
-      }
-    ];
-
     defaultWorkspace = "workspace ${ws1}";
 
     keybindings = {
