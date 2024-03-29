@@ -16,7 +16,7 @@
     blender
     obsidian
     logseq
-    butler
+    # butler: broken
   ];
 
   programs.firefox.webapps.superlist = {
