@@ -20,6 +20,7 @@
         yzhang.markdown-all-in-one
         bbenoist.nix
         svelte.svelte-vscode
+        esbenp.prettier-vscode
         vscodevim.vim
         enkia.tokyo-night
         mkhl.direnv
