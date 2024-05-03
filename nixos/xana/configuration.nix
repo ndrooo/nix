@@ -33,10 +33,8 @@
 
   networking = {
     hostName = "xana";
-    wireless = {
+    networkmanager = {
       enable = true;
-      # networks."ssid".psk = "password";
-      interfaces = [ "wlan0" ];
     };
   };
 
