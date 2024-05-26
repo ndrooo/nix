@@ -17,6 +17,7 @@
     obsidian
     logseq
     # butler: broken
+    zed-editor
   ];
 
   programs.firefox.webapps.superlist = {
