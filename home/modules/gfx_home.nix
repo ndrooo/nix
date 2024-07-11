@@ -1,6 +1,5 @@
 { pkgs, nixpkgs, ... }: {
   home.packages = with pkgs; [
-    # todoist-electron
     gimp
     xfce.thunar
     darktable
@@ -9,13 +8,11 @@
     _1password-gui
     signal-desktop
     discord
-    notion-app-enhanced
     zoom-us
     prusa-slicer
     # itch: running off an EOLed Electron version?
     blender
     obsidian
-    logseq
     # butler: broken
     zed-editor
   ];
