@@ -33,18 +33,10 @@ in {
   programs.kitty.font.size = 13;
 
   services.polybar.config = ./modules/polybar/lyoko.ini;
-  services.polybar.script = "polybar left &; polybar right &";
+  services.polybar.script = "polybar left &\npolybar right &";
 
   xsession.windowManager.i3.config = {
     startup = [
-      {
-        command = "\"polybar left &\"";
-        notification = false;
-      }
-      {
-        command = "\"polybar right &\"";
-        notification = false;
-      }
       {
         command = "polybar-msg cmd restart";
         always = true;
