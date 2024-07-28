@@ -35,7 +35,7 @@
     dedicatedServer.openFirewall = true;
   };
 
-  hardware.opengl.driSupport32Bit = true;
+  hardware.graphics.enable32Bit = true;
 
   xdg.mime.defaultApplications = {
     "text/html" = "firefox.desktop";
