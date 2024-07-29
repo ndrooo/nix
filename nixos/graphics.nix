@@ -10,6 +10,7 @@
     rofi
     dunst
     picom
+    pulseaudio # for pactl
   ];
 
   fonts.packages = with pkgs; [
