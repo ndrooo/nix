@@ -15,6 +15,7 @@
     obsidian
     # butler: broken
     zed-editor
+    youtube-dl
   ];
 
   programs.firefox.webapps.superlist = {
