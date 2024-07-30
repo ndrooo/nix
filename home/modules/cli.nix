@@ -53,6 +53,13 @@
     };
   };
 
+  programs.tmux = {
+    prefix = "C-a";
+    baseIndex = 1;
+    mouse = true;
+    escapeTime = 0;
+  };
+
   programs.carapace = {
     enable = true;
     enableNushellIntegration = true;
