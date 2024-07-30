@@ -29,6 +29,13 @@
     };
   };
   
+  environment.etc.fstab = {
+    enable = true;
+    text = ''
+      UUID=6a325e69-8672-44d0-a803-a4b18bbf0d7b /twistor ext4 rw,relatime,nofail 0 2
+    '';
+  };
+
   age.identityPaths = ["/etc/ssh/id_ed25519"];
 
   networking = {
