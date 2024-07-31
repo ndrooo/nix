@@ -1,8 +1,12 @@
 { pkgs, ... }: {
   imports = [];
 
-  virtualisation.docker.enable = true;
-  users.users.ndrooo.extraGroups = [ "docker" ];
+  virtualisation.containers.enable = true;
+  virtualisation.podman = {
+    enable = true;
+    dockerCompat = true;
+    defaultNetwork.settings.dns_enabled = true;
+  };
   virtualisation.oci-containers.containers.homarr = {
     image = "ghcr.io/ajnart/homarr:latest";
     volumes = [
