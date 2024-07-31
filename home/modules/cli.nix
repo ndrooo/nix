@@ -54,10 +54,23 @@
   };
 
   programs.tmux = {
+    enable = true;
     prefix = "C-a";
     baseIndex = 1;
     mouse = true;
     escapeTime = 0;
+    extraConfig = ''
+      set-option -g status-justify centre
+      set-window-option -g window-status-separator " "
+
+      set -g status-style "fg=blue bg=default"
+
+      set-window-option -g status-left ""
+      set-window-option -g status-right ""
+
+      set-window-option -g window-status-current-format "#[bg=blue,fg=black] [#I] #{=10:window_name} "
+      set-window-option -g window-status-format "#[bg=black,fg=blue] [#I] #{=10:window_name} "
+    '';
   };
 
   programs.carapace = {
