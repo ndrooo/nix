@@ -15,6 +15,7 @@
     openscad
     (vscode-with-extensions.override {
       vscodeExtensions = with vscode-extensions; [
+        ms-vscode-remote.remote-ssh
         rust-lang.rust-analyzer
         tamasfe.even-better-toml
         yzhang.markdown-all-in-one
