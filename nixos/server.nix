@@ -1,21 +1,27 @@
 { pkgs, ... }: {
   imports = [];
 
-  virtualisation.containers.enable = true;
-  virtualisation.podman = {
-    enable = true;
-    dockerCompat = true;
-    defaultNetwork.settings.dns_enabled = true;
+  virtualisation.oci-containers = {
+    backend = "podman";
+    containers.homarr = {
+      image = "ghcr.io/ajnart/homarr:latest";
+      volumes = [
+        "./homarr/configs:/app/data/configs"
+        "./homarr/icons:/app/public/icons"
+        "./homarr/data:/data"
+      ];
+      ports = ["7575:7575"];
+    };
+    containers.homeassistant = {
+      volumes = [ "home-assistant:/config" ];
+      environment.TZ = "America/New_York";
+      image = "ghcr.io/home-assistant/home-assistant:stable"; # Warning: if the tag does not change, the image will not be updated
+      extraOptions = [ 
+        "--network=host" 
+      ];
+    };
   };
-  virtualisation.oci-containers.containers.homarr = {
-    image = "ghcr.io/ajnart/homarr:latest";
-    volumes = [
-      "./homarr/configs:/app/data/configs"
-      "./homarr/icons:/app/public/icons"
-      "./homarr/data:/data"
-    ];
-    ports = ["7575:7575"];
-  };
+  networking.firewall.allowedTCPPorts = [ 8123 ]; # for home-assistant
   services.jellyfin = {
     enable = true;
     openFirewall = true;
