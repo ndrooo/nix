@@ -31,12 +31,6 @@
     };
   };
 
-  fileSystems."/papertape" = {
-    device = "/dev/disk/by-uuid/7A909141909104B3";
-    fsType = "ntfs3";
-    options = ["rw" "uid=1000"];
-  };
-
   environment.etc.crypttab = {
     enable = true;
     text = ''
