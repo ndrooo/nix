@@ -26,7 +26,7 @@
   environment.etc.fstab = {
     enable = true;
     text = ''
-      UUID=6a325e69-8672-44d0-a803-a4b18bbf0d7b /twistor ext4 rw,relatime,nofail 0 2
+      UUID=52030d99-d654-4516-aea4-ba33d174882c /twistor ext4 rw,relatime,nofail 0 2
     '';
   };
 
