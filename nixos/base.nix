@@ -21,6 +21,7 @@
     wget
     git
     curl
+    zip unzip
     direnv
     pciutils
     stow
