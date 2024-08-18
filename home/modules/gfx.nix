@@ -20,6 +20,7 @@
         tamasfe.even-better-toml
         yzhang.markdown-all-in-one
         bbenoist.nix
+        jnoortheen.nix-ide
         svelte.svelte-vscode
         esbenp.prettier-vscode
         vscodevim.vim
