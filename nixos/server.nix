@@ -51,7 +51,10 @@
       extraOptions = ["--network=container:gluetun"];
     };
   };
-  networking.firewall.allowedTCPPorts = [ 8123 ]; # for home-assistant
+  networking = {
+    firewall.allowedTCPPorts = [ 8123 ]; # for home-assistant
+    firewall.checkReversePath = "loose";
+  };
   services.jellyfin = {
     enable = true;
     openFirewall = true;
