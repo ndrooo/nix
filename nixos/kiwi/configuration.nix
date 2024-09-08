@@ -15,13 +15,10 @@
     ./hardware-configuration.nix
   ];
 
-
-  age.identityPaths = ["/etc/ssh/id_ed25519"];
   networking = {
     hostName = "kiwi";
     firewall.checkReversePath = "loose";
   };
-
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = false;

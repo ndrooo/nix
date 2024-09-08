@@ -30,7 +30,13 @@
     '';
   };
 
-  age.identityPaths = ["/etc/ssh/id_ed25519"];
+  age.identityPaths = ["/root/.ssh/id_ed25519"];
+  age.secrets.ddclient.file = ../../secrets/ddclient.age;
+
+  services.ddclient = {
+    enable = true;
+    configFile = config.age.secrets.ddclient.path;
+  };
 
   networking = {
     hostName = "xana";
