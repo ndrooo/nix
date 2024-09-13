@@ -1,9 +1,11 @@
 # Common configuration for all home-manager hosts
+{ inputs, config, ... }:
 
 let
   modules = import ./modules;
 in {
   imports = [
+    inputs.agenix.homeManagerModules.default
     modules.firefox_webapp
   ];
 
@@ -28,6 +30,24 @@ in {
 
   programs.git.userName = "ndrooo";
   programs.git.userEmail = "git@ndr.ooo";
+
+  age.identityPaths = ["/home/ndrooo/.ssh/id_ed25519"];
+  age.secrets.ssh.file = ../secrets/ssh.age;
+  age.secrets.ssh.path = "$HOME/.ssh/hosts.config";
+
+  programs.ssh = {
+    enable = true;
+    extraConfig = ''
+      IdentityFile ~/.ssh/id_ed25519
+    '';
+    matchBlocks = {
+      gh = {
+        user = "git";
+        hostname = "github.com";
+      };
+    };
+    includes = [ "hosts.config" ];
+  };
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
