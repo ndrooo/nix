@@ -40,11 +40,9 @@ in {
     extraConfig = ''
       IdentityFile ~/.ssh/id_ed25519
     '';
-    matchBlocks = {
-      gh = {
-        user = "git";
-        hostname = "github.com";
-      };
+    matchBlocks.gh = {
+      user = "git";
+      hostname = "github.com";
     };
     includes = [ "hosts.config" ];
   };
