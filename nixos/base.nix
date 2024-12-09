@@ -33,6 +33,7 @@
     python3
     libnotify
     neofetch
+    ntfs3g
     # for terminfo
     kitty
   ];
