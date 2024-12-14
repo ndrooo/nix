@@ -39,6 +39,8 @@
     chromium
   ];
 
+  services.xserver.dpi = 144;
+
   users.users.ndrooo = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
