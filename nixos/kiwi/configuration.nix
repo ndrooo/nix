@@ -35,6 +35,10 @@
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
 
+  environment.systemPackages = with pkgs; [
+    chromium
+  ];
+
   users.users.ndrooo = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
