@@ -9,9 +9,10 @@
     agenix.url = "github:ryantm/agenix";
     agenix.inputs.nixpkgs.follows = "nixpkgs";
     agenix.inputs.darwin.follows = "";
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
-  outputs = { nixpkgs, home-manager, agenix, ... }@inputs: {
+  outputs = { nixpkgs, home-manager, agenix, nixos-hardware, ... }@inputs: {
     # nixos-rebuild switch --flake .#hostname
     nixosConfigurations.lyoko = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs; };
@@ -23,6 +24,7 @@
       specialArgs = { inherit inputs; };
       modules = [
         ./nixos/kiwi/configuration.nix
+        nixos-hardware.nixosModules.framework-13-7040-amd
       ];
     };
     nixosConfigurations.xana = nixpkgs.lib.nixosSystem {
