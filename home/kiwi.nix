@@ -27,7 +27,7 @@ in {
     ./themes/luna.nix
   ];
 
-  programs.kitty.font.size = 15;
+  programs.kitty.font.size = 17;
 
   services.polybar.config = ./modules/polybar/kiwi.ini;
   services.polybar.script = "polybar laptop &";
