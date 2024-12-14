@@ -14,7 +14,8 @@
   ];
 
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = ["VictorMono" "SpaceMono"]; })
+    nerd-fonts.victor-mono
+    nerd-fonts.space-mono
     lexend
     victor-mono
   ];
