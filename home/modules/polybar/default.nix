@@ -22,7 +22,7 @@ in {
     "polybar/user_modules.ini".source = ./user_modules.ini;
   };
 
-  services.polybar.enable = true;
+  # services.polybar.enable = true;
   services.polybar.package = pkgs.polybar.override {
     i3Support = true;
     pulseSupport = true;

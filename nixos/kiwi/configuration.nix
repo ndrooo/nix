@@ -34,6 +34,7 @@
 
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
+  programs.light.enable = true;
 
   environment.systemPackages = with pkgs; [
     chromium
@@ -43,7 +44,7 @@
 
   users.users.ndrooo = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "video" ];
     shell = pkgs.nushell;
   };
 }

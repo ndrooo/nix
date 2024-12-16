@@ -14,6 +14,7 @@
   ];
 
   fonts.packages = with pkgs; [
+    nerd-fonts.caskaydia-cove
     nerd-fonts.victor-mono
     nerd-fonts.space-mono
     lexend
@@ -25,11 +26,16 @@
     enable = true;
     wayland = true;
   };
+  programs.xwayland.enable = true;
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
   services.xserver.desktopManager.xfce.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
   services.xserver.windowManager.i3.enable = true;
+  programs.sway.enable = true;
+  programs.sway.wrapperFeatures.gtk = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
+  security.polkit.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
