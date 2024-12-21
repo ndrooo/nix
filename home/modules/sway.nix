@@ -35,7 +35,12 @@ in {
       disable-scroll = true;
     };
     "clock" = {
-      format = "{:%I.%M}";
+      format = "{:%I.%M | %m-%d}";
+    };
+    "pulseaudio" = {
+      format = "{icon} {volume}";
+      format-muted = "󰸈 MU";
+      format-icons = ["󰕿" "󰖀" "󰕾"];
     };
     "battery" = {
       format = "{icon} {capacity}";
@@ -59,8 +64,8 @@ in {
     #workspaces button.focused {
       color: ${fg};
     }
-    #tray {
-      padding: 10px;
+    .module {
+      padding: 5px 10px;
     }
   '';
 
