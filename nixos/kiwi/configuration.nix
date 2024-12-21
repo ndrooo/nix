@@ -33,6 +33,7 @@
   hardware.graphics.enable = true;
 
   hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
   services.blueman.enable = true;
   programs.light.enable = true;
 
@@ -41,6 +42,8 @@
   ];
 
   services.xserver.dpi = 144;
+
+  services.joycond.enable = true;
 
   users.users.ndrooo = {
     isNormalUser = true;
