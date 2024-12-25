@@ -27,6 +27,7 @@
     wayland = true;
   };
   programs.xwayland.enable = true;
+  programs.dconf.enable = true;
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   services.xserver.desktopManager.xfce.enable = true;
   services.xserver.desktopManager.gnome.enable = true;

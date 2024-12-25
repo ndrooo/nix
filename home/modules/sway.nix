@@ -24,6 +24,18 @@ in {
 
   home.packages = [ pkgs.waypaper pkgs.swaybg ];
 
+  gtk = {
+    enable = true;
+    theme = {
+      package = pkgs.rose-pine-gtk-theme;
+      name = "rose-pine-gtk";
+    };
+    iconTheme = {
+      package = pkgs.rose-pine-icon-theme;
+      name = "rose-pine-icons";
+    };
+  };
+
   programs.waybar.enable = true;
   programs.waybar.settings.main = {
     layer = "top";
