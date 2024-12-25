@@ -11,6 +11,7 @@
     dunst
     picom
     pulseaudio # for pactl
+    wev
   ];
 
   fonts.packages = with pkgs; [
