@@ -11,7 +11,7 @@
     feh
     zathura
     playerctl
-    spotify
+    tidal-hifi
     openscad
     (vscode-with-extensions.override {
       vscodeExtensions = with vscode-extensions; [
