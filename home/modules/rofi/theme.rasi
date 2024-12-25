@@ -1,7 +1,8 @@
 * {
-  font: "VictorMono Nerd Font Mono 20";
+  font: "VictorMono Nerd Font Mono 18";
   hide-scrollbar: true;
   columns: 2;
+  lines: 8;
 
   /* colors */
   background: #101010;
@@ -23,7 +24,7 @@
   selected-normal-background:  @accent;
   selected-normal-foreground:  @foreground;
   spacing: 0;
-  width: 1024px;
+  width: 900px;
 }
 
 inputbar {
@@ -63,7 +64,7 @@ element selected {
 }
 
 element-icon {
-  size: 35px;
+  size: 32px;
 }
 
 element-icon selected {

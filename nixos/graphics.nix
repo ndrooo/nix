@@ -7,7 +7,7 @@
     gparted
     redshift
     brightnessctl
-    rofi
+    rofi-wayland
     dunst
     picom
     pulseaudio # for pactl
