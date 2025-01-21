@@ -10,7 +10,7 @@
     discord
     zoom-us
     prusa-slicer
-    # itch: running off an EOLed Electron version?
+    itch
     blender
     obsidian
     # butler: broken
