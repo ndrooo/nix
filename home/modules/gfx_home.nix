@@ -16,6 +16,8 @@
     # butler: broken
     zed-editor
     yt-dlp
+    lutris
+    cemu
   ];
 
   programs.firefox.webapps.superlist = {
