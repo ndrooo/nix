@@ -18,6 +18,7 @@
     yt-dlp
     lutris
     cemu
+    todoist-electron
   ];
 
   programs.firefox.webapps.superlist = {
