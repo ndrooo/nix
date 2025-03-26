@@ -14,7 +14,6 @@
     blender
     obsidian
     # butler: broken
-    zed-editor
     yt-dlp
     lutris
     cemu
