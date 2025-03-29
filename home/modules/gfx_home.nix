@@ -18,6 +18,7 @@
     lutris
     cemu
     todoist-electron
+    zed-editor
   ];
 
   programs.firefox.webapps.superlist = {
