@@ -43,7 +43,7 @@ in {
       "XF86MonBrightnessUp" = "exec light -A 5";
       "XF86MonBrightnessDown" = "exec light -U 5";
       "XF86AudioPlay" = "exec playerctl play-pause";
-      "Print" = "exec grim";
+      "Print" = "exec grim && notify-send -t 1000 \"took screenshot\"";
 
       "${mod}+1" = "workspace ${ws1}";
       "${mod}+2" = "workspace ${ws2}";

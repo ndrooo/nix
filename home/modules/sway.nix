@@ -22,7 +22,12 @@ in {
     size = 48;
   };
 
-  home.packages = [ pkgs.waypaper pkgs.swaybg ];
+  home.packages = [
+    pkgs.waypaper
+    pkgs.swaybg
+    pkgs.grim
+    pkgs.slurp
+  ];
 
   gtk = {
     enable = true;
@@ -130,7 +135,7 @@ in {
         "${mod}+s" = "exec rofi -show ssh";
         "${mod}+m" = "exec rofimoji";
 
-        # "${mod}+c" = "exec flameshot gui";
+        "${mod}+c" = "exec grim -g \"$(slurp)\"";
         # "${mod}+g" = "exec wmfocus";
       };
 
