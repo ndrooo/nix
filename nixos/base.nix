@@ -27,7 +27,6 @@
     stow
     inputs.agenix.packages."${system}".default
     bottom
-    ranger
     efibootmgr
     home-manager
     python3

@@ -7,6 +7,7 @@
     ripgrep
     zola
     nodejs
+    yazi
   ];
   
   programs.git = {

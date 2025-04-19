@@ -8,12 +8,6 @@ in {
 
   programs.kitty.enable = true;
 
-  programs.ranger.enable = true;
-  programs.ranger.extraConfig = ''
-    set preview_images_method kitty
-    set preview_images true
-  '';
-
   programs.kitty.font.name = "Victor Mono Nerd Font";
   programs.kitty.settings = {
     confirm_os_window_close = 2;
