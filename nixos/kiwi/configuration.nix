@@ -12,6 +12,7 @@
     ../base.nix
     ../dev.nix
     ../graphics.nix
+    ../virtualization.nix
     ./hardware-configuration.nix
   ];
 
