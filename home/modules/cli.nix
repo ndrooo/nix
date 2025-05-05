@@ -48,6 +48,7 @@
         }
       }
       alias cat = bat
+      alias yz = yazi
     '';
     shellAliases = {
       cat = "bat";
