@@ -117,7 +117,7 @@ in {
         "${mod}+Shift+BackSpace" = "floating toggle";
 
         "${mod}+r" = "layout toggle split";
-        "${mod}+e" = "layout stacking";
+        "${mod}+e" = "layout tabbed";
         "${mod}+v" = "split v";
         "${mod}+f" = "fullscreen toggle";
         "${mod}+a" = "focus parent";
