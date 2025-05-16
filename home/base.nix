@@ -30,6 +30,7 @@ in {
 
   programs.git.userName = "ndrooo";
   programs.git.userEmail = "git@ndr.ooo";
+  programs.git.extraConfig.init.defaultBranch = "main";
 
   age.identityPaths = ["/home/ndrooo/.ssh/id_ed25519"];
   age.secrets.ssh.file = ../secrets/ssh.age;
