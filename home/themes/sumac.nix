@@ -3,8 +3,8 @@ let
   fg = "cccccc";
 
   # black
-  c0 =  "222222";
-  c8 =  "292929";
+  c0 =  "151515";
+  c8 =  "222222";
 
   # red
   c1 =  "91534f";
@@ -42,10 +42,10 @@ in {
       inherit fg bg c0 c1 c2 c3 c4 c5 c6 c7 c8 c9 c10 c11 c12 c13 c14 c15;
 
       primary = c6;
-      secondary = c10;
-      tertiary = c12;
-      urgent = c5;
-      dimmed = c8;
+      secondary = c4;
+      tertiary = c2;
+      urgent = c1;
+      dimmed = c7;
       altbg = c0;
       altfg = bg;
     };
