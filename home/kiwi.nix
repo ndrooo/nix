@@ -25,7 +25,7 @@ in {
     modules.kitty
     modules.sway
     modules.zathura
-    ./themes/luna.nix
+    ./themes/sumac.nix
   ];
 
   programs.kitty.font.size = 13;
