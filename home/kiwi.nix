@@ -2,11 +2,11 @@
 let
   modules = import ./modules;
 
-  ws1 = "1: www";
-  ws2 = "2: code";
-  ws3 = "3: discord";
-  ws4 = "4: games";
-  ws5 = "5: book";
+  ws1 = "1: web";
+  ws2 = "2: notes";
+  ws3 = "3: chat";
+  ws4 = "4: code";
+  ws5 = "5: games";
   ws6 = "6: six";
   ws7 = "7: seven";
   ws8 = "8: music";
