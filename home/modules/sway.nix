@@ -41,6 +41,19 @@ in {
     };
   };
 
+  programs.swaylock.enable = true;
+  programs.swaylock.settings = {
+    color = "${bg}";
+    font-size = 24;
+    indicator-idle-visible = false;
+    indicator-radius = 100;
+    show-failed-attempts = true;
+    ignore-empty-password = true;
+    ring-color = "${primary}";
+    key-hl-color = "${primary}";
+    bs-hl-color = "${urgent}";
+  };
+
   programs.waybar.enable = true;
   programs.waybar.settings.main = {
     layer = "top";
@@ -103,6 +116,7 @@ in {
         "${mod}+Shift+r" = "restart";
         "${mod}+Shift+e" = "exit";
         "${mod}+Shift+s" = "exec systemctl suspend";
+        "${mod}+z" = "exec swaylock";
 
         "${mod}+h" = "focus left";
         "${mod}+j" = "focus down";

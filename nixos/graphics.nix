@@ -44,6 +44,7 @@
     alsa.support32Bit = true;
     pulse.enable = true;
   };
+  security.pam.services.swaylock = {};
 
   programs.steam = {
     enable = true;
