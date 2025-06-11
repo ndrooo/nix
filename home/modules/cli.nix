@@ -8,6 +8,7 @@
     zola
     nodejs
     yazi
+    exiftool
   ];
   
   programs.git = {
