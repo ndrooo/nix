@@ -19,6 +19,7 @@
     cemu
     todoist-electron
     zed-editor
+    aseprite
   ];
 
   programs.firefox.webapps.superlist = {
