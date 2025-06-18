@@ -37,6 +37,11 @@ in {
     };
   };
 
+  qt = {
+    enable = true;
+    platformTheme = "gtk";
+  };
+
   programs.swaylock.enable = true;
   programs.swaylock.settings = {
     color = "${bg}";
