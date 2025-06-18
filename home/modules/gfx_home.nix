@@ -20,6 +20,7 @@
     todoist-electron
     zed-editor
     aseprite
+    vlc
   ];
 
   programs.firefox.webapps.superlist = {
