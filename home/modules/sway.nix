@@ -32,12 +32,8 @@ in {
   gtk = {
     enable = true;
     theme = {
-      package = pkgs.rose-pine-gtk-theme;
-      name = "rose-pine-gtk";
-    };
-    iconTheme = {
-      package = pkgs.rose-pine-icon-theme;
-      name = "rose-pine-icons";
+      name = "Materia-dark";
+      package = pkgs.materia-theme;
     };
   };
 
