@@ -5,7 +5,6 @@
   environment.systemPackages = with pkgs; [
     firefox
     gparted
-    redshift
     brightnessctl
     rofi-wayland
     dunst
@@ -45,6 +44,11 @@
     pulse.enable = true;
   };
   security.pam.services.swaylock = {};
+  ## broken: https://github.com/NixOS/nixpkgs/issues/426046
+  # services.redshift = {
+  #   enable = true;
+  # };
+  location.provider = "geoclue2";
 
   programs.steam = {
     enable = true;
@@ -53,11 +57,4 @@
   };
 
   hardware.graphics.enable32Bit = true;
-
-  xdg.mime.defaultApplications = {
-    "text/html" = "firefox.desktop";
-    "x-scheme-handler/http" = "firefox.desktop";
-    "x-scheme-handler/https" = "firefox.desktop";
-  };
-
 }

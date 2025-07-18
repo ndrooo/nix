@@ -2,10 +2,10 @@
   home.packages = with pkgs; [
     gimp
     xfce.thunar
-    darktable
+    # darktable
     godot_4
     protonvpn-gui
-    _1password-gui
+    # _1password-gui
     signal-desktop
     discord
     zoom-us
