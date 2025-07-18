@@ -2,10 +2,10 @@
   home.packages = with pkgs; [
     gimp
     xfce.thunar
-    # darktable
+    # darktable: https://github.com/NixOS/nixpkgs/issues/425306
     godot_4
     protonvpn-gui
-    # _1password-gui
+    _1password-gui
     signal-desktop
     discord
     zoom-us
@@ -13,7 +13,7 @@
     itch
     blender
     obsidian
-    # butler: broken
+    butler
     yt-dlp
     lutris
     cemu
