@@ -37,4 +37,15 @@
       ];
     })
   ];
+
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "image/png" = "feh.desktop";
+      "image/jpeg" = "feh.desktop";
+      "application/pdf" = "firefox.desktop";
+      "x-scheme-handler/sgnl" = "signal.desktop";
+      "x-scheme-handler/signalcaptcha" = "signal.desktop";
+    };
+  };
 }
