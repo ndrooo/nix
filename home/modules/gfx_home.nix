@@ -3,6 +3,7 @@
     gimp
     xfce.thunar
     # darktable: https://github.com/NixOS/nixpkgs/issues/425306
+    digikam
     godot_4
     protonvpn-gui
     _1password-gui
