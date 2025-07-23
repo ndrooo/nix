@@ -22,7 +22,7 @@
   ];
 
   services.xserver.enable = true;
-  services.xserver.displayManager.gdm = {
+  services.displayManager.gdm = {
     enable = true;
     wayland = true;
   };
@@ -30,11 +30,11 @@
   programs.dconf.enable = true;
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   services.xserver.desktopManager.xfce.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  services.desktopManager.gnome.enable = true;
   services.xserver.windowManager.i3.enable = true;
   programs.sway.enable = true;
   programs.sway.wrapperFeatures.gtk = true;
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   security.polkit.enable = true;
   services.pipewire = {
