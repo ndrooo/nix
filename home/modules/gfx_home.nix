@@ -1,27 +1,27 @@
-{ pkgs, nixpkgs, ... }: {
-  home.packages = with pkgs; [
-    gimp
-    xfce.thunar
-    # darktable: https://github.com/NixOS/nixpkgs/issues/425306
-    digikam
-    godot_4
-    protonvpn-gui
-    _1password-gui
-    signal-desktop
-    discord
-    zoom-us
-    prusa-slicer
-    itch
-    blender
-    obsidian
-    butler
-    yt-dlp
-    lutris
-    cemu
-    todoist-electron
-    zed-editor
-    aseprite
-    vlc
+{ pkgs, nixpkgs, pkgs-stable, ... }: {
+  home.packages = [
+    pkgs.gimp
+    pkgs.xfce.thunar
+    pkgs.digikam
+    pkgs-stable.darktable
+    pkgs.godot_4
+    pkgs.protonvpn-gui
+    pkgs._1password-gui
+    pkgs.signal-desktop
+    pkgs.discord
+    pkgs.zoom-us
+    pkgs.prusa-slicer
+    pkgs.itch
+    pkgs.blender
+    pkgs.obsidian
+    pkgs.butler
+    pkgs.yt-dlp
+    pkgs.lutris
+    pkgs.cemu
+    pkgs.todoist-electron
+    pkgs.zed-editor
+    pkgs.aseprite
+    pkgs.vlc
   ];
 
   nixpkgs.config.permittedInsecurePackages = ["electron-25.9.0"];
