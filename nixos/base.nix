@@ -46,6 +46,8 @@
     defaultEditor = true;
   };
 
+  programs.nix-ld.enable = true;
+
   nix = {
     # This will add each flake input as a registry
     # To make nix3 commands consistent with your flake
