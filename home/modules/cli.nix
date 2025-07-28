@@ -83,6 +83,11 @@
 
   programs.fish = {
     enable = true;
+    shellAliases = {
+      ls = "exa";
+      cat = "bat";
+      yz = "yazi";
+    };
     interactiveShellInit = ''
       set fish_greeting # no more greeting
       fish_vi_key_bindings
