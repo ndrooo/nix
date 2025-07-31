@@ -58,6 +58,7 @@
   ];
   hardware.opengl.enable = true;
   hardware.nvidia.modesetting.enable = true;
+  hardware.nvidia.open = false;
 
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
