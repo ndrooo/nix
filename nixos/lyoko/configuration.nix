@@ -48,12 +48,12 @@
   services.xserver.videoDrivers = [ "nvidia" ];
   services.xserver.xrandrHeads = [
     {
-      output = "DP-4.8";
+      output = "DP-4.1.8";
       primary = true;
     }
     {
-      output = "DP-4.1.8";
-      monitorConfig = "Option \"LeftOf\" \"DP-4.8\"";
+      output = "DP-4.8";
+      monitorConfig = "Option \"LeftOf\" \"DP-4.1.8\"";
     }
   ];
   hardware.opengl.enable = true;
