@@ -2,8 +2,8 @@
 let
   modules = import ./modules;
 
-  lmon = "DP-2";
-  rmon = "DP-4";
+  lmon = "DP-4.1.8";
+  rmon = "DP-4.8";
 
   ws1 = "1: left";
   ws2 = "2: steam";
