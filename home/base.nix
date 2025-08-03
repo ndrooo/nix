@@ -26,8 +26,6 @@ in {
   home.stateVersion = "22.11";
   programs.home-manager.enable = true;
 
-  programs.command-not-found.enable = true;
-
   programs.git.userName = "ndrooo";
   programs.git.userEmail = "git@ndr.ooo";
   programs.git.extraConfig.init.defaultBranch = "main";
