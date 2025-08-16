@@ -59,10 +59,10 @@
     enable = true;
     openFirewall = true;
   };
-  services.plex = {
-    enable = true;
-    openFirewall = true;
-  };
+  # services.plex = {
+  #   enable = true;
+  #   openFirewall = true;
+  # };
   environment.systemPackages = [
     pkgs.jellyfin
     pkgs.jellyfin-web
