@@ -22,6 +22,7 @@
     git
     curl
     zip unzip
+    unrar
     direnv
     pciutils
     stow
