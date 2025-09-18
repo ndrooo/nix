@@ -9,6 +9,7 @@
     pkgs._1password-gui
     pkgs.signal-desktop
     pkgs.discord
+    pkgs.slack
     pkgs.zoom-us
     pkgs.prusa-slicer
     pkgs.itch
