@@ -2,7 +2,7 @@
   home.packages = [
     pkgs.gimp
     pkgs.xfce.thunar
-    pkgs.digikam
+    # pkgs.digikam - https://github.com/NixOS/nixpkgs/issues/449394
     pkgs-stable.darktable
     pkgs.godot_4
     pkgs.protonvpn-gui

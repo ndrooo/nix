@@ -6,7 +6,7 @@
     firefox
     gparted
     brightnessctl
-    rofi-wayland
+    rofi
     dunst
     picom
     pulseaudio # for pactl
