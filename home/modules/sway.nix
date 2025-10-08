@@ -76,6 +76,8 @@ in {
     "battery" = {
       format = "{icon} {capacity}";
       format-icons = ["󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
+      format-charging = "󰂄 {capacity}";
+      interval = 3;
     };
     "tray" = { spacing = 10; };
   };
