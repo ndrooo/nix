@@ -2,7 +2,6 @@
   home.packages = [
     pkgs.gimp
     pkgs.xfce.thunar
-    # pkgs.digikam - https://github.com/NixOS/nixpkgs/issues/449394
     pkgs-stable.darktable
     pkgs.godot_4
     pkgs.protonvpn-gui
@@ -17,11 +16,10 @@
     pkgs.obsidian
     pkgs.butler
     pkgs.yt-dlp
-    pkgs.lutris
-    pkgs.cemu
+    # pkgs.cemu - https://github.com/NixOS/nixpkgs/issues/449394
     pkgs.todoist-electron
     pkgs.zed-editor
-    pkgs.aseprite
+    # pkgs.aseprite - https://github.com/NixOS/nixpkgs/issues/449394
     pkgs.vlc
   ];
 
