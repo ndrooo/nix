@@ -21,7 +21,6 @@
     pkgs.zed-editor
     # pkgs.aseprite - https://github.com/NixOS/nixpkgs/issues/449394
     pkgs.vlc
-    pkgs.winbox4
   ];
 
   nixpkgs.config.permittedInsecurePackages = ["electron-25.9.0"];

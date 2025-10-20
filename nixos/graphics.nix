@@ -56,5 +56,11 @@
     dedicatedServer.openFirewall = true;
   };
 
+  programs.winbox = {
+    enable = true;
+    openFirewall = true;
+    package = pkgs.winbox4;
+  };
+
   hardware.graphics.enable32Bit = true;
 }
