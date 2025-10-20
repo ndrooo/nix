@@ -9,6 +9,7 @@
     nodejs
     yazi
     exiftool
+    nmap
   ];
   
   programs.git = {
