@@ -35,6 +35,7 @@
     neofetch
     ntfs3g
     dmidecode
+    nil
     # for terminfo
     kitty
   ];
