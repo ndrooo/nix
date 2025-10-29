@@ -34,6 +34,7 @@
     libnotify
     neofetch
     ntfs3g
+    dmidecode
     # for terminfo
     kitty
   ];
