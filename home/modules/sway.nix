@@ -160,6 +160,7 @@ in {
         wrapping = "no";
         followMouse = false;
         mouseWarping = false;
+        newWindow = "focus";
       };
 
       fonts = {
