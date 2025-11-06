@@ -3,6 +3,22 @@
 
   virtualisation.oci-containers = {
     backend = "podman";
+    containers.omada = {
+      image = "mbentley/omada-controller";
+      environment = {
+        TZ = "America/New_York";
+      };
+      extraOptions = [
+        "--network=host"
+        "--ulimit nofile=4096:8192"
+        "--stop-timeout 60"
+        "--restart unless-stopped"
+      ];
+      volumes = [
+        "omada-data:/opt/tplink/EAPController/data"
+        "omada-logs:/opt/tplink/EAPController/logs"
+      ];
+    };
     containers.gluetun = {
       image = "qmcgaw/gluetun";
       ports = [
