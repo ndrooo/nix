@@ -9,9 +9,11 @@
     # ./users.nix
 
     # Import your generated (nixos-generate-config) hardware configuration
-    ../base.nix
-    ../server.nix
     ./hardware-configuration.nix
+    ../base.nix
+    ../modules/omada.nix
+    ../modules/plex.nix
+    ../modules/torrent.nix
   ];
 
   boot.loader.systemd-boot.enable = true;

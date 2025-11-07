@@ -51,6 +51,10 @@
 
   programs.nix-ld.enable = true;
 
+  virtualisation.oci-containers = {
+    backend = "podman";
+  };
+
   nix = {
     # This will add each flake input as a registry
     # To make nix3 commands consistent with your flake
