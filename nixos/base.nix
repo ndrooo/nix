@@ -36,6 +36,7 @@
     ntfs3g
     dmidecode
     nil
+    miniupnpc
     # for terminfo
     kitty
   ];
