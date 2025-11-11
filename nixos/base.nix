@@ -34,7 +34,7 @@
     neofetch
     ntfs3g
     dmidecode
-    nil
+    nil nixfmt
     miniupnpc
     # for terminfo
     kitty
