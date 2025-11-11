@@ -21,8 +21,7 @@
     wget
     git
     curl
-    zip unzip
-    unrar
+    zip unzip unrar zstd
     direnv
     pciutils
     stow
