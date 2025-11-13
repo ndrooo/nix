@@ -34,6 +34,12 @@
         ./nixos/xana/configuration.nix
       ];
     };
+    nixosConfigurations.replika = nixpkgs.lib.nixosSystem {
+      specialArgs = { inherit inputs; };
+      modules = [
+        ./nixos/replika/configuration.nix
+      ];
+    };
 
     homeModules = import ./home/modules;
     themes = import ./home/themes;
@@ -71,6 +77,17 @@
         };
       };
       modules = [ ./home/xana.nix ];
+    };
+    homeConfigurations.replika = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages.aarch64-linux;
+      extraSpecialArgs = {
+        inherit inputs;
+        pkgs-stable = import nixpkgs-stable {
+          system = "aarch64-linux";
+          config.allowUnfree = true;
+        };
+      };
+      modules = [ ./home/replika.nix ];
     };
   };
 }

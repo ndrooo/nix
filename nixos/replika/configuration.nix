@@ -1,18 +1,34 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   imports = [
     ./hardware-configuration.nix
     ../base.nix
     ../modules/octoprint.nix
   ];
 
+  boot = {
+    kernelPackages = pkgs.linuxKernel.packages.linux_rpi4;
+    initrd.availableKernelModules = [
+      "xhci_pci"
+      "usbhid"
+      "usb_storage"
+    ];
+    loader = {
+      grub.enable = false;
+      generic-extlinux-compatible.enable = true;
+    };
+  };
+
   fileSystems = {
     "/" = {
+      device = "/dev/disk/by-label/NIXOS_SD";
+      fsType = "ext4";
       options = [ "noatime" ];
     };
   };
 
   networking = {
-    hostName = "xana";
+    hostName = "replika";
     networkmanager = {
       enable = true;
     };
@@ -25,7 +41,9 @@
 
   users.users.ndrooo = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "podman" ];
+    extraGroups = [
+      "wheel"
+    ];
     shell = pkgs.fish;
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEEnxGHi/ehTxFxEwWSyozesfQL3uX9762NW/YtgKrJw ndrooo@lyoko"
