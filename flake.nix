@@ -38,6 +38,7 @@
       specialArgs = { inherit inputs; };
       modules = [
         ./nixos/replika/configuration.nix
+        nixos-hardware.nixosModules.raspberry-pi-4
       ];
     };
 
