@@ -24,6 +24,7 @@
     zip unzip unrar zstd
     direnv
     pciutils
+    dnsutils
     stow
     inputs.agenix.packages."${system}".default
     bottom
