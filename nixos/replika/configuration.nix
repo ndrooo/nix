@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   imports = [
     # ./hardware-configuration.nix
@@ -53,5 +53,6 @@
     ];
   };
 
+  nixpkgs.hostPlatform = lib.mkDefault "aarch64-linux";
   hardware.enableRedistributableFirmware = true;
 }
