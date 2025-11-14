@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
-    ./hardware-configuration.nix
+    # ./hardware-configuration.nix
     ../base.nix
     ../modules/octoprint.nix
   ];
