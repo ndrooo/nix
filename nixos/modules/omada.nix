@@ -37,6 +37,7 @@
         "omada-logs:/opt/tplink/EAPController/logs"
       ];
     };
+  };
   networking.firewall = {
     allowedTCPPorts = [
       8088   # MANAGE_HTTP_PORT / PORTAL_HTTP_PORT
