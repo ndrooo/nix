@@ -39,6 +39,17 @@
     settings.PasswordAuthentication = false;
   };
 
+  services.nginx = {
+    enable = true;
+    recommendedProxySettings = true;
+    virtualHosts."octo" = {
+      locations."/" = {
+        proxyPass = "http://127.0.0.1:5000";
+      };
+    };
+  };
+  networking.firewall.allowedTCPPorts = [ 80 443 ];
+
   users.users.ndrooo = {
     isNormalUser = true;
     extraGroups = [

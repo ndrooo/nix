@@ -52,6 +52,22 @@
     settings.PasswordAuthentication = false;
   };
 
+  services.nginx = {
+    enable = true;
+    recommendedProxySettings = true;
+    virtualHosts."qb" = {
+      locations."/" = {
+        proxyPass = "http://127.0.0.1:6011";
+      };
+    };
+    virtualHosts."omada" = {
+      locations."/" = {
+        proxyPass = "http://127.0.0.1:8043";
+      };
+    };
+  };
+  networking.firewall.allowedTCPPorts = [ 80 443 ];
+
   users.users.ndrooo = {
     isNormalUser = true;
     extraGroups = [ "wheel" "podman" ];
