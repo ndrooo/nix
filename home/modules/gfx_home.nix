@@ -13,6 +13,7 @@
     pkgs.prusa-slicer
     pkgs.itch
     pkgs.blender
+    pkgs.inkscape
     pkgs.obsidian
     pkgs.butler
     pkgs.yt-dlp
