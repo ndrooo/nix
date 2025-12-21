@@ -20,7 +20,7 @@
     # pkgs.cemu - https://github.com/NixOS/nixpkgs/issues/449394
     pkgs.todoist-electron
     pkgs.zed-editor
-    # pkgs.aseprite - https://github.com/NixOS/nixpkgs/issues/449394
+    pkgs.aseprite
     pkgs.vlc
   ];
 
