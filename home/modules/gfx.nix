@@ -19,6 +19,9 @@
         rust-lang.rust-analyzer
         tamasfe.even-better-toml
         yzhang.markdown-all-in-one
+        ms-python.python
+        ms-python.debugpy
+        ms-python.black-formatter
         bbenoist.nix
         jnoortheen.nix-ide
         svelte.svelte-vscode
