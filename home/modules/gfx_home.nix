@@ -22,6 +22,7 @@
     pkgs.zed-editor
     pkgs.aseprite
     pkgs.vlc
+    pkgs.easyrpg-player
   ];
 
   nixpkgs.config.permittedInsecurePackages = ["electron-25.9.0"];
