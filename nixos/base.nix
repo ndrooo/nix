@@ -11,11 +11,8 @@
 
   environment.systemPackages = with pkgs; [
     nushell
-    zsh
-    antibody
     bat
     eza
-    vim
     neovim
     tmux
     wget
@@ -36,7 +33,6 @@
     ntfs3g
     dmidecode
     nil nixfmt
-    miniupnpc
     # for terminfo
     kitty
   ];

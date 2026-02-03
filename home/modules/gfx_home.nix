@@ -1,9 +1,9 @@
-{ pkgs, nixpkgs, pkgs-stable, ... }: {
+{ pkgs, pkgs-stable, ... }: {
   home.packages = [
     pkgs.gimp
-    pkgs.xfce.thunar
+    pkgs.thunar
     pkgs-stable.darktable
-    pkgs.godot_4
+    pkgs.godot
     pkgs.protonvpn-gui
     pkgs._1password-gui
     pkgs.signal-desktop
@@ -17,9 +17,7 @@
     pkgs.obsidian
     pkgs.butler
     pkgs.yt-dlp
-    # pkgs.cemu - https://github.com/NixOS/nixpkgs/issues/449394
     pkgs.todoist-electron
-    pkgs.zed-editor
     pkgs.aseprite
     pkgs.vlc
     pkgs.easyrpg-player
