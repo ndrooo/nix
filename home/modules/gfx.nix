@@ -24,6 +24,7 @@
         ms-python.black-formatter
         bbenoist.nix
         jnoortheen.nix-ide
+        geequlim.godot-tools
         svelte.svelte-vscode
         esbenp.prettier-vscode
         vscodevim.vim
@@ -32,10 +33,10 @@
         vadimcn.vscode-lldb
       ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         {
-          name = "godot-tools";
-          publisher = "geequlim";
-          version = "1.3.1";
-          sha256 = "wJICDW8bEBjilhjhoaSddN63vVn6l6aepPtx8VKTdZA=";
+          name = "openscad-language-support";
+          publisher = "Leathong";
+          version = "2.0.1";
+          sha256 = "sha256-GTvn97POOVmie7mOD/Q3ivEHXmqb+hvgiic9pTWYS0s=";
         }
       ];
     })
