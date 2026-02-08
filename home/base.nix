@@ -26,9 +26,9 @@ in {
   home.stateVersion = "22.11";
   programs.home-manager.enable = true;
 
-  programs.git.userName = "ndrooo";
-  programs.git.userEmail = "git@ndr.ooo";
-  programs.git.extraConfig.init.defaultBranch = "main";
+  programs.git.settings.user.name = "ndrooo";
+  programs.git.settings.user.email = "git@ndr.ooo";
+  programs.git.settings.init.defaultBranch = "main";
 
   age.identityPaths = ["/home/ndrooo/.ssh/id_ed25519"];
   age.secrets.ssh.file = ../secrets/ssh.age;

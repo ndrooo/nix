@@ -14,10 +14,10 @@
   
   programs.git = {
     enable = true;
-    aliases = {
+    settings.aliases = {
       st = "status";
     };
-    extraConfig = {
+    settings = {
       pull.rebase = true;
     };
   };
