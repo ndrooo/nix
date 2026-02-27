@@ -13,6 +13,7 @@
     nushell
     bat
     eza
+    file
     neovim
     tmux
     wget
@@ -31,6 +32,7 @@
     libnotify
     neofetch
     ntfs3g
+    libwebp
     dmidecode
     nil nixfmt
     # for terminfo
