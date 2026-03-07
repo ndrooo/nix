@@ -38,10 +38,10 @@
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
   services.blueman.enable = true;
-  programs.light.enable = true;
 
   environment.systemPackages = with pkgs; [
     chromium
+    xbacklight
   ];
 
   services.xserver.dpi = 144;

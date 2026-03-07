@@ -30,7 +30,7 @@
     home-manager
     python3
     libnotify
-    neofetch
+    fastfetch
     ntfs3g
     libwebp
     dmidecode
