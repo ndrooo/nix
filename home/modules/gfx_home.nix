@@ -11,7 +11,7 @@
     pkgs.slack
     pkgs.zulip
     pkgs.zoom-us
-    pkgs.prusa-slicer
+    pkgs.orca-slicer
     pkgs.itch
     pkgs.blender
     pkgs.inkscape
