@@ -29,6 +29,7 @@ in {
   programs.git.settings.user.name = "ndrooo";
   programs.git.settings.user.email = "git@ndr.ooo";
   programs.git.settings.init.defaultBranch = "main";
+  programs.git.signing.format = "openpgp";
 
   age.identityPaths = ["/home/ndrooo/.ssh/id_ed25519"];
   age.secrets.ssh.file = ../secrets/ssh.age;

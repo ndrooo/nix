@@ -32,12 +32,12 @@
         mkhl.direnv
         vadimcn.vscode-lldb
       ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-        {
-          name = "openscad-language-support";
-          publisher = "Leathong";
-          version = "2.0.1";
-          sha256 = "sha256-GTvn97POOVmie7mOD/Q3ivEHXmqb+hvgiic9pTWYS0s=";
-        }
+        # {
+        #   name = "openscad-language-support";
+        #   publisher = "Leathong";
+        #   version = "2.0.1";
+        #   sha256 = "sha256-GTvn97POOVmie7mOD/Q3ivEHXmqb+hvgiic9pTWYS0s=";
+        # }
       ];
     })
   ];

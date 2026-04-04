@@ -4,7 +4,7 @@
     pkgs.thunar
     pkgs-stable.darktable
     pkgs.godot
-    pkgs.protonvpn-gui
+    pkgs.proton-vpn
     pkgs._1password-gui
     pkgs.signal-desktop
     pkgs.discord
