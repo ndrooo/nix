@@ -39,6 +39,8 @@
   hardware.bluetooth.powerOnBoot = true;
   services.blueman.enable = true;
 
+  programs.mango.enable = true;
+
   environment.systemPackages = with pkgs; [
     chromium
     xbacklight
