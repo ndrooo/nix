@@ -48,6 +48,18 @@
           }
         }
       }
+      $env.config.keybindings ++= [
+        {
+          name: run_yazi
+          modifier: control
+          keycode: char_f
+          mode: [vi_normal vi_insert]
+          event: {
+            send: executehostcommand,
+            cmd: "y",
+          }
+        }
+      ]
     '';
     shellAliases = {
       cat = "bat";
