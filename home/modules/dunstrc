@@ -3,7 +3,10 @@
     monitor = 0 # ignored
     follow = keyboard
 
-    geometry = "500x4-12+56"
+    width = (300, 450)
+    height = (50, 450)
+    origin = top-right
+    offset = (30, 30)
 
     indicate_hidden = yes
     shrink = no
@@ -30,7 +33,7 @@
     frame_width = 4
 
     # Defines color of the frame around the notification window.
-    frame_color = "#7882bf"
+    frame_color = "#3a625b"
 
     # Define a color for the separator.
     # possible values are:
@@ -192,17 +195,17 @@
 
 [urgency_low]
     background = ""
-    foreground = "#c8cacc"
+    foreground = "#bababa"
     timeout = 20
 
 [urgency_normal]
-    background = "#101010"
-    foreground = "#e0def4"
+    background = "#0a0a0a"
+    foreground = "#cccccc"
     timeout = 20
 
 [urgency_critical]
-    background = "#7882bf"
-    foreground = "#101010"
+    background = "#3a625b"
+    foreground = "#0a0a0a"
     timeout = 0
 
 # vim: ft=cfg
