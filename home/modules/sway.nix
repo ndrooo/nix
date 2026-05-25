@@ -1,15 +1,14 @@
 { inputs, config, pkgs, ... }:
 
-with config.colorScheme.colors;
 let
   mod = "Mod4";
-  bg = "#${config.colorScheme.colors.bg}";
-  fg = "#${config.colorScheme.colors.fg}";
-  altbg = "#${config.colorScheme.colors.altbg}";
-  altfg = "#${config.colorScheme.colors.altfg}";
-  dimmed = "#${config.colorScheme.colors.dimmed}";
-  primary = "#${config.colorScheme.colors.primary}";
-  urgent = "#${config.colorScheme.colors.urgent}";
+  bg = "#${config.colorScheme.palette.bg}";
+  fg = "#${config.colorScheme.palette.fg}";
+  altbg = "#${config.colorScheme.palette.altbg}";
+  altfg = "#${config.colorScheme.palette.altfg}";
+  dimmed = "#${config.colorScheme.palette.dimmed}";
+  primary = "#${config.colorScheme.palette.primary}";
+  urgent = "#${config.colorScheme.palette.urgent}";
   term = "kitty";
 in {
   imports = [
@@ -37,6 +36,7 @@ in {
       name = "Materia-dark";
       package = pkgs.materia-theme;
     };
+    gtk4.theme = config.gtk.theme;
   };
 
   qt = {

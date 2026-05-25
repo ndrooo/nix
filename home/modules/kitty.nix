@@ -1,6 +1,6 @@
 { inputs, config, ... }:
 let
-  colors = config.colorScheme.colors;
+  colors = config.colorScheme.palette;
 in {
   imports = [
     inputs.nix-colors.homeManagerModule
