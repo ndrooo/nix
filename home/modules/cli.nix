@@ -7,7 +7,6 @@
     ripgrep
     zola
     nodejs
-    yazi
     exiftool
     nmap
   ];
@@ -49,8 +48,6 @@
           }
         }
       }
-      alias cat = bat
-      alias yz = yazi
     '';
     shellAliases = {
       cat = "bat";
@@ -75,6 +72,12 @@
       set-window-option -g window-status-current-format "#[bg=blue,fg=black] [#I] #{=10:window_name} "
       set-window-option -g window-status-format "#[bg=black,fg=blue] [#I] #{=10:window_name} "
     '';
+  };
+
+  programs.yazi = {
+    enable = true;
+    enableNushellIntegration = true;
+    shellWrapperName = "y";
   };
 
   programs.carapace = {
