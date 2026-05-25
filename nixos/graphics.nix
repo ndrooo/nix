@@ -1,6 +1,7 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   # You can import other NixOS modules here
-  imports = [];
+  imports = [ ];
 
   environment.systemPackages = with pkgs; [
     firefox
@@ -25,17 +26,14 @@
     atkinson-hyperlegible-next
   ];
 
-  services.xserver.enable = true;
-  services.displayManager.gdm = {
-    enable = true;
-    wayland = true;
+  services.displayManager = {
+    autoLogin.enable = true;
+    autoLogin.user = "ndrooo";
   };
+  services.xserver.enable = true;
   programs.xwayland.enable = true;
   programs.dconf.enable = true;
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
-  services.xserver.desktopManager.xfce.enable = true;
-  services.desktopManager.gnome.enable = true;
-  services.xserver.windowManager.i3.enable = true;
   programs.sway.enable = true;
   programs.sway.wrapperFeatures.gtk = true;
   services.pulseaudio.enable = false;
@@ -47,7 +45,7 @@
     alsa.support32Bit = true;
     pulse.enable = true;
   };
-  security.pam.services.swaylock = {};
+  security.pam.services.swaylock = { };
   ## broken: https://github.com/NixOS/nixpkgs/issues/426046
   # services.redshift = {
   #   enable = true;

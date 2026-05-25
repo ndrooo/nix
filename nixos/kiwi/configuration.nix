@@ -19,6 +19,7 @@
   networking = {
     hostName = "kiwi";
     firewall.checkReversePath = "loose";
+    networkmanager.enable = true;
   };
 
   services.fwupd.enable = true;
