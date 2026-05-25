@@ -14,6 +14,8 @@ let
 in {
   imports = [
     inputs.nix-colors.homeManagerModule
+    (import ./default.nix).dunst
+    (import ./default.nix).rofi
   ];
 
   home.pointerCursor = {

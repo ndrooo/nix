@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 let
   modules = import ./modules;
 
@@ -21,7 +21,6 @@ in {
     modules.cli
     modules.gfx
     modules.gfx_home
-    modules.i3
     modules.kitty
     modules.sway
     modules.zathura

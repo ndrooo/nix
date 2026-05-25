@@ -1,17 +1,14 @@
 # Common configuration for all home-manager hosts
-{ inputs, config, ... }:
+{ inputs, ... }:
 
-let
-  modules = import ./modules;
-in {
+{
   imports = [
     inputs.agenix.homeManagerModules.default
-    modules.firefox_webapp
   ];
 
   nixpkgs = {
     # You can add overlays here
-    overlays = [];
+    overlays = [ ];
     # Configure your nixpkgs instance
     config = {
       allowUnfree = true;
@@ -31,7 +28,7 @@ in {
   programs.git.settings.init.defaultBranch = "main";
   programs.git.signing.format = "openpgp";
 
-  age.identityPaths = ["/home/ndrooo/.ssh/id_ed25519"];
+  age.identityPaths = [ "/home/ndrooo/.ssh/id_ed25519" ];
   age.secrets.ssh.file = ../secrets/ssh.age;
   age.secrets.ssh.path = "$HOME/.ssh/hosts.config";
 
@@ -39,7 +36,7 @@ in {
     enable = true;
     enableDefaultConfig = false;
     matchBlocks."*" = {
-      identityFile = ["~/.ssh/id_ed25519"];
+      identityFile = [ "~/.ssh/id_ed25519" ];
     };
     matchBlocks.gh = {
       user = "git";

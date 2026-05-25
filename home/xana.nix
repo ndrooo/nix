@@ -1,4 +1,4 @@
-{ pkgs, ... }: 
+{ ... }: 
 let
   modules = import ./modules;
 in {
