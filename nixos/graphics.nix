@@ -19,6 +19,10 @@
     nerd-fonts.space-mono
     lexend
     victor-mono
+    fraunces
+    atkinson-hyperlegible
+    atkinson-hyperlegible-mono
+    atkinson-hyperlegible-next
   ];
 
   services.xserver.enable = true;
