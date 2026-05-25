@@ -39,7 +39,7 @@
       "*" = {
         identityFile = "~/.ssh/id_ed25519";
       };
-      "github.com" = {
+      "gh" = {
         HostName = "github.com";
         User = "git";
       };
