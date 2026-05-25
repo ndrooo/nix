@@ -53,6 +53,6 @@
   users.users.ndrooo = {
     isNormalUser = true;
     extraGroups = [ "wheel" "video" ];
-    shell = pkgs.fish;
+    shell = pkgs.nushell;
   };
 }
