@@ -1,7 +1,6 @@
 {
   cli = import ./cli.nix;
-  gfx = import ./gfx.nix;
-  gfx_home = import ./gfx_home.nix;
+  graphical = import ./graphical.nix;
   kitty = import ./kitty.nix;
   rofi = import ./rofi;
   sway = import ./sway.nix;

@@ -19,8 +19,7 @@ in {
   imports = [
     ./base.nix
     modules.cli
-    modules.gfx
-    modules.gfx_home
+    modules.graphical
     modules.kitty
     modules.sway
     modules.zathura
