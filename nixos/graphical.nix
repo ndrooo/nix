@@ -9,7 +9,6 @@
     brightnessctl
     rofi
     dunst
-    picom
     pulseaudio # for pactl
     wev
     resources
