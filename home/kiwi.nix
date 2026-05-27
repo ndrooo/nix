@@ -28,9 +28,6 @@ in {
 
   programs.kitty.font.size = 13;
 
-  services.polybar.config = ./modules/polybar/kiwi.ini;
-  services.polybar.script = "polybar laptop &";
-
   wayland.windowManager.sway.config = {
     defaultWorkspace = "workspace ${ws1}";
 

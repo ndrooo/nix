@@ -5,37 +5,39 @@
       solaar
       kitty
       alacritty
-      xdotool
       lxappearance
       baobab
-      nitrogen
-      mpv
-      feh
-      zathura
-      playerctl
-      tidal-hifi
-      gimp
       thunar
-      godot
       proton-vpn
       _1password-gui
+      obsidian
+      todoist-electron
+      # media
+      mpv
+      feh
+      vlc
+      yt-dlp
+      tidal-hifi
+      playerctl
+      zathura
+      easyrpg-player
+      # communications
       signal-desktop
       discord
       slack
       zulip
       zoom-us
+      # cad & fabrication
       orca-slicer
+      gimp
+      # openscad : linker issue
+      inkscape
+      # game development
+      godot
+      aseprite
+      butler
       itch
       blender
-      inkscape
-      obsidian
-      butler
-      yt-dlp
-      todoist-electron
-      aseprite
-      vlc
-      easyrpg-player
-      # openscad : linker issue
       (vscode-with-extensions.override {
         vscodeExtensions =
           with vscode-extensions;
