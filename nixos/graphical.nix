@@ -12,6 +12,7 @@
     picom
     pulseaudio # for pactl
     wev
+    resources
   ];
 
   fonts.packages = with pkgs; [
