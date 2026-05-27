@@ -12,6 +12,15 @@
     pulseaudio # for pactl
     wev
     resources
+    baobab
+    thunar
+    kitty
+    solaar
+    mpv
+    vlc
+    feh
+    playerctl
+    lxappearance
   ];
 
   fonts.packages = with pkgs; [

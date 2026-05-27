@@ -2,23 +2,14 @@
 {
   home.packages =
     (with pkgs; [
-      solaar
-      kitty
       alacritty
-      lxappearance
-      baobab
-      thunar
       proton-vpn
       _1password-gui
       obsidian
       todoist-electron
       # media
-      mpv
-      feh
-      vlc
       yt-dlp
       tidal-hifi
-      playerctl
       zathura
       easyrpg-player
       # communications
