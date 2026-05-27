@@ -11,7 +11,7 @@
     # Import your generated (nixos-generate-config) hardware configuration
     ../base.nix
     ../dev.nix
-    ../graphics.nix
+    ../graphical.nix
     ../virtualization.nix
     ./hardware-configuration.nix
   ];
