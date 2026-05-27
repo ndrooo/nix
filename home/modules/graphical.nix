@@ -2,7 +2,6 @@
 {
   home.packages =
     (with pkgs; [
-      alacritty
       proton-vpn
       _1password-gui
       obsidian
