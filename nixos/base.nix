@@ -35,6 +35,8 @@
     libwebp
     dmidecode
     nil nixfmt
+    proton-vpn-cli
+    wireguard-tools
     # for terminfo
     kitty
   ];

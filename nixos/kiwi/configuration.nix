@@ -18,7 +18,7 @@
 
   networking = {
     hostName = "kiwi";
-    firewall.checkReversePath = "loose";
+    firewall.checkReversePath = false;
     networkmanager.enable = true;
   };
 
@@ -56,7 +56,7 @@
 
   users.users.ndrooo = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "video" ];
+    extraGroups = [ "wheel" "video" "networkmanager" ];
     shell = pkgs.nushell;
   };
 }

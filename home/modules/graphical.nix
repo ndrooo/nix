@@ -2,7 +2,6 @@
 {
   home.packages =
     (with pkgs; [
-      proton-vpn
       _1password-gui
       obsidian
       todoist-electron

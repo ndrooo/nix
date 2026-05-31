@@ -21,6 +21,7 @@
     feh
     playerctl
     lxappearance
+    proton-vpn
   ];
 
   fonts.packages = with pkgs; [
@@ -60,6 +61,9 @@
   #   enable = true;
   # };
   location.provider = "geoclue2";
+
+  services.gnome.gnome-keyring.enable = true;
+  programs.seahorse.enable = true;
 
   programs.steam = {
     enable = true;
