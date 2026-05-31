@@ -17,11 +17,12 @@
       slack
       zulip
       zoom-us
-      # cad & fabrication
+      # cad, art, making
       orca-slicer
       gimp
-      # openscad : linker issue
+      openscad
       inkscape
+      rapidraw
       # game development
       godot
       aseprite
@@ -59,7 +60,7 @@
           ];
       })
     ])
-    ++ (with pkgs-stable; [ darktable ]);
+    ++ (with pkgs-stable; [ ]);
 
   xdg.mimeApps = {
     enable = true;
