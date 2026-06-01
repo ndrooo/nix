@@ -27,14 +27,18 @@
   width: 900px;
 }
 
+mainbox {
+  border: 4px;
+}
+
 inputbar {
-  border: 0 0 1px 0;
+  border: 0 0 2px 0;
   children: [prompt,entry];
 }
 
 prompt {
   padding: 16px;
-  border: 0 1px 0 0;
+  border: 0 2px 0 0;
 }
 
 textbox {
