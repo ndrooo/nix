@@ -18,6 +18,7 @@
     tmux
     wget
     git
+    jujutsu
     curl
     zip unzip unrar zstd
     direnv
