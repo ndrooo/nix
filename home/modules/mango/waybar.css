@@ -1,0 +1,21 @@
+* {
+  border: none;
+  border-radius: 0;
+  font-family: "Fraunces 72pt SuperSoft";
+  font-size: 18px;
+  font-weight: 700;
+}
+window#waybar {
+  background: #0a0a0a;
+  color: #cccccc;
+  padding: 80px;
+}
+#workspaces button {
+  color: #999999;
+}
+#workspaces button.active {
+  color: #cccccc;
+}
+.module {
+  padding: 0px 10px;
+}

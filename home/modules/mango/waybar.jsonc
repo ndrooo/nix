@@ -1,0 +1,65 @@
+[
+  {
+    "battery": {
+      "format": "{icon} empty",
+      "format-charging": "{icon} full",
+      "states": {
+        "not-full": 99,
+        "full": 100
+      },
+      "format-full": "Fully charged",
+      "format-not-full": "{icon} empty",
+      "format-not-full-charging": "{icon} full",
+      "format-icons": [
+        "One eighth",
+        "One quarter",
+        "Three eighths",
+        "Half",
+        "Five eighths",
+        "Three quarters",
+        "Seven eighths"
+      ],
+      "interval": 3
+    },
+    "clock": {
+      "format": "{:%b %d, %I:%M %p}"
+    },
+    "layer": "top",
+    "modules-center": [
+      "ext/workspaces"
+    ],
+    "modules-left": [
+      "clock"
+    ],
+    "modules-right": [
+      "pulseaudio",
+      "battery"
+    ],
+    "position": "bottom",
+    "pulseaudio": {
+      "format": "{icon}",
+      "format-icons": [
+        "Pianississimo",
+        "Pianissimo",
+        "Piano",
+        "Mezzo piano",
+        "Mezzo forte",
+        "Forte",
+        "Fortissimo",
+        "Fortississimo"
+      ],
+      "format-muted": "Tacet",
+      "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    },
+    "ext/workspaces": {
+      "format": "{icon}",
+      "on-click": "activate",
+      "on-click-right": "deactivate",
+      "sort-by-id": true
+    },
+    "tray": {
+      "spacing": 10
+    },
+    "reload_style_on_change": true
+  }
+]
