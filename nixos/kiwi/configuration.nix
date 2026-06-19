@@ -53,10 +53,4 @@
   services.xserver.dpi = 144;
 
   services.joycond.enable = true;
-
-  users.users.ndrooo = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" "video" "networkmanager" ];
-    shell = pkgs.nushell;
-  };
 }

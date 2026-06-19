@@ -62,10 +62,4 @@
 
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
-
-  users.users.ndrooo = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" ];
-    shell = pkgs.fish;
-  };
 }

@@ -1,4 +1,11 @@
-{ inputs, lib, config, pkgs, ... }: {
+{
+  inputs,
+  lib,
+  config,
+  pkgs,
+  ...
+}:
+{
   # You can import other NixOS modules here
   imports = [
     inputs.agenix.nixosModules.default
@@ -20,7 +27,10 @@
     git
     jujutsu
     curl
-    zip unzip unrar zstd
+    zip
+    unzip
+    unrar
+    zstd
     direnv
     pciutils
     dnsutils
@@ -35,7 +45,8 @@
     ntfs3g
     libwebp
     dmidecode
-    nil nixfmt
+    nil
+    nixfmt
     proton-vpn-cli
     wireguard-tools
     # for terminfo
@@ -43,7 +54,7 @@
   ];
 
   services.locate.enable = true;
-  
+
   programs.fish.enable = true;
 
   programs.vim = {
@@ -74,7 +85,18 @@
     };
   };
 
-  users.defaultUserShell = pkgs.fish;
+  users.defaultUserShell = pkgs.nushell;
+
+  users.users.ndrooo = {
+    isNormalUser = true;
+    extraGroups = [
+      "wheel"
+      "video"
+      "networkmanager"
+      "podman"
+    ];
+    shell = pkgs.nushell;
+  };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "22.11"; # Did you read the comment?
