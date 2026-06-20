@@ -44,13 +44,4 @@
   services.blueman.enable = true;
 
   programs.mango.enable = true;
-
-  environment.systemPackages = with pkgs; [
-    chromium
-    xbacklight
-  ];
-
-  services.xserver.dpi = 144;
-
-  services.joycond.enable = true;
 }

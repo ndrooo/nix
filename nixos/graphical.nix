@@ -5,6 +5,7 @@
 
   environment.systemPackages = with pkgs; [
     firefox
+    chromium
     gparted
     brightnessctl
     rofi
