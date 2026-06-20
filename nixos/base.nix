@@ -45,6 +45,7 @@
     ntfs3g
     libwebp
     dmidecode
+    traceroute
     nil
     nixfmt
     proton-vpn-cli
