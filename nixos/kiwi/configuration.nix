@@ -24,6 +24,8 @@
 
   services.fwupd.enable = true;
 
+  services.fprintd.enable = true;
+
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = false;
   boot.initrd.luks.devices = {

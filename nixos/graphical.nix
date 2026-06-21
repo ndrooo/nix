@@ -23,6 +23,7 @@
     playerctl
     lxappearance
     proton-vpn
+    lxqt.lxqt-policykit
   ];
 
   fonts.packages = with pkgs; [
@@ -57,6 +58,7 @@
     pulse.enable = true;
   };
   security.pam.services.swaylock = { };
+  security.pam.services.hyprlock = { };
   ## broken: https://github.com/NixOS/nixpkgs/issues/426046
   # services.redshift = {
   #   enable = true;
