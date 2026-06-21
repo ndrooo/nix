@@ -24,6 +24,7 @@
     lxappearance
     proton-vpn
     lxqt.lxqt-policykit
+    swayidle
   ];
 
   fonts.packages = with pkgs; [

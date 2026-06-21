@@ -7,5 +7,6 @@
     "mango/waybar.css".source = ./waybar.css;
     "mango/launch.sh".source = ./launch.sh;
     "mango/hyprlock.conf".source = ./hyprlock.conf;
+    "mango/swayidle".source = ./swayidle;
   };
 }
