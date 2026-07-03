@@ -86,6 +86,8 @@
     };
   };
 
+  services.syncthing.openDefaultPorts = true;
+
   users.defaultUserShell = pkgs.nushell;
 
   users.users.ndrooo = {

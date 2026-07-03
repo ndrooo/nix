@@ -70,6 +70,7 @@
   networking.firewall.allowedTCPPorts = [
     80
     443
+    8384
   ];
 
   users.users.ndrooo.openssh.authorizedKeys.keys = [

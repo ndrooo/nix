@@ -81,4 +81,15 @@ in {
     };
   };
 
+  services.syncthing = {
+    enable = true;
+    settings = {
+      folders = {
+        "/home/ndrooo/make" = {
+          id = "make";
+          devices = [ ];
+        };
+      };
+    };
+  };
 }
