@@ -53,7 +53,7 @@
     settings.PasswordAuthentication = false;
   };
 
-  services.caddy = {
+  services.nginx = {
     enable = true;
     recommendedProxySettings = true;
     virtualHosts."qb" = {
