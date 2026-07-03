@@ -80,16 +80,4 @@ in {
       "${alt}+Shift+y" = "move container to workspace ${ws8}";
     };
   };
-
-  services.syncthing = {
-    enable = true;
-    settings = {
-      folders = {
-        "/home/ndrooo/make" = {
-          id = "make";
-          devices = [ ];
-        };
-      };
-    };
-  };
 }

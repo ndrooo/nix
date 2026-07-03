@@ -97,6 +97,7 @@
       "video"
       "networkmanager"
       "podman"
+      "syncthing"
     ];
     shell = pkgs.nushell;
   };
