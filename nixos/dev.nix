@@ -7,6 +7,7 @@
     cargo
     nil
     nixd
+    uv
   ];
 
 }
