@@ -16,43 +16,47 @@
   time.timeZone = "America/New_York";
   i18n.defaultLocale = "en_US.UTF-8";
 
-  environment.systemPackages = with pkgs; [
-    nushell
-    bat
-    eza
-    file
-    neovim
-    tmux
-    wget
-    git
-    jujutsu
-    curl
-    zip
-    unzip
-    unrar
-    zstd
-    direnv
-    pciutils
-    dnsutils
-    stow
-    inputs.agenix.packages."${system}".default
-    bottom
-    efibootmgr
-    home-manager
-    python3
-    libnotify
-    fastfetch
-    ntfs3g
-    libwebp
-    dmidecode
-    traceroute
-    nil
-    nixfmt
-    proton-vpn-cli
-    wireguard-tools
-    # for terminfo
-    kitty
-  ];
+  environment.systemPackages =
+    (with pkgs; [
+      nushell
+      bat
+      eza
+      file
+      neovim
+      tmux
+      wget
+      git
+      jujutsu
+      curl
+      zip
+      unzip
+      unrar
+      zstd
+      direnv
+      pciutils
+      dnsutils
+      stow
+      bottom
+      efibootmgr
+      home-manager
+      python3
+      libnotify
+      fastfetch
+      ntfs3g
+      libwebp
+      dmidecode
+      traceroute
+      nil
+      nixfmt
+      proton-vpn-cli
+      wireguard-tools
+      # for terminfo
+      kitty
+    ])
+    ++ [
+      inputs.zmx.packages."${pkgs.system}".default
+      inputs.agenix.packages."${pkgs.system}".default
+    ];
 
   services.locate.enable = true;
 

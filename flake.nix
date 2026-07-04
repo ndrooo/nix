@@ -15,6 +15,7 @@
       url = "github:mangowm/mango";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    zmx.url = "github:neurosnap/zmx";
   };
 
   outputs = { nixpkgs, nixpkgs-stable, home-manager, agenix, nixos-hardware, ... }@inputs: {
