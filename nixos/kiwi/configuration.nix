@@ -26,10 +26,6 @@
 
   services.fprintd.enable = true;
 
-  services.syncthing = {
-    enable = true;
-  };
-
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = false;
   boot.initrd.luks.devices = {
