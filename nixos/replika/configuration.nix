@@ -48,6 +48,17 @@
         proxyWebsockets = true;
       };
     };
+    virtualHosts."octo.replika.local" = {
+      locations."/" = {
+        proxyPass = "http://127.0.0.1:5000";
+        proxyWebsockets = true;
+      };
+    };
+    virtualHosts."sync.replika.local" = {
+      locations."/" = {
+        proxyPass = "http://127.0.0.1:8384";
+      };
+    };
   };
   networking.firewall.allowedTCPPorts = [
     80

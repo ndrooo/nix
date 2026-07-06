@@ -61,9 +61,24 @@
         proxyPass = "http://127.0.0.1:6011";
       };
     };
+    virtualHosts."qb.xana.local" = {
+      locations."/" = {
+        proxyPass = "http://localhost:6011";
+      };
+    };
     virtualHosts."omada" = {
       locations."/" = {
         proxyPass = "http://127.0.0.1:8043";
+      };
+    };
+    virtualHosts."omada.xana.local" = {
+      locations."/" = {
+        proxyPass = "http://localhost:8043";
+      };
+    };
+    virtualHosts."sync.xana.local" = {
+      locations."/" = {
+        proxyPass = "http://localhost:8384";
       };
     };
   };
