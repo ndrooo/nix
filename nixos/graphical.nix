@@ -25,6 +25,7 @@
     proton-vpn
     lxqt.lxqt-policykit
     swayidle
+    pavucontrol
   ];
 
   fonts.packages = with pkgs; [
