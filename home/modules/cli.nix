@@ -1,7 +1,8 @@
 # Common configuration for any unix-like host with a CLI
 
-{ pkgs, lib, ... }: {
-  
+{ pkgs, lib, ... }:
+{
+
   home.packages = with pkgs; [
     wiki-tui
     ripgrep
@@ -10,7 +11,7 @@
     exiftool
     nmap
   ];
-  
+
   programs.git = {
     enable = true;
     settings.aliases = {
@@ -63,6 +64,7 @@
     '';
     shellAliases = {
       cat = "bat";
+      z = "zeditor";
     };
   };
 
@@ -110,7 +112,10 @@
       set -gx EDITOR vim
     '';
     plugins = [
-      { name = "pisces"; src = pkgs.fishPlugins.pisces.src; }
+      {
+        name = "pisces";
+        src = pkgs.fishPlugins.pisces.src;
+      }
     ];
   };
 
@@ -125,14 +130,21 @@
     enableFishIntegration = true;
     settings = {
       format = lib.concatStrings [
-        "$hostname" "$directory"
-        "$git_branch" "$git_status" "$git_state"
+        "$hostname"
+        "$directory"
+        "$git_branch"
+        "$git_status"
+        "$git_state"
         "$nix_shell"
         "$cmd_duration"
         "$sudo"
         "$line_break"
-        "$jobs" "$battery" "$shell"
-        "$character" "$status" " "
+        "$jobs"
+        "$battery"
+        "$shell"
+        "$character"
+        "$status"
+        " "
       ];
       hostname = {
         format = "[ 󰟀  ]($style inverted)[ $hostname ]($style)";
@@ -167,7 +179,10 @@
       git_branch = {
         format = "[  ]($style inverted)[ $branch(:$remote_branch) ]($style)";
         style = "bright-green bg:black";
-        ignore_branches = ["main" "master"];
+        ignore_branches = [
+          "main"
+          "master"
+        ];
       };
       git_status = {
         format = "[   ]($style inverted)([ $all_status$ahead_behind ]($style))";

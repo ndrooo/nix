@@ -61,6 +61,8 @@
     ])
     ++ (with pkgs-stable; [ ]);
 
+  programs.zed-editor.enable = true;
+
   xdg.mimeApps = {
     enable = true;
     defaultApplications = {
@@ -75,5 +77,5 @@
     };
   };
 
-  nixpkgs.config.permittedInsecurePackages = ["electron-25.9.0"];
+  nixpkgs.config.permittedInsecurePackages = [ "electron-25.9.0" ];
 }
