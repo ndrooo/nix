@@ -91,7 +91,7 @@ in
         "${mod}+Shift+r" = "restart";
         "${mod}+Shift+e" = "exit";
         "${mod}+Shift+s" = "exec systemctl suspend";
-        "${mod}+z" = "exec hyprlock";
+        "${mod}+z" = "exec hyprlock -c ~/.config/sway/hyprlock.conf";
 
         "${mod}+h" = "focus left";
         "${mod}+j" = "focus down";
