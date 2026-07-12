@@ -1,4 +1,9 @@
-{ inputs, config, pkgs, ... }:
+{
+  inputs,
+  config,
+  pkgs,
+  ...
+}:
 
 let
   mod = "Mod4";
@@ -10,12 +15,23 @@ let
   primary = "#${config.colorScheme.palette.primary}";
   urgent = "#${config.colorScheme.palette.urgent}";
   term = "kitty";
-in {
+in
+{
   imports = [
     inputs.nix-colors.homeManagerModule
-    (import ./default.nix).dunst
-    (import ./default.nix).rofi
+    (import ../default.nix).dunst
+    (import ../default.nix).rofi
   ];
+
+  xdg.configFile = {
+    "sway/waybar.jsonc".source = ./waybar.jsonc;
+    "sway/waybar.css".source = ./waybar.css;
+    "sway/hyprlock.conf".source = ./hyprlock.conf;
+    "sway/rofi-ws.sh" = {
+      source = ./rofi-ws.sh;
+      executable = true;
+    };
+  };
 
   home.pointerCursor = {
     name = "Rose Pine";
@@ -24,6 +40,7 @@ in {
   };
 
   home.packages = [
+    pkgs.waybar
     pkgs.waypaper
     pkgs.swaybg
     pkgs.grim
@@ -44,65 +61,7 @@ in {
     style.name = "gtk2";
   };
 
-  programs.swaylock.enable = true;
-  programs.swaylock.settings = {
-    color = "${bg}";
-    font-size = 24;
-    indicator-idle-visible = false;
-    indicator-radius = 100;
-    show-failed-attempts = true;
-    ignore-empty-password = true;
-    ring-color = "${primary}";
-    key-hl-color = "${primary}";
-    bs-hl-color = "${urgent}";
-  };
-
-  programs.waybar.enable = true;
-  programs.waybar.settings.main = {
-    layer = "top";
-    position = "bottom";
-    modules-left = ["clock"];
-    modules-center = ["sway/workspaces"];
-    modules-right = ["pulseaudio" "battery" "tray"];
-    "sway/workspaces" = {
-      disable-scroll = true;
-    };
-    "clock" = {
-      format = "{:%I.%M | %m-%d}";
-    };
-    "pulseaudio" = {
-      format = "{icon} {volume}";
-      format-muted = "󰸈 MU";
-      format-icons = ["󰕿" "󰖀" "󰕾"];
-    };
-    "battery" = {
-      format = "{icon} {capacity}";
-      format-icons = ["󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
-      format-charging = "󰂄 {capacity}";
-      interval = 3;
-    };
-    "tray" = { spacing = 10; };
-  };
-  programs.waybar.style = ''
-    * {
-      border: none;
-      border-radius: 0;
-      font-family: CaskaydiaCove Nerd Font Mono;
-    }
-    window#waybar {
-      background: ${bg};
-      color: ${fg};
-    }
-    #workspaces button {
-      color: ${dimmed};
-    }
-    #workspaces button.focused {
-      color: ${fg};
-    }
-    .module {
-      padding: 5px 10px;
-    }
-  '';
+  programs.hyprlock.enable = true;
 
   wayland.windowManager.sway = {
     enable = true;
@@ -112,16 +71,19 @@ in {
       terminal = term;
       startup = [
         { command = "waypaper --restore"; }
-        { command = "systemctl --user restart waybar"; always = true; }
+        {
+          command = "pkill --signal SIGUSR2 waybar";
+          always = true;
+        }
+        { command = "waybar -c ~/.config/sway/waybar.jsonc -s ~/.config/sway/waybar.css"; }
       ];
       keybindings = {
         "${mod}+Return" = "exec ${term}";
 
-        "${mod}+Shift+c" = "reload";
         "${mod}+Shift+r" = "restart";
         "${mod}+Shift+e" = "exit";
         "${mod}+Shift+s" = "exec systemctl suspend";
-        "${mod}+z" = "exec swaylock";
+        "${mod}+z" = "exec hyprlock";
 
         "${mod}+h" = "focus left";
         "${mod}+j" = "focus down";
@@ -131,9 +93,18 @@ in {
         "${mod}+Shift+j" = "move down";
         "${mod}+Shift+k" = "move up";
         "${mod}+Shift+l" = "move right";
+        "${mod}+Control+h" = "resize grow left 2px or 2ppt";
+        "${mod}+Control+j" = "resize grow down 2px or 2ppt";
+        "${mod}+Control+k" = "resize grow up 2px or 2ppt";
+        "${mod}+Control+l" = "resize grow right 2px or 2ppt";
+
+        "${mod}+comma" = "workspace prev";
+        "${mod}+period" = "workspace next";
 
         "${mod}+BackSpace" = "focus mode_toggle";
         "${mod}+Shift+BackSpace" = "floating toggle";
+
+        "${mod}+Space" = "exec dunstctl close-all";
 
         "${mod}+r" = "layout toggle split";
         "${mod}+e" = "layout tabbed";
@@ -141,21 +112,15 @@ in {
         "${mod}+f" = "fullscreen toggle";
         "${mod}+a" = "focus parent";
 
-        "${mod}+Control+h" = "resize grow left 2px or 2ppt";
-        "${mod}+Control+j" = "resize grow down 2px or 2ppt";
-        "${mod}+Control+k" = "resize grow up 2px or 2ppt";
-        "${mod}+Control+l" = "resize grow right 2px or 2ppt";
-
         "${mod}+q" = "kill";
-        # "${mod}+Shift+q" = "exec xkill -id `xprop -root _NET_ACTIVE_WINDOW | cut -d\\# -f2`";
 
         "${mod}+d" = "exec rofi -show drun";
         "${mod}+Shift+d" = "exec rofi -show run";
         "${mod}+s" = "exec rofi -show ssh";
         "${mod}+m" = "exec rofimoji";
+        "${mod}+semicolon" = "exec rofi -modes \"Workspaces:~/.config/sway/rofi-ws.sh\" -show Workspaces";
 
         "${mod}+c" = "exec grim -g \"$(slurp)\"";
-        # "${mod}+g" = "exec wmfocus";
       };
 
       focus = {
@@ -166,8 +131,8 @@ in {
       };
 
       fonts = {
-        names = [ "CaskaydiaCove Nerd Font Mono" ];
-        size = 9.0;
+        names = [ "Fraunces" ];
+        size = 11.0;
       };
 
       window = {
@@ -240,7 +205,7 @@ in {
         };
       };
 
-      bars = [];
+      bars = [ ];
     };
   };
 }

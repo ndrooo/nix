@@ -36,6 +36,7 @@
       pciutils
       dnsutils
       stow
+      jq
       bottom
       efibootmgr
       home-manager
