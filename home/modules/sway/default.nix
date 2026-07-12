@@ -31,6 +31,10 @@ in
       source = ./rofi-ws.sh;
       executable = true;
     };
+    "sway/scratchpad.sh" = {
+      source = ./scratchpad.sh;
+      executable = true;
+    };
   };
 
   home.pointerCursor = {
@@ -78,7 +82,11 @@ in
         { command = "waybar -c ~/.config/sway/waybar.jsonc -s ~/.config/sway/waybar.css"; }
       ];
       keybindings = {
-        "${mod}+Return" = "exec ${term}";
+        "${mod}+Return" =
+          "exec --no-startup-id bash ~/.config/sway/scratchpad.sh -t -acc -d 60%x70% -- kitty";
+        "${mod}+Shift+Return" = "exec ${term}";
+        "${mod}+t" =
+          "exec --no-startup-id bash ~/.config/sway/scratchpad.sh -t -acc -d 60%x80% -- todoist-electron";
 
         "${mod}+Shift+r" = "restart";
         "${mod}+Shift+e" = "exit";
