@@ -15,7 +15,8 @@ let
 
   mod = "Mod4";
   alt = "Mod1";
-in {
+in
+{
   imports = [
     ./base.nix
     modules.cli
@@ -34,12 +35,15 @@ in {
 
     keybindings = {
       "XF86AudioMute" = "exec pactl set-sink-mute @DEFAULT_SINK@ toggle";
-      "XF86AudioRaiseVolume" = "exec pactl set-sink-volume @DEFAULT_SINK@ +1000";
-      "XF86AudioLowerVolume" = "exec pactl set-sink-volume @DEFAULT_SINK@ -1000";
+      "XF86AudioRaiseVolume" = "exec pactl set-sink-volume @DEFAULT_SINK@ +5%";
+      "XF86AudioLowerVolume" = "exec pactl set-sink-volume @DEFAULT_SINK@ -5%";
       "XF86MonBrightnessUp" = "exec brightnessctl set 5%+";
       "XF86MonBrightnessDown" = "exec brightnessctl set 5%-";
+      "XF86AudioPrev" = "exec playerctl previous";
       "XF86AudioPlay" = "exec playerctl play-pause";
+      "XF86AudioNext" = "exec playerctl next";
       "Print" = "exec grim && notify-send -t 1000 \"took screenshot\"";
+      "XF86AudioMedia" = "exec hyprlock -c ~/.config/sway/hyprlock.conf";
 
       "${mod}+1" = "workspace ${ws1}";
       "${mod}+2" = "workspace ${ws2}";
@@ -78,6 +82,16 @@ in {
       "${alt}+Shift+comma" = "move container to workspace ${ws5}";
       "${alt}+Shift+period" = "move container to workspace ${ws6}";
       "${alt}+Shift+y" = "move container to workspace ${ws8}";
+    };
+    bindswitches = {
+      "lid:on" = {
+        locked = true;
+        action = "exec hyprlock -c ~/.config/sway/hyprlock.conf; output eDP-1 disable";
+      };
+      "lid:off" = {
+        locked = true;
+        action = "output eDP-1 enable";
+      };
     };
   };
 
