@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ config, ... }:
+{
   # You can import other NixOS modules here
   imports = [
     # If you want to use modules from other flakes (such as nixos-hardware):
@@ -10,7 +11,7 @@
 
     # Import your generated (nixos-generate-config) hardware configuration
     ../base.nix
-    #../graphical.nix
+    ../graphical.nix
     ./hardware-configuration.nix
   ];
 
@@ -23,7 +24,10 @@
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.initrd.kernelModules = [ "dm-snapshot" "cryptd" ];
+  boot.initrd.kernelModules = [
+    "dm-snapshot"
+    "cryptd"
+  ];
   boot.initrd.luks.devices = {
     nix = {
       device = "/dev/disk/by-uuid/fbff2983-ec03-45b9-9feb-38ebcfab7a6e";
@@ -47,6 +51,7 @@
   #};
 
   services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
   #services.xserver.xrandrHeads = [
   #  {
   #    output = "DP-4.1.8";
@@ -57,11 +62,10 @@
   #    monitorConfig = "Option \"LeftOf\" \"DP-4.1.8\"";
   #  }
   #];
-  hardware.opengl.enable = true;
+  hardware.graphics.enable = true;
   hardware.nvidia.modesetting.enable = true;
   hardware.nvidia.open = false;
 
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
 }
-
