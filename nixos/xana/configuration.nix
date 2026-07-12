@@ -94,6 +94,7 @@
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJhQKBp+aYcvMtHWUp6X3aUIfglWEl+6LcU/XrqdnWNC ndrooo@kiwi"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPglOw1DK7ANW7k3s2UrpzEzJ11VD9db/9BVc2mdQCsP ndrooo@sanic"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGZNQgC/US8O4Pb0c61fUsPr8OVpCAEWjr/i8QtJnjq6 ndrooo@lyoko-win"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINNFduZVzZWQK7zP8ji/+nqwF4YsTEwLOY1ZoOdr4Up7 ndrooo@lyoko"
   ];
 
   hardware.enableRedistributableFirmware = true;

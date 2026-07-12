@@ -10,7 +10,7 @@
 
     # Import your generated (nixos-generate-config) hardware configuration
     ../base.nix
-    ../graphical.nix
+    #../graphical.nix
     ./hardware-configuration.nix
   ];
 
@@ -22,40 +22,41 @@
   };
 
   boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = false;
+  boot.loader.efi.canTouchEfiVariables = true;
+  boot.initrd.kernelModules = [ "dm-snapshot" "cryptd" ];
   boot.initrd.luks.devices = {
     nix = {
-      device = "/dev/disk/by-uuid/30b81c9d-b1ab-4eca-97f0-b76443553999";
+      device = "/dev/disk/by-uuid/fbff2983-ec03-45b9-9feb-38ebcfab7a6e";
       preLVM = true;
       allowDiscards = true;
     };
   };
 
-  environment.etc.crypttab = {
-    enable = true;
-    text = ''
-      magdrum UUID=682c9ace-52e0-46e0-9f8e-0ed479d648e1 /root/lyoko.key luks,nofail
-    '';
-  };
+  #environment.etc.crypttab = {
+  #  enable = true;
+  #  text = ''
+  #    magdrum UUID=682c9ace-52e0-46e0-9f8e-0ed479d648e1 /root/lyoko.key luks,nofail
+  #  '';
+  #};
 
-  environment.etc.fstab = {
-    enable = true;
-    text = ''
-      UUID=3239b580-6a8b-4a1f-a9cd-d6a97c3b9f95 /magdrum ext4 rw,relatime,nofail 0 2
-    '';
-  };
+  #environment.etc.fstab = {
+  #  enable = true;
+  #  text = ''
+  #    UUID=3239b580-6a8b-4a1f-a9cd-d6a97c3b9f95 /magdrum ext4 rw,relatime,nofail 0 2
+  #  '';
+  #};
 
   services.xserver.videoDrivers = [ "nvidia" ];
-  services.xserver.xrandrHeads = [
-    {
-      output = "DP-4.1.8";
-      primary = true;
-    }
-    {
-      output = "DP-4.8";
-      monitorConfig = "Option \"LeftOf\" \"DP-4.1.8\"";
-    }
-  ];
+  #services.xserver.xrandrHeads = [
+  #  {
+  #    output = "DP-4.1.8";
+  #    primary = true;
+  #  }
+  #  {
+  #    output = "DP-4.8";
+  #    monitorConfig = "Option \"LeftOf\" \"DP-4.1.8\"";
+  #  }
+  #];
   hardware.opengl.enable = true;
   hardware.nvidia.modesetting.enable = true;
   hardware.nvidia.open = false;
@@ -63,3 +64,4 @@
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
 }
+
