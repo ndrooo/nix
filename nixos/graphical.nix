@@ -1,10 +1,11 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
   # You can import other NixOS modules here
   imports = [ ];
 
   environment.systemPackages = with pkgs; [
     firefox
+    inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     chromium
     gparted
     brightnessctl
