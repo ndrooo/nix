@@ -24,6 +24,7 @@
       file
       neovim
       tmux
+      zmx
       wget
       git
       jujutsu
@@ -55,7 +56,6 @@
       kitty
     ])
     ++ [
-      inputs.zmx.packages."${pkgs.system}".default
       inputs.agenix.packages."${pkgs.system}".default
     ];
 

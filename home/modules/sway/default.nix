@@ -38,6 +38,7 @@ in
   };
 
   home.pointerCursor = {
+    enable = true;
     name = "Rose Pine";
     package = pkgs.rose-pine-cursor;
     size = 48;
@@ -108,6 +109,8 @@ in
 
         "${mod}+comma" = "workspace prev";
         "${mod}+period" = "workspace next";
+        "${mod}+Shift+comma" = "workspace prev";
+        "${mod}+Shift+period" = "workspace next";
 
         "${mod}+BackSpace" = "focus mode_toggle";
         "${mod}+Shift+BackSpace" = "floating toggle";
