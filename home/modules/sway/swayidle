@@ -1,0 +1,3 @@
+timeout 390 'notify-send "Locking..." -t 9000'
+timeout 400 'hyprlock -c ~/.config/sway/hyprlock.conf'
+timeout 500 'swaymsg output * disable' resume 'swaymsg output * enable'

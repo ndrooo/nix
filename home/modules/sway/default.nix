@@ -27,6 +27,7 @@ in
     "sway/waybar.jsonc".source = ./waybar.jsonc;
     "sway/waybar.css".source = ./waybar.css;
     "sway/hyprlock.conf".source = ./hyprlock.conf;
+    "sway/swayidle".source = ./swayidle;
     "sway/rofi-ws.sh" = {
       source = ./rofi-ws.sh;
       executable = true;
@@ -81,6 +82,7 @@ in
           always = true;
         }
         { command = "waybar -c ~/.config/sway/waybar.jsonc -s ~/.config/sway/waybar.css"; }
+        { command = "swayidle -C ~/.config/sway/swayidle"; }
       ];
       keybindings = {
         "${mod}+Return" =
