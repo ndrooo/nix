@@ -32,6 +32,10 @@ in
       source = ./rofi-ws.sh;
       executable = true;
     };
+    "sway/rofi-ws-move.sh" = {
+      source = ./rofi-ws-move.sh;
+      executable = true;
+    };
     "sway/scratchpad.sh" = {
       source = ./scratchpad.sh;
       executable = true;
@@ -132,6 +136,7 @@ in
         "${mod}+s" = "exec rofi -show ssh";
         "${mod}+m" = "exec rofimoji";
         "${mod}+semicolon" = "exec rofi -modes \"Workspaces:~/.config/sway/rofi-ws.sh\" -show Workspaces";
+        "${mod}+Shift+semicolon" = "exec rofi -modes \"Move to workspace:~/.config/sway/rofi-ws-move.sh\" -show \"Move to workspace\"";
 
         "${mod}+c" = "exec grim -g \"$(slurp)\"";
       };
