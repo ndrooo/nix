@@ -21,83 +21,92 @@
     };
   };
 
-  outputs = { nixpkgs, nixpkgs-stable, home-manager, agenix, nixos-hardware, ... }@inputs: {
-    # nixos-rebuild switch --flake .#hostname
-    nixosConfigurations.lyoko = nixpkgs.lib.nixosSystem {
-      specialArgs = { inherit inputs; };
-      modules = [
-        ./nixos/lyoko/configuration.nix
-      ];
-    };
-    nixosConfigurations.kiwi = nixpkgs.lib.nixosSystem {
-      specialArgs = { inherit inputs; };
-      modules = [
-        ./nixos/kiwi/configuration.nix
-        nixos-hardware.nixosModules.framework-13-7040-amd
-        inputs.mangowm.nixosModules.mango
-      ];
-    };
-    nixosConfigurations.xana = nixpkgs.lib.nixosSystem {
-      specialArgs = { inherit inputs; };
-      modules = [
-        ./nixos/xana/configuration.nix
-      ];
-    };
-    nixosConfigurations.replika = nixpkgs.lib.nixosSystem {
-      specialArgs = { inherit inputs; };
-      modules = [
-        ./nixos/replika/configuration.nix
-        nixos-hardware.nixosModules.raspberry-pi-4
-      ];
-    };
+  outputs =
+    {
+      nixpkgs,
+      nixpkgs-stable,
+      home-manager,
+      agenix,
+      nixos-hardware,
+      ...
+    }@inputs:
+    {
+      # nixos-rebuild switch --flake .#hostname
+      nixosConfigurations.lyoko = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./nixos/lyoko/configuration.nix
+        ];
+      };
+      nixosConfigurations.kiwi = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./nixos/kiwi/configuration.nix
+          nixos-hardware.nixosModules.framework-13-7040-amd
+          inputs.mangowm.nixosModules.mango
+        ];
+      };
+      nixosConfigurations.xana = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./nixos/xana/configuration.nix
+        ];
+      };
+      nixosConfigurations.replika = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./nixos/replika/configuration.nix
+          nixos-hardware.nixosModules.raspberry-pi-4
+        ];
+      };
 
-    homeModules = import ./home/modules;
-    themes = import ./home/themes;
+      homeModules = import ./home/modules;
+      themes = import ./home/themes;
 
-    # home-manager switch --flake .#hostname
-    homeConfigurations.lyoko = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages.x86_64-linux;
-      extraSpecialArgs = {
-        inherit inputs;
-        pkgs-stable = import nixpkgs-stable {
-          system = "x86_64-linux";
-          config.allowUnfree = true;
+      # home-manager switch --flake .#hostname
+      homeConfigurations.lyoko = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        extraSpecialArgs = {
+          inherit inputs;
+          pkgs-stable = import nixpkgs-stable {
+            system = "x86_64-linux";
+            config.allowUnfree = true;
+          };
         };
+        modules = [ ./home/lyoko.nix ];
       };
-      modules = [ ./home/lyoko.nix ];
-    };
-    homeConfigurations.kiwi = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages.x86_64-linux;
-      extraSpecialArgs = {
-        inherit inputs;
-        pkgs-stable = import nixpkgs-stable {
-          system = "x86_64-linux";
-          config.allowUnfree = true;
+      homeConfigurations.kiwi = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        extraSpecialArgs = {
+          inherit inputs;
+          pkgs-stable = import nixpkgs-stable {
+            system = "x86_64-linux";
+            config.allowUnfree = true;
+          };
         };
+        modules = [ ./home/kiwi.nix ];
       };
-      modules = [ ./home/kiwi.nix ];
-    };
-    homeConfigurations.xana = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages.x86_64-linux;
-      extraSpecialArgs = {
-        inherit inputs;
-        pkgs-stable = import nixpkgs-stable {
-          system = "x86_64-linux";
-          config.allowUnfree = true;
+      homeConfigurations.xana = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        extraSpecialArgs = {
+          inherit inputs;
+          pkgs-stable = import nixpkgs-stable {
+            system = "x86_64-linux";
+            config.allowUnfree = true;
+          };
         };
+        modules = [ ./home/xana.nix ];
       };
-      modules = [ ./home/xana.nix ];
-    };
-    homeConfigurations.replika = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages.aarch64-linux;
-      extraSpecialArgs = {
-        inherit inputs;
-        pkgs-stable = import nixpkgs-stable {
-          system = "aarch64-linux";
-          config.allowUnfree = true;
+      homeConfigurations.replika = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.aarch64-linux;
+        extraSpecialArgs = {
+          inherit inputs;
+          pkgs-stable = import nixpkgs-stable {
+            system = "aarch64-linux";
+            config.allowUnfree = true;
+          };
         };
+        modules = [ ./home/replika.nix ];
       };
-      modules = [ ./home/replika.nix ];
     };
-  };
 }
