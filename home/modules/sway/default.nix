@@ -136,7 +136,8 @@ in
         "${mod}+s" = "exec rofi -show ssh";
         "${mod}+m" = "exec rofimoji";
         "${mod}+semicolon" = "exec rofi -modes \"Workspaces:~/.config/sway/rofi-ws.sh\" -show Workspaces";
-        "${mod}+Shift+semicolon" = "exec rofi -modes \"Move to workspace:~/.config/sway/rofi-ws-move.sh\" -show \"Move to workspace\"";
+        "${mod}+Shift+semicolon" =
+          "exec rofi -modes \"Move to workspace:~/.config/sway/rofi-ws-move.sh\" -show \"Move to workspace\"";
 
         "${mod}+c" = "exec grim -g \"$(slurp)\"";
       };
