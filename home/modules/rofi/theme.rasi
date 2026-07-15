@@ -1,7 +1,7 @@
 * {
   font: "VictorMono Nerd Font Mono 18";
   hide-scrollbar: true;
-  columns: 2;
+  columns: 1;
   lines: 8;
 
   /* colors */
@@ -24,7 +24,7 @@
   selected-normal-background:  @accent;
   selected-normal-foreground:  @foreground;
   spacing: 0;
-  width: 900px;
+  width: 600px;
 }
 
 mainbox {
