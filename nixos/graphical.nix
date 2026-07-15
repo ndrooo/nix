@@ -57,12 +57,9 @@
     alsa.support32Bit = true;
     pulse.enable = true;
   };
-  security.pam.services.swaylock = { };
-  security.pam.services.hyprlock = { };
-  ## broken: https://github.com/NixOS/nixpkgs/issues/426046
-  # services.redshift = {
-  #   enable = true;
-  # };
+  security.pam.services = {
+    hyprlock.enableGnomeKeyring = true;
+  };
   location.provider = "geoclue2";
 
   services.gnome.gnome-keyring.enable = true;
