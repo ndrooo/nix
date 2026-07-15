@@ -41,11 +41,8 @@
     atkinson-hyperlegible-next
   ];
 
-  services.displayManager = {
-    autoLogin.enable = true;
-    autoLogin.user = "ndrooo";
-  };
-  services.xserver.enable = true;
+  services.displayManager.gdm.enable = true;
+  services.displayManager.defaultSession = "sway";
   programs.xwayland.enable = true;
   programs.dconf.enable = true;
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
