@@ -152,7 +152,7 @@ in
         wrapping = "no";
         followMouse = false;
         mouseWarping = false;
-        newWindow = "focus";
+        newWindow = "urgent";
       };
 
       fonts = {
@@ -165,10 +165,17 @@ in
         border = 4;
         commands = [
           {
-            command = "border pixel 4";
             criteria = {
               class = "^.*";
             };
+            command = "border pixel 4";
+          }
+          {
+            criteria = {
+              class = "^zoom$";
+              title = "^annotate_toolbar$";
+            };
+            command = "move to scratchpad";
           }
         ];
       };
