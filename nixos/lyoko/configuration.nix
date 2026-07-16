@@ -2,6 +2,7 @@
 {
   imports = [
     ../base.nix
+    ../dev.nix
     ../graphical.nix
     ./hardware-configuration.nix
   ];
