@@ -198,7 +198,7 @@ in
         focusedInactive = {
           border = altbg;
           background = altbg;
-          text = altfg;
+          text = fg;
           indicator = altbg;
           childBorder = altbg;
         };

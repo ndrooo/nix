@@ -66,7 +66,7 @@ in
       tertiary = c2;
       urgent = c1;
       dimmed = c7;
-      altbg = c0;
+      altbg = c8;
       altfg = bg;
     };
   };
