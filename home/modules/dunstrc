@@ -149,7 +149,7 @@
     dmenu = /usr/bin/dmenu -p dunst:
 
     # Browser for opening urls in context menu.
-    browser = /usr/bin/firefox -new-tab
+    browser = zen --new-tab
 
     # Define the title of the windows spawned by dunst
     title = Dunst

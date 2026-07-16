@@ -66,12 +66,12 @@
   xdg.mimeApps = {
     enable = true;
     defaultApplications = {
-      "text/html" = "firefox.desktop";
-      "x-scheme-handler/http" = "firefox.desktop";
-      "x-scheme-handler/https" = "firefox.desktop";
+      "text/html" = "zen-browser.desktop";
+      "x-scheme-handler/http" = "zen-browser.desktop";
+      "x-scheme-handler/https" = "zen-browser.desktop";
       "image/png" = "feh.desktop";
       "image/jpeg" = "feh.desktop";
-      "application/pdf" = "firefox.desktop";
+      "application/pdf" = "zen-browser.desktop";
       "x-scheme-handler/sgnl" = "signal.desktop";
       "x-scheme-handler/signalcaptcha" = "signal.desktop";
     };
