@@ -93,6 +93,9 @@ in
         action = "output eDP-1 enable";
       };
     };
+    startup = [
+      { command = "swayidle -C ~/.config/sway/swayidle"; }
+    ];
   };
 
   services.syncthing = {

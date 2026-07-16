@@ -87,7 +87,6 @@ in
           always = true;
         }
         { command = "waybar -c ~/.config/sway/waybar.jsonc -s ~/.config/sway/waybar.css"; }
-        { command = "swayidle -C ~/.config/sway/swayidle"; }
       ];
       keybindings = {
         "${mod}+Return" =
