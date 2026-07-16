@@ -75,6 +75,7 @@ in
 
   wayland.windowManager.sway = {
     enable = true;
+    systemd.variables = [ "--all" ];
     xwayland = true;
     config = {
       modifier = mod;

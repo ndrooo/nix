@@ -66,15 +66,24 @@
   xdg.mimeApps = {
     enable = true;
     defaultApplications = {
-      "text/html" = "zen-browser.desktop";
-      "x-scheme-handler/http" = "zen-browser.desktop";
-      "x-scheme-handler/https" = "zen-browser.desktop";
+      "text/html" = "zen.desktop";
+      "x-scheme-handler/http" = "zen.desktop";
+      "x-scheme-handler/https" = "zen.desktop";
       "image/png" = "feh.desktop";
       "image/jpeg" = "feh.desktop";
-      "application/pdf" = "zen-browser.desktop";
+      "application/pdf" = "zen.desktop";
       "x-scheme-handler/sgnl" = "signal.desktop";
       "x-scheme-handler/signalcaptcha" = "signal.desktop";
     };
+  };
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = [
+      pkgs.xdg-desktop-portal-wlr
+      pkgs.xdg-desktop-portal-gtk
+    ];
+    config.common.default = "*";
   };
 
   nixpkgs.config.permittedInsecurePackages = [ "electron-25.9.0" ];
