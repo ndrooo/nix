@@ -1,5 +1,5 @@
-{ pkgs, ... }: {
-  imports = [];
+{ ... }: {
+  imports = [ ];
 
   virtualisation.oci-containers = {
     containers.gluetun = {
@@ -15,12 +15,15 @@
       environment = {
         VPN_SERVICE_PROVIDER = "protonvpn";
         VPN_TYPE = "wireguard";
-        SERVER_COUNTRIES="United States";
-        PORT_FORWARD_ONLY="on";
-        VPN_PORT_FORWARDING="on";
+        SERVER_COUNTRIES = "United States";
+        PORT_FORWARD_ONLY = "on";
+        VPN_PORT_FORWARDING = "on";
       };
-      environmentFiles = [/root/wireguard-keys/wg.env];
-      extraOptions = ["--cap-add=NET_ADMIN" "--device=/dev/net/tun"];
+      environmentFiles = [ /root/wireguard-keys/wg.env ];
+      extraOptions = [
+        "--cap-add=NET_ADMIN"
+        "--device=/dev/net/tun"
+      ];
     };
     containers.qbittorrent = {
       image = "ghcr.io/linuxserver/qbittorrent";
@@ -35,7 +38,7 @@
         "/twistor:/twistor"
         "/root/qbittorrent/config:/config"
       ];
-      extraOptions = ["--network=container:gluetun"];
+      extraOptions = [ "--network=container:gluetun" ];
     };
   };
   networking.firewall = {

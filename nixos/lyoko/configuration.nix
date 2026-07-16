@@ -1,15 +1,6 @@
 { config, ... }:
 {
-  # You can import other NixOS modules here
   imports = [
-    # If you want to use modules from other flakes (such as nixos-hardware):
-    # inputs.hardware.nixosModules.common-cpu-amd
-    # inputs.hardware.nixosModules.common-ssd
-
-    # You can also split up your configuration and import pieces of it here:
-    # ./users.nix
-
-    # Import your generated (nixos-generate-config) hardware configuration
     ../base.nix
     ../graphical.nix
     ./hardware-configuration.nix
@@ -52,16 +43,6 @@
 
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
-  #services.xserver.xrandrHeads = [
-  #  {
-  #    output = "DP-4.1.8";
-  #    primary = true;
-  #  }
-  #  {
-  #    output = "DP-4.8";
-  #    monitorConfig = "Option \"LeftOf\" \"DP-4.1.8\"";
-  #  }
-  #];
   hardware.graphics.enable = true;
   hardware.nvidia.modesetting.enable = true;
   hardware.nvidia.open = false;

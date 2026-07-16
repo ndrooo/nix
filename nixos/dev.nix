@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   # You can import other NixOS modules here
-  imports = [];
+  imports = [ ];
 
   environment.systemPackages = with pkgs; [
     rustc
