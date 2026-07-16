@@ -1,7 +1,8 @@
 { inputs, config, ... }:
 let
   colors = config.colorScheme.palette;
-in {
+in
+{
   imports = [
     inputs.nix-colors.homeManagerModule
   ];
@@ -32,21 +33,21 @@ in {
     background = "#${colors.bg}";
     selection_foreground = "#${colors.bg}";
     selection_background = "#${colors.fg}";
-    color0  = "#${colors.c0}";
-    color8  = "#${colors.c8}";
-    color1  = "#${colors.c1}";
-    color9  = "#${colors.c9}";
-    color2  = "#${colors.c2}";
+    color0 = "#${colors.c0}";
+    color8 = "#${colors.c8}";
+    color1 = "#${colors.c1}";
+    color9 = "#${colors.c9}";
+    color2 = "#${colors.c2}";
     color10 = "#${colors.c10}";
-    color3  = "#${colors.c3}";
+    color3 = "#${colors.c3}";
     color11 = "#${colors.c11}";
-    color4  = "#${colors.c4}";
+    color4 = "#${colors.c4}";
     color12 = "#${colors.c12}";
-    color5  = "#${colors.c5}";
+    color5 = "#${colors.c5}";
     color13 = "#${colors.c13}";
-    color6  = "#${colors.c6}";
+    color6 = "#${colors.c6}";
     color14 = "#${colors.c14}";
-    color7  = "#${colors.c7}";
+    color7 = "#${colors.c7}";
     color15 = "#${colors.c15}";
   };
 }

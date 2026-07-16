@@ -1,7 +1,8 @@
-{ ... }: 
+{ ... }:
 let
   modules = import ./modules;
-in {
+in
+{
   imports = [
     ./base.nix
     modules.cli

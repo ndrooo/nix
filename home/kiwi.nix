@@ -22,8 +22,8 @@ in
     modules.cli
     modules.graphical
     modules.kitty
-    modules.mango
     modules.sway
+    modules.vscode
     modules.zathura
     ./themes/sumac.nix
   ];

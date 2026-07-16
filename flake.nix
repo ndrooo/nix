@@ -11,10 +11,6 @@
     agenix.inputs.nixpkgs.follows = "nixpkgs";
     agenix.inputs.darwin.follows = "";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    mangowm = {
-      url = "github:mangowm/mango";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     zen-browser = {
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -43,7 +39,6 @@
         modules = [
           ./nixos/kiwi/configuration.nix
           nixos-hardware.nixosModules.framework-13-7040-amd
-          inputs.mangowm.nixosModules.mango
         ];
       };
       nixosConfigurations.xana = nixpkgs.lib.nixosSystem {
