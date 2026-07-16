@@ -12,5 +12,14 @@ in
     ./themes/sumac.nix
   ];
 
+  wayland.windowManager.sway.config = {
+    output.DP-4 = {
+      scale = "1.5";
+    };
+    output.DP-5 = {
+      scale = "1.5";
+    };
+  };
+
   services.syncthing.enable = true;
 }
