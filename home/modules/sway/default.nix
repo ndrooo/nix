@@ -117,8 +117,8 @@ in
         "${mod}+Control+k" = "resize grow up 2px or 2ppt";
         "${mod}+Control+l" = "resize grow right 2px or 2ppt";
 
-        "${mod}+comma" = "workspace prev";
-        "${mod}+period" = "workspace next";
+        "${mod}+comma" = "workspace prev_on_output";
+        "${mod}+period" = "workspace next_on_output";
         "${mod}+Shift+comma" = "workspace prev";
         "${mod}+Shift+period" = "workspace next";
 
@@ -176,6 +176,18 @@ in
               title = "^annotate_toolbar$";
             };
             command = "move to scratchpad";
+          }
+          {
+            criteria = {
+              app_id = "^waypaper$";
+            };
+            command = "floating enable";
+          }
+          {
+            criteria = {
+              class = "^feh$";
+            };
+            command = "floating enable, move position center";
           }
         ];
       };
