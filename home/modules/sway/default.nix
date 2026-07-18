@@ -10,7 +10,6 @@ let
   bg = "#${config.colorScheme.palette.bg}";
   fg = "#${config.colorScheme.palette.fg}";
   altbg = "#${config.colorScheme.palette.altbg}";
-  altfg = "#${config.colorScheme.palette.altfg}";
   dimmed = "#${config.colorScheme.palette.dimmed}";
   primary = "#${config.colorScheme.palette.primary}";
   urgent = "#${config.colorScheme.palette.urgent}";
@@ -85,6 +84,7 @@ in
     config = {
       modifier = mod;
       terminal = term;
+      workspaceAutoBackAndForth = true;
       startup = [
         { command = "waypaper --restore"; }
         {
