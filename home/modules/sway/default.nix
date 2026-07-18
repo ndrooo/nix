@@ -79,6 +79,7 @@ in
 
   wayland.windowManager.sway = {
     enable = true;
+    package = null;
     systemd.variables = [ "--all" ];
     xwayland = true;
     config = {

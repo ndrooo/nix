@@ -53,7 +53,6 @@
   security.polkit.enable = true;
   services.pipewire = {
     enable = true;
-    wireplumber.enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
@@ -62,6 +61,14 @@
     hyprlock.enableGnomeKeyring = true;
   };
   location.provider = "geoclue2";
+
+  xdg.portal.wlr.enable = true;
+  xdg.portal.wlr.settings.screencast = {
+    output_name = "eDP-1";
+    max_fps = 30;
+    chooser_type = "simple";
+    chooser_cmd = "${pkgs.slurp}/bin/slurp -f 'Monitor: %o' -or";
+  };
 
   services.gnome.gnome-keyring.enable = true;
   programs.seahorse.enable = true;

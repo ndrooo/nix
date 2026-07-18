@@ -45,14 +45,5 @@
     };
   };
 
-  xdg.portal = {
-    enable = true;
-    extraPortals = [
-      pkgs.xdg-desktop-portal-wlr
-      pkgs.xdg-desktop-portal-gtk
-    ];
-    config.common.default = "*";
-  };
-
   nixpkgs.config.permittedInsecurePackages = [ "electron-25.9.0" ];
 }
