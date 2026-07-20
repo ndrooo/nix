@@ -4,5 +4,6 @@ if [ x"$1" = x ]
 then
 	swaymsg -t get_workspaces | jq '.[] | .name' | tr -d '"'
 else
-	swaymsg [workspace=$1] move workspace to output current >/dev/null
+    ws=${1%:*}
+	swaymsg [workspace=$ws] move workspace to output current >/dev/null
 fi
