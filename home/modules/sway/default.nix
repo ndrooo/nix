@@ -27,6 +27,7 @@ in
     "sway/waybar.css".source = ./waybar.css;
     "sway/hyprlock.conf".source = ./hyprlock.conf;
     "sway/swayidle".source = ./swayidle;
+    "sway/swayidle-desktop".source = ./swayidle-desktop;
     "sway/rofi-ws.sh" = {
       source = ./rofi-ws.sh;
       executable = true;

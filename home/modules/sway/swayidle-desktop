@@ -1,0 +1,1 @@
+timeout 500 'swaymsg output * disable' resume 'swaymsg output * enable'
