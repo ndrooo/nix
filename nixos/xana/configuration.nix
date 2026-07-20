@@ -6,6 +6,7 @@
     ../modules/omada.nix
     ../modules/plex.nix
     ../modules/torrent.nix
+    ../modules/home-assistant.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
@@ -70,6 +71,11 @@
     virtualHosts."sync.xana.local" = {
       locations."/" = {
         proxyPass = "http://localhost:8384";
+      };
+    };
+    virtualHosts."home.xana.local" = {
+      locations."/" = {
+        proxyPass = "http://localhost:8123";
       };
     };
   };
