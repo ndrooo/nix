@@ -64,8 +64,8 @@ in
   gtk = {
     enable = true;
     theme = {
-      name = "Materia-dark";
-      package = pkgs.materia-theme;
+      name = "Juno";
+      package = pkgs.juno-theme;
     };
     gtk4.theme = config.gtk.theme;
   };

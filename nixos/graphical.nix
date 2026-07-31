@@ -62,12 +62,13 @@
   };
   location.provider = "geoclue2";
 
-  xdg.portal.wlr.enable = true;
-  xdg.portal.wlr.settings.screencast = {
-    output_name = "eDP-1";
-    max_fps = 30;
-    chooser_type = "simple";
-    chooser_cmd = "${pkgs.slurp}/bin/slurp -f 'Monitor: %o' -or";
+  xdg.portal.wlr = {
+    enable = true;
+    settings.screencast = {
+      max_fps = 30;
+      chooser_type = "simple";
+      chooser_cmd = "${pkgs.slurp}/bin/slurp -f 'Monitor: %o' -or";
+    };
   };
 
   services.gnome.gnome-keyring.enable = true;
