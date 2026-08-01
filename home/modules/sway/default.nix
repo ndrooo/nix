@@ -64,7 +64,7 @@ in
   gtk = {
     enable = true;
     theme = {
-      name = "Juno";
+      name = "Juno-ocean";
       package = pkgs.juno-theme;
     };
     gtk4.theme = config.gtk.theme;

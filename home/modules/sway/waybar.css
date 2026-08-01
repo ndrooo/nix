@@ -4,6 +4,7 @@
     font-family: "Fraunces 72pt SuperSoft";
     font-size: 18px;
     font-weight: 700;
+    min-height: 32px;
 }
 window#waybar {
     background: #0a0a0a;
@@ -13,8 +14,16 @@ window#waybar {
 #workspaces button {
     color: #999999;
 }
+#workspaces button.visible {
+    color: #cccccc;
+}
 #workspaces button.focused {
     color: #cccccc;
+    background-color: #222222;
+}
+#workspaces button:hover {
+    background-color: #cccccc;
+    color: #0a0a0a;
 }
 .module {
     padding: 0px 10px;

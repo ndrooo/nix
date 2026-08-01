@@ -2,16 +2,16 @@
 let
   modules = import ./modules;
 
-  ws1 = "1: web";
-  ws2 = "2: notes";
-  ws3 = "3: chat";
-  ws4 = "4: code";
-  ws5 = "5: games";
-  ws6 = "6: six";
-  ws7 = "7: seven";
-  ws8 = "8: music";
-  ws9 = "9: nine";
-  ws10 = "10: ten";
+  ws1 = "1:web";
+  ws2 = "2:notes";
+  ws3 = "3:chat";
+  ws4 = "4:code";
+  ws5 = "5:games";
+  ws6 = "6:six";
+  ws7 = "7:seven";
+  ws8 = "8:music";
+  ws9 = "9:nine";
+  ws10 = "10:ten";
 
   mod = "Mod4";
   alt = "Mod1";
@@ -71,17 +71,11 @@ in
       "${alt}+i" = "workspace ${ws2}";
       "${alt}+o" = "workspace ${ws3}";
       "${alt}+p" = "workspace ${ws4}";
-      "${alt}+comma" = "workspace ${ws5}";
-      "${alt}+period" = "workspace ${ws6}";
-      "${alt}+y" = "workspace ${ws8}";
 
       "${alt}+Shift+u" = "move container to workspace ${ws1}";
       "${alt}+Shift+i" = "move container to workspace ${ws2}";
       "${alt}+Shift+o" = "move container to workspace ${ws3}";
       "${alt}+Shift+p" = "move container to workspace ${ws4}";
-      "${alt}+Shift+comma" = "move container to workspace ${ws5}";
-      "${alt}+Shift+period" = "move container to workspace ${ws6}";
-      "${alt}+Shift+y" = "move container to workspace ${ws8}";
     };
     bindswitches = {
       "lid:on" = {
