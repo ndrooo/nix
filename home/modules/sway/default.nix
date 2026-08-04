@@ -101,7 +101,7 @@ in
         "${mod}+t" =
           "exec --no-startup-id bash ~/.config/sway/scratchpad.sh -t -acc -d 60%x80% -- todoist-electron";
 
-        "${mod}+Shift+r" = "restart";
+        "${mod}+Shift+r" = "reload";
         "${mod}+Shift+e" = "exit";
         "${mod}+Shift+s" = "exec systemctl suspend";
         "${mod}+z" = "exec hyprlock -c ~/.config/sway/hyprlock.conf";
@@ -132,6 +132,8 @@ in
         "${mod}+r" = "layout toggle split";
         "${mod}+e" = "layout tabbed";
         "${mod}+v" = "split v";
+        "${mod}+slash" = "split h";
+        "${mod}+g" = "gaps inner current toggle 20px";
         "${mod}+f" = "fullscreen toggle";
         "${mod}+a" = "focus parent";
 
