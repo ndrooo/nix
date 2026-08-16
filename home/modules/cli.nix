@@ -10,6 +10,8 @@
     nodejs
     exiftool
     nmap
+    cowsay
+    termdown
   ];
 
   programs.git = {
