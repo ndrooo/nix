@@ -34,6 +34,7 @@
     nerd-fonts.victor-mono
     nerd-fonts.space-mono
     lexend
+    inter
     victor-mono
     fraunces
     atkinson-hyperlegible

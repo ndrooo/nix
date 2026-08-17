@@ -20,6 +20,7 @@ in
     inputs.nix-colors.homeManagerModule
     (import ../default.nix).dunst
     (import ../default.nix).rofi
+    (import ../default.nix).fuzzel
   ];
 
   xdg.configFile = {
@@ -28,16 +29,16 @@ in
     "sway/hyprlock.conf".source = ./hyprlock.conf;
     "sway/swayidle".source = ./swayidle;
     "sway/swayidle-desktop".source = ./swayidle-desktop;
-    "sway/rofi-ws.sh" = {
-      source = ./rofi-ws.sh;
+    "sway/fuzz-ws.nu" = {
+      source = ./fuzz-ws.nu;
       executable = true;
     };
-    "sway/rofi-ws-move.sh" = {
-      source = ./rofi-ws-move.sh;
+    "sway/fuzz-ws-move.nu" = {
+      source = ./fuzz-ws-move.nu;
       executable = true;
     };
-    "sway/rofi-ws-to-here.sh" = {
-      source = ./rofi-ws-to-here.sh;
+    "sway/fuzz-ws-to-here.nu" = {
+      source = ./fuzz-ws-to-here.nu;
       executable = true;
     };
     "sway/scratchpad.sh" = {
@@ -139,15 +140,13 @@ in
 
         "${mod}+q" = "kill";
 
-        "${mod}+d" = "exec rofi -show drun";
+        "${mod}+d" = "exec fuzzel";
         "${mod}+Shift+d" = "exec rofi -show run";
         "${mod}+s" = "exec rofi -show ssh";
         "${mod}+m" = "exec rofimoji";
-        "${mod}+semicolon" = "exec rofi -modes \"Workspaces:~/.config/sway/rofi-ws.sh\" -show Workspaces";
-        "${mod}+Shift+semicolon" =
-          "exec rofi -modes \"Move to workspace:~/.config/sway/rofi-ws-move.sh\" -show \"Move to workspace\"";
-        "${mod}+Control+semicolon" =
-          "exec rofi -modes \"Move workspace here:~/.config/sway/rofi-ws-to-here.sh\" -show \"Move workspace here\"";
+        "${mod}+semicolon" = "exec ~/.config/sway/fuzz-ws.nu";
+        "${mod}+Shift+semicolon" = "exec ~/.config/sway/fuzz-ws-move.nu";
+        "${mod}+Control+semicolon" = "exec ~/.config/sway/fuzz-ws-to-here.nu";
 
         "${mod}+c" = "exec grim -g \"$(slurp)\"";
       };
