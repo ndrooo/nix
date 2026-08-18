@@ -3,9 +3,9 @@
   programs.fuzzel.settings = {
     main = {
       font = "VictorMono Nerd Font Mono:size=18";
+      terminal = "kitty -e";
       prompt = "\"=> \"";
       use-bold = "yes";
-      gamma-correct = "enabled";
       minimal-lines = "yes";
       horizontal-pad = 20;
       vertical-pad = 20;
