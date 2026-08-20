@@ -7,6 +7,7 @@
       prompt = "\"=> \"";
       use-bold = "yes";
       minimal-lines = "yes";
+      gamma-correct-blending = "yes";
       horizontal-pad = 20;
       vertical-pad = 20;
       inner-pad = 30;
