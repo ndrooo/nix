@@ -44,6 +44,7 @@ in
       "XF86AudioNext" = "exec playerctl next";
       "Print" = "exec grim && notify-send -t 1000 \"took screenshot\"";
       "XF86AudioMedia" = "exec hyprlock -c ~/.config/sway/hyprlock.conf";
+      "Pause" = "exec hyprlock -c ~/.config/sway/hyprlock.conf";
 
       "${mod}+1" = "workspace ${ws1}";
       "${mod}+2" = "workspace ${ws2}";
