@@ -181,6 +181,12 @@ in
           }
           {
             criteria = {
+              class = "^Frogansplayer$";
+            };
+            command = "floating enable, border none";
+          }
+          {
+            criteria = {
               app_id = "^waypaper$";
             };
             command = "floating enable";
