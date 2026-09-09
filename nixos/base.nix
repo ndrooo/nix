@@ -69,6 +69,33 @@
   };
 
   programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    gtk2
+    gtk2-x11
+    gtk3
+    gtk3-x11
+    libappindicator-gtk2
+    libdbusmenu-gtk2
+    libindicator-gtk2
+    atk
+    atkmm
+    gdk-pixbuf
+    glib
+    pango
+    fontconfig
+    freetype
+    cairo
+    libx11
+    libxext
+    libxcomposite
+    openssl
+    pkg-config
+    wayland
+    libxkbcommon
+    libdecor
+    egl-wayland
+    libGL
+  ];
 
   virtualisation.oci-containers = {
     backend = "podman";
