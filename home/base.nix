@@ -43,6 +43,10 @@
         HostName = "github.com";
         User = "git";
       };
+      "cb" = {
+        HostName = "codeberg.org";
+        User = "git";
+      };
     };
     includes = [ "hosts.config" ];
   };
