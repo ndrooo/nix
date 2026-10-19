@@ -14,6 +14,7 @@ let
   primary = "#${config.colorScheme.palette.primary}";
   urgent = "#${config.colorScheme.palette.urgent}";
   term = "kitty";
+in
 {
   imports = [
     inputs.nix-colors.homeManagerModule
