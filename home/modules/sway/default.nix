@@ -14,7 +14,6 @@ let
   primary = "#${config.colorScheme.palette.primary}";
   urgent = "#${config.colorScheme.palette.urgent}";
   term = "kitty";
-in
 {
   imports = [
     inputs.nix-colors.homeManagerModule
@@ -94,6 +93,7 @@ in
           always = true;
         }
         { command = "waybar -c ~/.config/sway/waybar.jsonc -s ~/.config/sway/waybar.css"; }
+        { command = "dunst"; }
       ];
       keybindings = {
         "${mod}+Return" =

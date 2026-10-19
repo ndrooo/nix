@@ -9,7 +9,4 @@
   dunst = {
     xdg.configFile."dunst/dunstrc".source = ./dunstrc;
   };
-  zathura = {
-    xdg.configFile."zathura/zathurarc".source = ./zathurarc;
-  };
 }

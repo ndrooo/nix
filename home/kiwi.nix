@@ -23,8 +23,7 @@ in
     modules.graphical
     modules.kitty
     modules.sway
-    modules.vscode
-    modules.zathura
+    modules.dunst
     ./themes/sumac.nix
   ];
 

@@ -7,7 +7,6 @@
     # media
     yt-dlp
     tidal-hifi
-    zathura
     easyrpg-player
     # communications
     signal-desktop

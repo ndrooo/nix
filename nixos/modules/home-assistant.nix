@@ -1,4 +1,4 @@
-{ config, ... }:
+{ ... }:
 {
   services.home-assistant = {
     enable = true;
@@ -27,8 +27,4 @@
       # "script ui" = "!include scripts.yaml";
     };
   };
-
-  networking.firewall.allowedTCPPorts = [
-    config.services.home-assistant.config.http.server_port
-  ];
 }
