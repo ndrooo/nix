@@ -74,9 +74,6 @@
     gtk2-x11
     gtk3
     gtk3-x11
-    libappindicator-gtk2
-    libdbusmenu-gtk2
-    libindicator-gtk2
     atk
     atkmm
     gdk-pixbuf

@@ -72,7 +72,6 @@ let
 
   qt = {
     enable = true;
-    style.name = "gtk2";
   };
 
   programs.hyprlock.enable = true;
