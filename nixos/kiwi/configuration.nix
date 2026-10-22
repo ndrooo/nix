@@ -26,9 +26,6 @@
       allowDiscards = true;
     };
   };
-  # Get fix for bluetooth issue early
-  # https://bugzilla.kernel.org/show_bug.cgi?id=221521
-  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   hardware.graphics.enable = true;
 
