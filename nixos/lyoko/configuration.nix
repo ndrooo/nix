@@ -23,7 +23,6 @@
   boot.initrd.luks.devices = {
     nix = {
       device = "/dev/disk/by-uuid/fbff2983-ec03-45b9-9feb-38ebcfab7a6e";
-      preLVM = true;
       allowDiscards = true;
     };
   };
